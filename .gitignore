@@ -1,0 +1,8 @@
+.DS_Store
+
+.idea
+Pods/
+Moovel.xcodeproj/xcuserdata/
+Moovel.xcworkspace/xcuserdata/
+Moovel.xcodeproj/project.xcworkspace/xcuserdata/
+Podfile.lock

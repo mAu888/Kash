@@ -7,22 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
+		3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9487F31421AD7E30214 /* KSHMainViewController.m */; };
+		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */; };
+		3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */; };
+		3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */; };
+		3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */; };
+		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
+		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
 		FEB5D17517B563CC00998E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17417B563CC00998E3B /* UIKit.framework */; };
 		FEB5D17717B563CC00998E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17617B563CC00998E3B /* Foundation.framework */; };
 		FEB5D17917B563CC00998E3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17817B563CC00998E3B /* CoreGraphics.framework */; };
-		FEB5D17F17B563CC00998E3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D17D17B563CC00998E3B /* InfoPlist.strings */; };
-		FEB5D18117B563CC00998E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D18017B563CC00998E3B /* main.m */; };
-		FEB5D18517B563CC00998E3B /* KSHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D18417B563CC00998E3B /* KSHAppDelegate.m */; };
-		FEB5D18717B563CC00998E3B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D18617B563CC00998E3B /* Default.png */; };
-		FEB5D18917B563CC00998E3B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D18817B563CC00998E3B /* Default@2x.png */; };
-		FEB5D18B17B563CC00998E3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D18A17B563CC00998E3B /* Default-568h@2x.png */; };
-		FEB5D18E17B563CC00998E3B /* KSHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D18D17B563CC00998E3B /* KSHViewController.m */; };
-		FEB5D19117B563CC00998E3B /* KSHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D18F17B563CC00998E3B /* KSHViewController.xib */; };
 		FEB5D19917B563CC00998E3B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D19817B563CC00998E3B /* SenTestingKit.framework */; };
 		FEB5D19A17B563CC00998E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17417B563CC00998E3B /* UIKit.framework */; };
 		FEB5D19B17B563CC00998E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17617B563CC00998E3B /* Foundation.framework */; };
-		FEB5D1A317B563CC00998E3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1A117B563CC00998E3B /* InfoPlist.strings */; };
-		FEB5D1A617B563CC00998E3B /* KashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1A517B563CC00998E3B /* KashTests.m */; };
+		FEB5D1C017B564AE00998E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B217B564AE00998E3B /* main.m */; };
+		FEB5D1C117B564AE00998E3B /* KSHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */; };
+		FEB5D1C217B564AE00998E3B /* KSHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B917B564AE00998E3B /* KSHViewController.m */; };
+		FEB5D1C317B564AE00998E3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1BC17B564AE00998E3B /* Default-568h@2x.png */; };
+		FEB5D1C417B564AE00998E3B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1BD17B564AE00998E3B /* Default.png */; };
+		FEB5D1C517B564AE00998E3B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1BE17B564AE00998E3B /* Default@2x.png */; };
+		FEB5D1CC17B564D300998E3B /* KashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1CA17B564D300998E3B /* KashTests.m */; };
+		FEB5D1D017B5690700998E3B /* KSHDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1CE17B5690700998E3B /* KSHDataModel.xcdatamodeld */; };
+		FEB5D1D217B56B2E00998E3B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D1D117B56B2E00998E3B /* CoreData.framework */; };
+		FEB5D1D517B5806B00998E3B /* KSHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1D417B5806B00998E3B /* KSHAccount.m */; };
+		FEB5D1DE17B5A72F00998E3B /* KSHCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1DD17B5A72F00998E3B /* KSHCategory.m */; };
+		FEB5D1E117B83C0400998E3B /* KSHExpenseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1E017B83C0400998E3B /* KSHExpenseItem.m */; };
+		FEB5D1E417B83C2900998E3B /* KSHExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1E317B83C2900998E3B /* KSHExpense.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,28 +47,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseItemViewController.m; sourceTree = "<group>"; };
+		3D09B073F05ED2EEB1AE5BB9 /* KSHExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpensesViewController.h; sourceTree = "<group>"; };
+		3D09B07B325C7FAEFF54984D /* KSHAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountsViewController.h; sourceTree = "<group>"; };
+		3D09B0AA5E12C921C19A086A /* KSHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHMainViewController.h; sourceTree = "<group>"; };
+		3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddAccountViewController.h; sourceTree = "<group>"; };
+		3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHInputCellDelegate.h; sourceTree = "<group>"; };
+		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
+		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
+		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
+		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
+		3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountsViewController.m; sourceTree = "<group>"; };
+		3D09B9487F31421AD7E30214 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
+		3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
+		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
+		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextfieldCell.m; sourceTree = "<group>"; };
+		3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
+		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextfieldCell.h; sourceTree = "<group>"; };
+		3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
 		FEB5D17117B563CC00998E3B /* Kash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB5D17417B563CC00998E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEB5D17617B563CC00998E3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEB5D17817B563CC00998E3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FEB5D17C17B563CC00998E3B /* Kash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kash-Info.plist"; sourceTree = "<group>"; };
-		FEB5D17E17B563CC00998E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FEB5D18017B563CC00998E3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FEB5D18217B563CC00998E3B /* Kash-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kash-Prefix.pch"; sourceTree = "<group>"; };
-		FEB5D18317B563CC00998E3B /* KSHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSHAppDelegate.h; sourceTree = "<group>"; };
-		FEB5D18417B563CC00998E3B /* KSHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSHAppDelegate.m; sourceTree = "<group>"; };
-		FEB5D18617B563CC00998E3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		FEB5D18817B563CC00998E3B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		FEB5D18A17B563CC00998E3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FEB5D18C17B563CC00998E3B /* KSHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSHViewController.h; sourceTree = "<group>"; };
-		FEB5D18D17B563CC00998E3B /* KSHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
-		FEB5D19017B563CC00998E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KSHViewController.xib; sourceTree = "<group>"; };
 		FEB5D19717B563CC00998E3B /* KashTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KashTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB5D19817B563CC00998E3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FEB5D1A017B563CC00998E3B /* KashTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KashTests-Info.plist"; sourceTree = "<group>"; };
-		FEB5D1A217B563CC00998E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FEB5D1A417B563CC00998E3B /* KashTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KashTests.h; sourceTree = "<group>"; };
-		FEB5D1A517B563CC00998E3B /* KashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KashTests.m; sourceTree = "<group>"; };
+		FEB5D1B017B564AE00998E3B /* Kash-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Kash-Info.plist"; sourceTree = "<group>"; };
+		FEB5D1B117B564AE00998E3B /* Kash-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kash-Prefix.pch"; sourceTree = "<group>"; };
+		FEB5D1B217B564AE00998E3B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FEB5D1B517B564AE00998E3B /* KSHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAppDelegate.h; sourceTree = "<group>"; };
+		FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAppDelegate.m; sourceTree = "<group>"; };
+		FEB5D1B817B564AE00998E3B /* KSHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHViewController.h; sourceTree = "<group>"; };
+		FEB5D1B917B564AE00998E3B /* KSHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
+		FEB5D1BC17B564AE00998E3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FEB5D1BD17B564AE00998E3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FEB5D1BE17B564AE00998E3B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FEB5D1C717B564D300998E3B /* KashTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KashTests-Info.plist"; sourceTree = "<group>"; };
+		FEB5D1C917B564D300998E3B /* KashTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KashTests.h; sourceTree = "<group>"; };
+		FEB5D1CA17B564D300998E3B /* KashTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KashTests.m; sourceTree = "<group>"; };
+		FEB5D1CF17B5690700998E3B /* KSHDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KSHDataModel.xcdatamodel; sourceTree = "<group>"; };
+		FEB5D1D117B56B2E00998E3B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FEB5D1D317B5806B00998E3B /* KSHAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccount.h; sourceTree = "<group>"; };
+		FEB5D1D417B5806B00998E3B /* KSHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccount.m; sourceTree = "<group>"; };
+		FEB5D1DC17B5A72F00998E3B /* KSHCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHCategory.h; sourceTree = "<group>"; };
+		FEB5D1DD17B5A72F00998E3B /* KSHCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHCategory.m; sourceTree = "<group>"; };
+		FEB5D1DF17B83C0400998E3B /* KSHExpenseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseItem.h; sourceTree = "<group>"; };
+		FEB5D1E017B83C0400998E3B /* KSHExpenseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpenseItem.m; sourceTree = "<group>"; };
+		FEB5D1E217B83C2900998E3B /* KSHExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpense.h; sourceTree = "<group>"; };
+		FEB5D1E317B83C2900998E3B /* KSHExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpense.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB5D1D217B56B2E00998E3B /* CoreData.framework in Frameworks */,
 				FEB5D17517B563CC00998E3B /* UIKit.framework in Frameworks */,
 				FEB5D17717B563CC00998E3B /* Foundation.framework in Frameworks */,
 				FEB5D17917B563CC00998E3B /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +121,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D09B0F7F075D776D7FDF687 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */,
+				3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextfieldCell.h */,
+				3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		3D09B3215042884848FAF79E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1D317B5806B00998E3B /* KSHAccount.h */,
+				FEB5D1D417B5806B00998E3B /* KSHAccount.m */,
+				FEB5D1DC17B5A72F00998E3B /* KSHCategory.h */,
+				FEB5D1DD17B5A72F00998E3B /* KSHCategory.m */,
+				FEB5D1DF17B83C0400998E3B /* KSHExpenseItem.h */,
+				FEB5D1E017B83C0400998E3B /* KSHExpenseItem.m */,
+				FEB5D1E217B83C2900998E3B /* KSHExpense.h */,
+				FEB5D1E317B83C2900998E3B /* KSHExpense.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3D09B32B6A3A0DCF5EE573B5 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */,
+				3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */,
+				3D09B3215042884848FAF79E /* Entities */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 		FEB5D16817B563CB00998E3B = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +178,7 @@
 		FEB5D17317B563CC00998E3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEB5D1D117B56B2E00998E3B /* CoreData.framework */,
 				FEB5D17417B563CC00998E3B /* UIKit.framework */,
 				FEB5D17617B563CC00998E3B /* Foundation.framework */,
 				FEB5D17817B563CC00998E3B /* CoreGraphics.framework */,
@@ -117,47 +190,116 @@
 		FEB5D17A17B563CC00998E3B /* Kash */ = {
 			isa = PBXGroup;
 			children = (
-				FEB5D18317B563CC00998E3B /* KSHAppDelegate.h */,
-				FEB5D18417B563CC00998E3B /* KSHAppDelegate.m */,
-				FEB5D18C17B563CC00998E3B /* KSHViewController.h */,
-				FEB5D18D17B563CC00998E3B /* KSHViewController.m */,
-				FEB5D18F17B563CC00998E3B /* KSHViewController.xib */,
-				FEB5D17B17B563CC00998E3B /* Supporting Files */,
+				FEB5D1AF17B564AE00998E3B /* Ancilliary Files */,
+				FEB5D1B317B564AE00998E3B /* Classes */,
+				FEB5D1CD17B568E300998E3B /* Data Source */,
+				FEB5D1BA17B564AE00998E3B /* Resources */,
 			);
 			path = Kash;
-			sourceTree = "<group>";
-		};
-		FEB5D17B17B563CC00998E3B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FEB5D17C17B563CC00998E3B /* Kash-Info.plist */,
-				FEB5D17D17B563CC00998E3B /* InfoPlist.strings */,
-				FEB5D18017B563CC00998E3B /* main.m */,
-				FEB5D18217B563CC00998E3B /* Kash-Prefix.pch */,
-				FEB5D18617B563CC00998E3B /* Default.png */,
-				FEB5D18817B563CC00998E3B /* Default@2x.png */,
-				FEB5D18A17B563CC00998E3B /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FEB5D19E17B563CC00998E3B /* KashTests */ = {
 			isa = PBXGroup;
 			children = (
-				FEB5D1A417B563CC00998E3B /* KashTests.h */,
-				FEB5D1A517B563CC00998E3B /* KashTests.m */,
-				FEB5D19F17B563CC00998E3B /* Supporting Files */,
+				FEB5D1C617B564D300998E3B /* Ancilliary Files */,
+				FEB5D1C817B564D300998E3B /* Test classes */,
 			);
 			path = KashTests;
 			sourceTree = "<group>";
 		};
-		FEB5D19F17B563CC00998E3B /* Supporting Files */ = {
+		FEB5D1AF17B564AE00998E3B /* Ancilliary Files */ = {
 			isa = PBXGroup;
 			children = (
-				FEB5D1A017B563CC00998E3B /* KashTests-Info.plist */,
-				FEB5D1A117B563CC00998E3B /* InfoPlist.strings */,
+				FEB5D1B017B564AE00998E3B /* Kash-Info.plist */,
+				FEB5D1B117B564AE00998E3B /* Kash-Prefix.pch */,
+				FEB5D1B217B564AE00998E3B /* main.m */,
+				3D09B41116538AF923FF8B8C /* enums.h */,
 			);
-			name = "Supporting Files";
+			path = "Ancilliary Files";
+			sourceTree = "<group>";
+		};
+		FEB5D1B317B564AE00998E3B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1B417B564AE00998E3B /* Application */,
+				FEB5D1B717B564AE00998E3B /* View Controllers */,
+				3D09B32B6A3A0DCF5EE573B5 /* Data Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FEB5D1B417B564AE00998E3B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1B517B564AE00998E3B /* KSHAppDelegate.h */,
+				FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FEB5D1B717B564AE00998E3B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1B817B564AE00998E3B /* KSHViewController.h */,
+				FEB5D1B917B564AE00998E3B /* KSHViewController.m */,
+				3D09B9487F31421AD7E30214 /* KSHMainViewController.m */,
+				3D09B0AA5E12C921C19A086A /* KSHMainViewController.h */,
+				3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */,
+				3D09B073F05ED2EEB1AE5BB9 /* KSHExpensesViewController.h */,
+				3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */,
+				3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */,
+				3D09B0F7F075D776D7FDF687 /* Custom Cells */,
+				3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */,
+				3D09B07B325C7FAEFF54984D /* KSHAccountsViewController.h */,
+				3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */,
+				3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */,
+				3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */,
+				3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FEB5D1BA17B564AE00998E3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1BB17B564AE00998E3B /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FEB5D1BB17B564AE00998E3B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1BC17B564AE00998E3B /* Default-568h@2x.png */,
+				FEB5D1BD17B564AE00998E3B /* Default.png */,
+				FEB5D1BE17B564AE00998E3B /* Default@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FEB5D1C617B564D300998E3B /* Ancilliary Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1C717B564D300998E3B /* KashTests-Info.plist */,
+			);
+			path = "Ancilliary Files";
+			sourceTree = "<group>";
+		};
+		FEB5D1C817B564D300998E3B /* Test classes */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1C917B564D300998E3B /* KashTests.h */,
+				FEB5D1CA17B564D300998E3B /* KashTests.m */,
+			);
+			path = "Test classes";
+			sourceTree = "<group>";
+		};
+		FEB5D1CD17B568E300998E3B /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5D1CE17B5690700998E3B /* KSHDataModel.xcdatamodeld */,
+			);
+			path = "Data Source";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,11 +374,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB5D17F17B563CC00998E3B /* InfoPlist.strings in Resources */,
-				FEB5D18717B563CC00998E3B /* Default.png in Resources */,
-				FEB5D18917B563CC00998E3B /* Default@2x.png in Resources */,
-				FEB5D18B17B563CC00998E3B /* Default-568h@2x.png in Resources */,
-				FEB5D19117B563CC00998E3B /* KSHViewController.xib in Resources */,
+				FEB5D1C317B564AE00998E3B /* Default-568h@2x.png in Resources */,
+				FEB5D1C417B564AE00998E3B /* Default.png in Resources */,
+				FEB5D1C517B564AE00998E3B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +384,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB5D1A317B563CC00998E3B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,9 +410,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB5D18117B563CC00998E3B /* main.m in Sources */,
-				FEB5D18517B563CC00998E3B /* KSHAppDelegate.m in Sources */,
-				FEB5D18E17B563CC00998E3B /* KSHViewController.m in Sources */,
+				FEB5D1C017B564AE00998E3B /* main.m in Sources */,
+				FEB5D1C117B564AE00998E3B /* KSHAppDelegate.m in Sources */,
+				FEB5D1C217B564AE00998E3B /* KSHViewController.m in Sources */,
+				3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */,
+				3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */,
+				FEB5D1D017B5690700998E3B /* KSHDataModel.xcdatamodeld in Sources */,
+				3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */,
+				3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */,
+				3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextfieldCell.m in Sources */,
+				3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */,
+				3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */,
+				FEB5D1D517B5806B00998E3B /* KSHAccount.m in Sources */,
+				FEB5D1DE17B5A72F00998E3B /* KSHCategory.m in Sources */,
+				3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */,
+				FEB5D1E117B83C0400998E3B /* KSHExpenseItem.m in Sources */,
+				FEB5D1E417B83C2900998E3B /* KSHExpense.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB5D1A617B563CC00998E3B /* KashTests.m in Sources */,
+				FEB5D1CC17B564D300998E3B /* KashTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,33 +446,6 @@
 			targetProxy = FEB5D19C17B563CC00998E3B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FEB5D17D17B563CC00998E3B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEB5D17E17B563CC00998E3B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FEB5D18F17B563CC00998E3B /* KSHViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEB5D19017B563CC00998E3B /* en */,
-			);
-			name = KSHViewController.xib;
-			sourceTree = "<group>";
-		};
-		FEB5D1A117B563CC00998E3B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FEB5D1A217B563CC00998E3B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FEB5D1A717B563CC00998E3B /* Debug */ = {
@@ -383,8 +508,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kash/Kash-Prefix.pch";
-				INFOPLIST_FILE = "Kash/Kash-Info.plist";
+				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancilliary Files/Kash-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,8 +519,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kash/Kash-Prefix.pch";
-				INFOPLIST_FILE = "Kash/Kash-Info.plist";
+				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancilliary Files/Kash-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,10 +535,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kash/Kash-Prefix.pch";
-				INFOPLIST_FILE = "KashTests/KashTests-Info.plist";
+				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
+				INFOPLIST_FILE = "KashTests/Ancilliary Files/KashTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -427,10 +551,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kash/Kash-Prefix.pch";
-				INFOPLIST_FILE = "KashTests/KashTests-Info.plist";
+				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
+				INFOPLIST_FILE = "KashTests/Ancilliary Files/KashTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -454,6 +577,7 @@
 				FEB5D1AB17B563CC00998E3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEB5D1AC17B563CC00998E3B /* Build configuration list for PBXNativeTarget "KashTests" */ = {
 			isa = XCConfigurationList;
@@ -462,8 +586,22 @@
 				FEB5D1AE17B563CC00998E3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FEB5D1CE17B5690700998E3B /* KSHDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FEB5D1CF17B5690700998E3B /* KSHDataModel.xcdatamodel */,
+			);
+			currentVersion = FEB5D1CF17B5690700998E3B /* KSHDataModel.xcdatamodel */;
+			path = KSHDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FEB5D16917B563CB00998E3B /* Project object */;
 }
