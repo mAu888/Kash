@@ -70,9 +70,9 @@
     [_context.undoManager beginUndoGrouping];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
 
     [_context.undoManager endUndoGrouping];
 }
@@ -152,7 +152,7 @@
     [self dismissViewControllerAnimated:YES
                              completion:^
                              {
-                                 [_context undo];
+                                 [_context rollback];
                              }];
 }
 
