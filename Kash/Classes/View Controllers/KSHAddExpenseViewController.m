@@ -12,6 +12,7 @@
 #import "enums.h"
 #import "KSHAccountsViewController.h"
 #import "KSHAddExpenseItemViewController.h"
+#import "KSHExpenseItem.h"
 
 NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 {
@@ -47,7 +48,6 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         _navigationStyle = KSHModalPresentationStyle;
 
         self.title = NSLocalizedString(@"Add expense", nil);
-
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
@@ -152,7 +152,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
     else if ( indexPath.section == 1 )
     {
-        static NSString *reuseIdentifier = @"CellIdentifier";
+        static NSString *reuseIdentifier = @"UITableViewCellStyleValue1";
 
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
@@ -171,23 +171,36 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
     else if ( indexPath.section == 2 )
     {
-        static NSString *reuseIdentifier = @"CellIdentifier";
-
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-        if ( cell == nil )
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                          reuseIdentifier:reuseIdentifier];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
+        UITableViewCell *cell = nil;
 
         if ( indexPath.row == _expense.items.count )
         {
+            static NSString *reuseIdentifier = @"UITableViewCellStyleDefault";
+
+            cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if ( cell == nil )
+            {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                              reuseIdentifier:reuseIdentifier];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+
             cell.textLabel.text = NSLocalizedString(@"Add item", nil);
         }
         else if ( indexPath.row < _expense.items.count )
         {
+            static NSString *reuseIdentifier = @"UITableViewCellStyleValue1";
+
+            cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if ( cell == nil )
+            {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                              reuseIdentifier:reuseIdentifier];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+
             cell.textLabel.text = [_expense.items[indexPath.row] name];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", [[_expense.items[indexPath.row] amount] floatValue]];
         }
 
         returnedCell = cell;
@@ -195,6 +208,17 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
     return returnedCell;
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.section == 2 && indexPath.row < _expense.items.count;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+
 
 
 #pragma mark - UITableViewDelegate

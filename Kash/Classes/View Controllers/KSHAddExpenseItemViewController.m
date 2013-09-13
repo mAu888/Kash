@@ -158,7 +158,9 @@
 
 - (void)save:(id)sender
 {
-    [[_expense mutableArrayValueForKey:@"items"] addObject:_expenseItem];
+    [self.view endEditing:YES];
+
+    [[_expense mutableOrderedSetValueForKey:@"items"] addObject:_expenseItem];
 
     if (_delegate != nil && [_delegate respondsToSelector:@selector(controllerDidSaveExpenseItem:)] )
     {
