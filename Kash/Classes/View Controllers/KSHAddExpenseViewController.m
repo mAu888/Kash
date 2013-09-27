@@ -4,7 +4,7 @@
 */
 
 #import "KSHAddExpenseViewController.h"
-#import "KSHLabelAndTextfieldCell.h"
+#import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
 #import "KSHExpense.h"
@@ -14,7 +14,7 @@
 #import "KSHAddExpenseItemViewController.h"
 #import "KSHExpenseItem.h"
 #import "KSHNumberFormatter.h"
-#import "KSHLabelAndTextfieldCell+Formatting.h"
+#import "KSHLabelAndTextFieldCell+Formatting.h"
 #import "UITableViewCell+Formatting.h"
 
 NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
@@ -138,6 +138,8 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             return 1;
         case 2:
             return _expense.items.count + 1;
+        default:
+            break;
     }
 
     return 0;
@@ -151,10 +153,10 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
     {
         static NSString *reuseIdentifier = @"TextFieldCellIdentifier";
 
-        KSHLabelAndTextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        KSHLabelAndTextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[KSHLabelAndTextfieldCell alloc] initWithReuseIdentifier:reuseIdentifier];
+            cell = [[KSHLabelAndTextFieldCell alloc] initWithReuseIdentifier:reuseIdentifier];
             cell.delegate = self;
         }
 
@@ -181,8 +183,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                          reuseIdentifier:reuseIdentifier];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
         }
 
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -202,8 +203,8 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
             if ( cell == nil )
             {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                              reuseIdentifier:reuseIdentifier];
+                cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
                 cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             }
 
@@ -216,8 +217,8 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
             if ( cell == nil )
             {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                              reuseIdentifier:reuseIdentifier];
+                cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
                 cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
             }
 
@@ -255,7 +256,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
         NSNumberFormatter *formatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
 
         NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
-        return [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil), [formatter stringFromNumber:sum]];
+        return [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil),
+                                          [formatter stringFromNumber:sum]];
     }
 
     return nil;
@@ -269,11 +271,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     if ( indexPath.section == 1 )
     {
         KSHAccountsViewController *controller =
-            [[KSHAccountsViewController alloc] initWithDataAccessLayer:_dataAccessLayer
-                                                       selectedAccount:_expense.account];
+            [[KSHAccountsViewController alloc]
+                initWithDataAccessLayer:_dataAccessLayer selectedAccount:_expense.account];
         controller.delegate = self;
-        [self.navigationController pushViewController:controller
-                                             animated:YES];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 
     else if ( indexPath.section == 2 && indexPath.row == _expense.items.count )
@@ -287,9 +288,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
         UINavigationController *navigationController =
             [[UINavigationController alloc] initWithRootViewController:controller];
 
-        [self presentViewController:navigationController
-                           animated:YES
-                         completion:nil];
+        [self presentViewController:navigationController animated:YES completion:nil];
 
     }
 }
@@ -307,11 +306,11 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:cell.center];
     if ( indexPath.section == 0 && indexPath.row == KSHAddExpenseTitleRow )
     {
-        _expense.title = (( KSHLabelAndTextfieldCell * ) cell).textField.text;
+        _expense.title = (( KSHLabelAndTextFieldCell * ) cell).textField.text;
     }
     else if ( indexPath.section == 0 && indexPath.row == KSHAddExpenseTotalAmountRow )
     {
-        _expense.totalAmount = (( KSHLabelAndTextfieldCell * ) cell).numericValue;
+        _expense.totalAmount = (( KSHLabelAndTextFieldCell * ) cell).numericValue;
     }
 }
 
@@ -341,8 +340,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)cancel:(id)sender
 {
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)save:(id)sender
@@ -364,8 +362,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
             [self.navigationController popViewControllerAnimated:YES];
             break;
         case KSHModalPresentationStyle:
-            [self dismissViewControllerAnimated:YES
-                                     completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
             break;
     }
 }

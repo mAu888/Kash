@@ -3,18 +3,19 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
-#import "KSHLabelAndTextfieldCell.h"
+#import "KSHLabelAndTextFieldCell.h"
 #import "KSHInputCellDelegate.h"
 #import "KSHNumberFormatter.h"
+#import "KSHTextField.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHLabelAndTextfieldCell () <UITextFieldDelegate>
+@interface KSHLabelAndTextFieldCell () <UITextFieldDelegate>
 
 @end
 
 
 ////////////////////////////////////////////////////////////////////////////////
-@implementation KSHLabelAndTextfieldCell
+@implementation KSHLabelAndTextFieldCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -23,13 +24,19 @@
 
     if ( self != nil )
     {
-        _textField = [[UITextField alloc] initWithFrame:CGRectZero];
+        KSHTextField *textField = [[KSHTextField alloc] initWithFrame:CGRectZero];
+        textField.textInsets = UIEdgeInsetsMake(.0f, .0f, .0f, 5.f);
+
+        _textField = textField;
         _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         _textField.textAlignment = NSTextAlignmentRight;
+        _textField.returnKeyType = UIReturnKeyDone;
+        _textField.enablesReturnKeyAutomatically = YES;
 
-        _textField.rightView = [[UIView alloc]
-            initWithFrame:CGRectMake(.0f, .0f, 5.f, CGRectGetHeight(_textField.bounds))];
-        _textField.rightViewMode = UITextFieldViewModeAlways;
+//        _textField.rightView = [[UIView alloc]
+//        initWithFrame:CGRect;Make(.0f, .0f, 5.f, CGRectGetHeight(_textField.bounds))];
+//        _textField.rightViewMode = UITextFieldViewModeAlways
+        _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 
         _textField.delegate = self;
 
@@ -70,10 +77,31 @@
     if ( textFieldType == KSHDecimalTextField || textFieldType == KSHCurrencyTextField )
     {
         self.textField.keyboardType = UIKeyboardTypeDecimalPad;
+
+        UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                 target:nil
+                                 action:nil];
+
+        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc]
+            initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                 target:self.textField
+                                 action:@selector(resignFirstResponder)];
+
+        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f)];
+        toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        toolbar.barStyle = UIBarStyleBlackTranslucent;
+        toolbar.items = @[
+            flexibleItem,
+            doneItem
+        ];
+
+        self.textField.inputAccessoryView = toolbar;
     }
     else
     {
         self.textField.keyboardType = UIKeyboardTypeDefault;
+        self.textField.inputAccessoryView = nil;
     }
 }
 
@@ -90,6 +118,13 @@
         NSNumberFormatter *decimalNumberFormatter = [KSHNumberFormatter sharedInstance].decimalNumberFormatter;
         textField.text = [decimalNumberFormatter stringFromNumber:currentValue];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+
+    return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -109,9 +144,9 @@
     }
 }
 
-- (BOOL)            textField:(UITextField *)textField
-shouldChangeCharactersInRange:(NSRange)range
-            replacementString:(NSString *)string
+- (BOOL)textField:(UITextField *)textField
+    shouldChangeCharactersInRange:(NSRange)range
+    replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range
                                                                   withString:string];

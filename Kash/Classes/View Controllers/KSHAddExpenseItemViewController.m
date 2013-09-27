@@ -6,11 +6,11 @@
 #import <CoreData/CoreData.h>
 #import "KSHAddExpenseItemViewController.h"
 #import "KSHDataAccessLayer.h"
-#import "KSHLabelAndTextfieldCell.h"
+#import "KSHLabelAndTextFieldCell.h"
 #import "KSHExpenseItem.h"
 #import "KSHInputCellDelegate.h"
 #import "KSHExpense.h"
-#import "KSHLabelAndTextfieldCell+Formatting.h"
+#import "KSHLabelAndTextFieldCell+Formatting.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAddExpenseItemViewController () <KSHInputCellDelegate>
@@ -97,10 +97,10 @@
     {
         static NSString *labelAndTextFieldReuseIdentifier = @"LabelAndTextFieldCellIdentifier";
 
-        KSHLabelAndTextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:labelAndTextFieldReuseIdentifier];
+        KSHLabelAndTextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:labelAndTextFieldReuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[KSHLabelAndTextfieldCell alloc] initWithReuseIdentifier:labelAndTextFieldReuseIdentifier];
+            cell = [[KSHLabelAndTextFieldCell alloc] initWithReuseIdentifier:labelAndTextFieldReuseIdentifier];
             cell.delegate = self;
         }
 
@@ -131,7 +131,7 @@
 
 #pragma mark - KSHInputCellDelegate
 
-- (void)cellDidChangeValue:(KSHLabelAndTextfieldCell *)cell
+- (void)cellDidChangeValue:(KSHLabelAndTextFieldCell *)cell
 {
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:cell.center];
 

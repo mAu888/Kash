@@ -3,12 +3,12 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
-#import "KSHLabelAndTextfieldCell+Formatting.h"
+#import "KSHLabelAndTextFieldCell+Formatting.h"
 #import "KSHNumberFormatter.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
-@implementation KSHLabelAndTextfieldCell (Formatting)
+@implementation KSHLabelAndTextFieldCell (Formatting)
 
 - (NSNumber *)numericValue
 {

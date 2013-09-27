@@ -4,9 +4,9 @@
 */
 
 #import <Foundation/Foundation.h>
-#import "KSHLabelAndTextfieldCell.h"
+#import "KSHLabelAndTextFieldCell.h"
 
-@interface KSHLabelAndTextfieldCell (Formatting)
+@interface KSHLabelAndTextFieldCell (Formatting)
 
 - (NSNumber *)numericValue;
 

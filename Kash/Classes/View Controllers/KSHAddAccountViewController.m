@@ -6,7 +6,7 @@
 #import <CoreData/CoreData.h>
 #import "KSHAddAccountViewController.h"
 #import "KSHInputCellDelegate.h"
-#import "KSHLabelAndTextfieldCell.h"
+#import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
 
@@ -69,10 +69,10 @@
 {
     static NSString *reuseIdentifier = @"CellIdentifier";
 
-    KSHLabelAndTextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    KSHLabelAndTextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if ( cell == nil )
     {
-        cell = [[KSHLabelAndTextfieldCell alloc] initWithReuseIdentifier:reuseIdentifier];
+        cell = [[KSHLabelAndTextFieldCell alloc] initWithReuseIdentifier:reuseIdentifier];
         cell.delegate = self;
     }
 
@@ -112,7 +112,7 @@
 
 - (void)cellDidChangeValue:(UITableViewCell *)cell
 {
-    _account.name = ((KSHLabelAndTextfieldCell *)cell).textField.text;
+    _account.name = (( KSHLabelAndTextFieldCell *)cell).textField.text;
 }
 
 @end

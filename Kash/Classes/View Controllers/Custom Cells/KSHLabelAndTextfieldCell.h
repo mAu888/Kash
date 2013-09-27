@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, KSHTextFieldType)
 
 @protocol KSHInputCellDelegate;
 
-@interface KSHLabelAndTextfieldCell : UITableViewCell
+@interface KSHLabelAndTextFieldCell : UITableViewCell
 
 @property(nonatomic, weak) id <KSHInputCellDelegate> delegate;
 @property(nonatomic, strong) UITextField *textField;

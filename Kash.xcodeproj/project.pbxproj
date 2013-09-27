@@ -10,15 +10,16 @@
 		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
 		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
+		3D09B22F33E9A7699AF0AB5D /* KSHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9CBAC7ACBD9EA649622 /* KSHTextField.m */; };
 		3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9487F31421AD7E30214 /* KSHMainViewController.m */; };
-		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */; };
+		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */; };
 		3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B01CB4FEBB395E39F91A /* Default@2x.png */; };
 		3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */; };
 		3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */; };
 		3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */; };
 		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
 		3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */; };
-		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextfieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextfieldCell+Formatting.m */; };
+		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */; };
 		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
 		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
 		FEB5D17517B563CC00998E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17417B563CC00998E3B /* UIKit.framework */; };
@@ -58,24 +59,26 @@
 		3D09B0AA5E12C921C19A086A /* KSHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHMainViewController.h; sourceTree = "<group>"; };
 		3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddAccountViewController.h; sourceTree = "<group>"; };
 		3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextfieldCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHLabelAndTextfieldCell+Formatting.m"; sourceTree = "<group>"; };
+		3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHLabelAndTextFieldCell+Formatting.m"; sourceTree = "<group>"; };
 		3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHInputCellDelegate.h; sourceTree = "<group>"; };
 		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
 		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
+		3D09B7DE0418CBE5415C5406 /* KSHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTextField.h; sourceTree = "<group>"; };
 		3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHNumberFormatter.h; sourceTree = "<group>"; };
 		3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountsViewController.m; sourceTree = "<group>"; };
 		3D09B9487F31421AD7E30214 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
-		3D09B9952948CD57DAB326F3 /* KSHLabelAndTextfieldCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHLabelAndTextfieldCell+Formatting.h"; sourceTree = "<group>"; };
+		3D09B9952948CD57DAB326F3 /* KSHLabelAndTextFieldCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHLabelAndTextFieldCell+Formatting.h"; sourceTree = "<group>"; };
+		3D09B9CBAC7ACBD9EA649622 /* KSHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTextField.m; sourceTree = "<group>"; };
 		3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Formatting.m"; sourceTree = "<group>"; };
 		3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
 		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
 		3D09BB87743145DED78C2A78 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextfieldCell.m; sourceTree = "<group>"; };
+		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextFieldCell.m; sourceTree = "<group>"; };
 		3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
-		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextfieldCell.h; sourceTree = "<group>"; };
+		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextFieldCell.h; sourceTree = "<group>"; };
 		3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
 		FEB5D17117B563CC00998E3B /* Kash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB5D17417B563CC00998E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -133,15 +136,24 @@
 		3D09B0F7F075D776D7FDF687 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */,
-				3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextfieldCell.h */,
+				3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */,
+				3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextFieldCell.h */,
 				3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */,
-				3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextfieldCell+Formatting.m */,
-				3D09B9952948CD57DAB326F3 /* KSHLabelAndTextfieldCell+Formatting.h */,
+				3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */,
+				3D09B9952948CD57DAB326F3 /* KSHLabelAndTextFieldCell+Formatting.h */,
 				3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */,
 				3D09B07A15C66F28960EED3C /* UITableViewCell+Formatting.h */,
 			);
 			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		3D09B264B952E3D71180BA7C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D09B9CBAC7ACBD9EA649622 /* KSHTextField.m */,
+				3D09B7DE0418CBE5415C5406 /* KSHTextField.h */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		3D09B3215042884848FAF79E /* Entities */ = {
@@ -295,6 +307,7 @@
 				3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */,
 				3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */,
 				3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */,
+				3D09B264B952E3D71180BA7C /* Custom Views */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -441,7 +454,7 @@
 				FEB5D1D017B5690700998E3B /* KSHDataModel.xcdatamodeld in Sources */,
 				3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */,
 				3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */,
-				3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextfieldCell.m in Sources */,
+				3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextFieldCell.m in Sources */,
 				3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */,
 				3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */,
 				FEB5D1D517B5806B00998E3B /* KSHAccount.m in Sources */,
@@ -450,8 +463,9 @@
 				FEB5D1E117B83C0400998E3B /* KSHExpenseItem.m in Sources */,
 				FEB5D1E417B83C2900998E3B /* KSHExpense.m in Sources */,
 				3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */,
-				3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextfieldCell+Formatting.m in Sources */,
+				3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */,
 				3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */,
+				3D09B22F33E9A7699AF0AB5D /* KSHTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
