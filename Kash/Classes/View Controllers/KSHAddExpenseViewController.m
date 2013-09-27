@@ -13,6 +13,7 @@
 #import "KSHAccountsViewController.h"
 #import "KSHAddExpenseItemViewController.h"
 #import "KSHExpenseItem.h"
+#import "KSHNumberFormatter.h"
 
 NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 {
@@ -30,7 +31,6 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHAddExpenseViewController
 {
-
     KSHDataAccessLayer *_dataAccessLayer;
     NSArray *_accounts;
     KSHExpense *_expense;
@@ -96,6 +96,28 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
     return self;
 }
+
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // Notifications -------------------------------------------------------
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self.tableView
+           selector:@selector(reloadData)
+               name:NSCurrentLocaleDidChangeNotification
+             object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]
+        removeObserver:self.tableView name:NSCurrentLocaleDidChangeNotification object:nil];
+}
+
 
 
 #pragma mark - UITableViewDataSource
@@ -228,6 +250,18 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if ( section == 2 && _expense.items.count > 0 )
+    {
+        NSNumberFormatter *formatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
+
+        NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
+        return [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil), [formatter stringFromNumber:sum]];
+    }
+
+    return nil;
+}
 
 
 #pragma mark - UITableViewDelegate
@@ -266,7 +300,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     NSLog(@"Accessory button tapped at index path %@", indexPath);
 }
-
 
 
 #pragma mark - KSHInputCellDelegate

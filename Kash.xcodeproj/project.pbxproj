@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
 		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
 		3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9487F31421AD7E30214 /* KSHMainViewController.m */; };
@@ -59,6 +60,8 @@
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
 		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
+		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
+		3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHNumberFormatter.h; sourceTree = "<group>"; };
 		3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountsViewController.m; sourceTree = "<group>"; };
 		3D09B9487F31421AD7E30214 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
 		3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
@@ -156,6 +159,15 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
+		3D09B7439F35962DC477F115 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */,
+				3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3D09B7CA679593CC22B6015D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +253,7 @@
 				FEB5D1B417B564AE00998E3B /* Application */,
 				FEB5D1B717B564AE00998E3B /* View Controllers */,
 				3D09B32B6A3A0DCF5EE573B5 /* Data Model */,
+				3D09B7439F35962DC477F115 /* Helpers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -426,6 +439,7 @@
 				3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */,
 				FEB5D1E117B83C0400998E3B /* KSHExpenseItem.m in Sources */,
 				FEB5D1E417B83C2900998E3B /* KSHExpense.m in Sources */,
+				3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
