@@ -34,7 +34,6 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 @implementation KSHAddExpenseViewController
 {
     KSHDataAccessLayer *_dataAccessLayer;
-    NSArray *_accounts;
     KSHExpense *_expense;
     NSManagedObjectContext *_context;
 
@@ -184,12 +183,10 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                           reuseIdentifier:reuseIdentifier];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
 
-        cell.textLabel.text = NSLocalizedString(@"Account", nil);
-        cell.detailTextLabel.text = _expense.account != nil ? _expense.account.name : NSLocalizedString(@"Choose account", nil);
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        [cell setAccount:_expense.account];
 
         returnedCell = cell;
     }
@@ -207,7 +204,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                               reuseIdentifier:reuseIdentifier];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             }
 
             cell.textLabel.text = NSLocalizedString(@"Add item", nil);
@@ -221,10 +218,10 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                               reuseIdentifier:reuseIdentifier];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
             }
 
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setExpenseItem:_expense.items[indexPath.row]];
         }
 

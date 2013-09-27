@@ -5,10 +5,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class KSHAccount;
 @class KSHExpenseItem;
 
 @interface UITableViewCell (Formatting)
 
+- (void)setAccount:(KSHAccount *)account;
 - (void)setExpenseItem:(KSHExpenseItem *)expenseItem;
 
 @end

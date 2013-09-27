@@ -95,12 +95,12 @@
     UITableViewCell *returnedCell = nil;
     if ( indexPath.section == 0 )
     {
-        static NSString *labelAndTextfieldReuseIdentifier = @"LabelAndTextfieldCellIdentifier";
+        static NSString *labelAndTextFieldReuseIdentifier = @"LabelAndTextFieldCellIdentifier";
 
-        KSHLabelAndTextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:labelAndTextfieldReuseIdentifier];
+        KSHLabelAndTextfieldCell *cell = [tableView dequeueReusableCellWithIdentifier:labelAndTextFieldReuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[KSHLabelAndTextfieldCell alloc] initWithReuseIdentifier:labelAndTextfieldReuseIdentifier];
+            cell = [[KSHLabelAndTextfieldCell alloc] initWithReuseIdentifier:labelAndTextFieldReuseIdentifier];
             cell.delegate = self;
         }
 
