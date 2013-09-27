@@ -10,6 +10,7 @@
 #import "KSHExpenseItem.h"
 #import "KSHInputCellDelegate.h"
 #import "KSHExpense.h"
+#import "KSHLabelAndTextfieldCell+Formatting.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAddExpenseItemViewController () <KSHInputCellDelegate>
@@ -20,7 +21,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHAddExpenseItemViewController
 {
-
     KSHDataAccessLayer *_dataAccessLayer;
     NSManagedObjectContext *_context;
     KSHExpense *_expense;
@@ -33,6 +33,8 @@
 
     if ( self != nil )
     {
+        self.title = NSLocalizedString(@"Add expense item", nil);
+
         _dataAccessLayer = dataAccessLayer;
         _context = context;
         _expense = expense;
@@ -40,8 +42,6 @@
         _expenseItem = ( KSHExpenseItem * ) [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpenseItem class])
                                                                           inManagedObjectContext:_context];
         _expenseItem.expense = _expense;
-//        [_expense addItemsObject:_expenseItem];
-//        [_expense addItems:[NSOrderedSet orderedSetWithObject:_expenseItem]];
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
@@ -106,12 +106,13 @@
 
         if ( indexPath.row == 0 )
         {
+            cell.textFieldType = KSHCurrencyTextField;
             cell.textLabel.text = NSLocalizedString(@"Amount", nil);
-            cell.textField.text = [NSString stringWithFormat:@"%.2f",
-                                                             [_expenseItem.amount doubleValue]];
+            [cell setCurrencyValue:_expenseItem.amount];
         }
         else if ( indexPath.row == 1 )
         {
+            cell.textFieldType = KSHDefaultTextField;
             cell.textLabel.text = NSLocalizedString(@"Description", nil);
             cell.textField.text = _expenseItem.name;
         }
@@ -136,7 +137,7 @@
 
     if ( indexPath.row == 0 )
     {
-        _expenseItem.amount = @([cell.textField.text doubleValue]);
+        _expenseItem.amount = cell.numericValue;
     }
     else if ( indexPath.row == 1 )
     {

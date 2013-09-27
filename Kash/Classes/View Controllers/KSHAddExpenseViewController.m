@@ -14,6 +14,8 @@
 #import "KSHAddExpenseItemViewController.h"
 #import "KSHExpenseItem.h"
 #import "KSHNumberFormatter.h"
+#import "KSHLabelAndTextfieldCell+Formatting.h"
+#import "UITableViewCell+Formatting.h"
 
 NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 {
@@ -161,12 +163,13 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         {
             cell.textLabel.text = NSLocalizedString(@"For what?", nil);
             cell.textField.text = _expense.title;
+            cell.textFieldType = KSHDefaultTextField;
         }
         else if ( indexPath.row == KSHAddExpenseTotalAmountRow )
         {
             cell.textLabel.text = NSLocalizedString(@"How much?", nil);
-            cell.textField.text = [NSString stringWithFormat:@"%.2f",
-                                                             [_expense.totalAmount doubleValue]];
+            [cell setCurrencyValue:_expense.totalAmount];
+            cell.textFieldType = KSHCurrencyTextField;
         }
 
         returnedCell = cell;
@@ -222,9 +225,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
                 cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
             }
 
-            cell.textLabel.text = [_expense.items[indexPath.row] name];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f",
-                                                                   [[_expense.items[indexPath.row] amount] floatValue]];
+            [cell setExpenseItem:_expense.items[indexPath.row]];
         }
 
         returnedCell = cell;
@@ -313,7 +314,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
     else if ( indexPath.section == 0 && indexPath.row == KSHAddExpenseTotalAmountRow )
     {
-        _expense.totalAmount = @([(( KSHLabelAndTextfieldCell * ) cell).textField.text doubleValue]);
+        _expense.totalAmount = (( KSHLabelAndTextfieldCell * ) cell).numericValue;
     }
 }
 

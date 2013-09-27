@@ -5,9 +5,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KSHNumberFormatter : NSNumberFormatter
+@interface KSHNumberFormatter : NSObject
+
+@property (nonatomic, readonly) NSNumberFormatter *currencyNumberFormatter;
+@property (nonatomic, readonly) NSNumberFormatter *decimalNumberFormatter;
 
 + (instancetype)sharedInstance;
-- (NSNumberFormatter *)currencyNumberFormatter;
 
 @end

@@ -5,6 +5,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, KSHTextFieldType)
+{
+    KSHDefaultTextField,
+    KSHCurrencyTextField,
+    KSHDecimalTextField
+};
+
 @protocol KSHInputCellDelegate;
 
 @interface KSHLabelAndTextfieldCell : UITableViewCell
@@ -13,6 +20,7 @@
 @property(nonatomic, strong) UITextField *textField;
 @property(nonatomic, assign) CGFloat textLabelMinimumWidth;
 @property(nonatomic, assign) CGFloat textLabelMaximumWidth;
+@property(nonatomic, assign) KSHTextFieldType textFieldType;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 

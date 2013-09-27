@@ -16,6 +16,7 @@
 {
 
     NSNumberFormatter *_currencyNumberFormatter;
+    NSNumberFormatter *_decimalNumberFormatter;
 }
 
 + (instancetype)sharedInstance
@@ -39,11 +40,29 @@
         {
             _currencyNumberFormatter = [[NSNumberFormatter alloc] init];
             _currencyNumberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+            _currencyNumberFormatter.lenient = YES;
         }
     }
-    
+
     return _currencyNumberFormatter;
 }
 
+- (NSNumberFormatter *)decimalNumberFormatter
+{
+    @synchronized ( self )
+    {
+        if ( _decimalNumberFormatter == nil )
+        {
+            _decimalNumberFormatter = [[NSNumberFormatter alloc] init];
+            _decimalNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+            _decimalNumberFormatter.usesGroupingSeparator = NO;
+            _decimalNumberFormatter.alwaysShowsDecimalSeparator = YES;
+            _decimalNumberFormatter.minimumFractionDigits = 2;
+            _decimalNumberFormatter.maximumFractionDigits = 2;
+        }
+    }
+
+    return _decimalNumberFormatter;
+}
 
 @end
