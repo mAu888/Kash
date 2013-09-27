@@ -51,14 +51,14 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                              target:self
-                                                              action:@selector(cancel:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                          target:self
+                                                          action:@selector(cancel:)];
 
         self.navigationItem.rightBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                              target:self
-                                                              action:@selector(save:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                          target:self
+                                                          action:@selector(save:)];
 
         // Data source ---------------------------------------------------------
         _dataAccessLayer = dataAccessLayer;
@@ -84,14 +84,14 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.rightBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                              target:self
-                                                              action:@selector(save:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                          target:self
+                                                          action:@selector(save:)];
 
         // Data source ---------------------------------------------------------
         _dataAccessLayer = dataAccessLayer;
         _context = [_dataAccessLayer contextForEditing];
-        _expense = (KSHExpense *)[_context objectWithID:expense.objectID];
+        _expense = ( KSHExpense * ) [_context objectWithID:expense.objectID];
     }
 
     return self;
@@ -197,10 +197,12 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                               reuseIdentifier:reuseIdentifier];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
             }
 
             cell.textLabel.text = [_expense.items[indexPath.row] name];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", [[_expense.items[indexPath.row] amount] floatValue]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f",
+                                                                   [[_expense.items[indexPath.row] amount] floatValue]];
         }
 
         returnedCell = cell;
@@ -214,9 +216,16 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
     return indexPath.section == 2 && indexPath.row < _expense.items.count;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if ( editingStyle == UITableViewCellEditingStyleDelete )
+    {
+        [[_expense mutableOrderedSetValueForKey:@"items"] removeObjectAtIndex:( NSUInteger ) indexPath.row];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2]
+                      withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 
@@ -228,8 +237,8 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
     if ( indexPath.section == 1 )
     {
         KSHAccountsViewController *controller =
-                [[KSHAccountsViewController alloc] initWithDataAccessLayer:_dataAccessLayer
-                                                           selectedAccount:_expense.account];
+            [[KSHAccountsViewController alloc] initWithDataAccessLayer:_dataAccessLayer
+                                                       selectedAccount:_expense.account];
         controller.delegate = self;
         [self.navigationController pushViewController:controller
                                              animated:YES];
@@ -238,19 +247,26 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
     else if ( indexPath.section == 2 && indexPath.row == _expense.items.count )
     {
         KSHAddExpenseItemViewController *controller =
-                [[KSHAddExpenseItemViewController alloc] initWithDataAccessLayer:_dataAccessLayer
-                                                                         context:_context
-                                                                         expense:_expense];
+            [[KSHAddExpenseItemViewController alloc] initWithDataAccessLayer:_dataAccessLayer
+                                                                     context:_context
+                                                                     expense:_expense];
         controller.delegate = self;
 
         UINavigationController *navigationController =
-                [[UINavigationController alloc] initWithRootViewController:controller];
+            [[UINavigationController alloc] initWithRootViewController:controller];
 
         [self presentViewController:navigationController
                            animated:YES
                          completion:nil];
+
     }
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Accessory button tapped at index path %@", indexPath);
+}
+
 
 
 #pragma mark - KSHInputCellDelegate
@@ -273,7 +289,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
 - (void)controller:(KSHAccountsViewController *)controller didSelectAccount:(KSHAccount *)account
 {
-    _expense.account = (KSHAccount *)[_context objectWithID:account.objectID];
+    _expense.account = ( KSHAccount * ) [_context objectWithID:account.objectID];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
                   withRowAnimation:UITableViewRowAnimationNone];
 

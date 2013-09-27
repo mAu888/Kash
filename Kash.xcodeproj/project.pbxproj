@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
+		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
 		3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9487F31421AD7E30214 /* KSHMainViewController.m */; };
 		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */; };
+		3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B01CB4FEBB395E39F91A /* Default@2x.png */; };
 		3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */; };
 		3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */; };
+		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
 		3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */; };
 		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
 		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
@@ -24,9 +27,6 @@
 		FEB5D1C017B564AE00998E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B217B564AE00998E3B /* main.m */; };
 		FEB5D1C117B564AE00998E3B /* KSHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */; };
 		FEB5D1C217B564AE00998E3B /* KSHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B917B564AE00998E3B /* KSHViewController.m */; };
-		FEB5D1C317B564AE00998E3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1BC17B564AE00998E3B /* Default-568h@2x.png */; };
-		FEB5D1C417B564AE00998E3B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1BD17B564AE00998E3B /* Default.png */; };
-		FEB5D1C517B564AE00998E3B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB5D1BE17B564AE00998E3B /* Default@2x.png */; };
 		FEB5D1CC17B564D300998E3B /* KashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1CA17B564D300998E3B /* KashTests.m */; };
 		FEB5D1D017B5690700998E3B /* KSHDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1CE17B5690700998E3B /* KSHDataModel.xcdatamodeld */; };
 		FEB5D1D217B56B2E00998E3B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D1D117B56B2E00998E3B /* CoreData.framework */; };
@@ -47,11 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D09B01CB4FEBB395E39F91A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseItemViewController.m; sourceTree = "<group>"; };
 		3D09B073F05ED2EEB1AE5BB9 /* KSHExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpensesViewController.h; sourceTree = "<group>"; };
 		3D09B07B325C7FAEFF54984D /* KSHAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountsViewController.h; sourceTree = "<group>"; };
 		3D09B0AA5E12C921C19A086A /* KSHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHMainViewController.h; sourceTree = "<group>"; };
 		3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddAccountViewController.h; sourceTree = "<group>"; };
+		3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHInputCellDelegate.h; sourceTree = "<group>"; };
 		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		3D09B9487F31421AD7E30214 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
 		3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
 		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
+		3D09BB87743145DED78C2A78 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextfieldCell.m; sourceTree = "<group>"; };
 		3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
 		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextfieldCell.h; sourceTree = "<group>"; };
@@ -78,9 +81,6 @@
 		FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAppDelegate.m; sourceTree = "<group>"; };
 		FEB5D1B817B564AE00998E3B /* KSHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHViewController.h; sourceTree = "<group>"; };
 		FEB5D1B917B564AE00998E3B /* KSHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
-		FEB5D1BC17B564AE00998E3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FEB5D1BD17B564AE00998E3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		FEB5D1BE17B564AE00998E3B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FEB5D1C717B564D300998E3B /* KashTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KashTests-Info.plist"; sourceTree = "<group>"; };
 		FEB5D1C917B564D300998E3B /* KashTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KashTests.h; sourceTree = "<group>"; };
 		FEB5D1CA17B564D300998E3B /* KashTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KashTests.m; sourceTree = "<group>"; };
@@ -156,6 +156,24 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
+		3D09B7CA679593CC22B6015D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D09BAFD30A73F79121A9A47 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D09BAFD30A73F79121A9A47 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */,
+				3D09BB87743145DED78C2A78 /* Default.png */,
+				3D09B01CB4FEBB395E39F91A /* Default@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FEB5D16817B563CB00998E3B = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +211,6 @@
 				FEB5D1AF17B564AE00998E3B /* Ancilliary Files */,
 				FEB5D1B317B564AE00998E3B /* Classes */,
 				FEB5D1CD17B568E300998E3B /* Data Source */,
-				FEB5D1BA17B564AE00998E3B /* Resources */,
 			);
 			path = Kash;
 			sourceTree = "<group>";
@@ -259,24 +276,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		FEB5D1BA17B564AE00998E3B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FEB5D1BB17B564AE00998E3B /* Images */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FEB5D1BB17B564AE00998E3B /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				FEB5D1BC17B564AE00998E3B /* Default-568h@2x.png */,
-				FEB5D1BD17B564AE00998E3B /* Default.png */,
-				FEB5D1BE17B564AE00998E3B /* Default@2x.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
 		FEB5D1C617B564D300998E3B /* Ancilliary Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				FEB5D1CE17B5690700998E3B /* KSHDataModel.xcdatamodeld */,
+				3D09B7CA679593CC22B6015D /* Resources */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -374,9 +374,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB5D1C317B564AE00998E3B /* Default-568h@2x.png in Resources */,
-				FEB5D1C417B564AE00998E3B /* Default.png in Resources */,
-				FEB5D1C517B564AE00998E3B /* Default@2x.png in Resources */,
+				3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */,
+				3D09B80DD126C75C1602969D /* Default.png in Resources */,
+				3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,10 +6,10 @@
 #import <CoreData/CoreData.h>
 #import "KSHAddExpenseItemViewController.h"
 #import "KSHDataAccessLayer.h"
-#import "KSHExpense.h"
 #import "KSHLabelAndTextfieldCell.h"
 #import "KSHExpenseItem.h"
 #import "KSHInputCellDelegate.h"
+#import "KSHExpense.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAddExpenseItemViewController () <KSHInputCellDelegate>
