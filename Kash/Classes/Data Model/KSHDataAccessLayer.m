@@ -76,7 +76,11 @@
     return YES;
 }
 
-- (NSFetchedResultsController *)fetchedResultsControllerForClass:(Class)klass sortKey:(NSString *)sortKey delegate:(id <NSFetchedResultsControllerDelegate>)delegate
+- (NSFetchedResultsController *)fetchedResultsControllerForClass:(Class)klass
+                                                         sortKey:(NSString *)sortKey
+                                              sectionNameKeyPath:(NSString *)sectionName
+                                                       cacheName:(NSString *)cacheName
+                                                        delegate:(id <NSFetchedResultsControllerDelegate>)delegate
 {
     NSFetchRequest *fetchRequest =
             [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(klass)];
@@ -87,8 +91,8 @@
     NSFetchedResultsController *controller =
             [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                 managedObjectContext:_mainManagedObjectContext
-                                                  sectionNameKeyPath:nil
-                                                           cacheName:@"Cache"];
+                                                  sectionNameKeyPath:sectionName
+                                                           cacheName:cacheName];
     controller.delegate = delegate;
 
     NSError *error = nil;

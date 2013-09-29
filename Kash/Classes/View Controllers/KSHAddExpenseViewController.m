@@ -267,6 +267,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.view endEditing:YES];
+
     if ( indexPath.section == 1 )
     {
         KSHAccountsViewController *controller =
@@ -346,6 +348,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     [self.view endEditing:YES];
 
+    _expense.date = [NSDate date];
     if ( ![_dataAccessLayer saveContext:_context] )
     {
         [[[UIAlertView alloc] initWithTitle:nil

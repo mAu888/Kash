@@ -10,6 +10,8 @@
 #import "KSHAccount.h"
 #import "KSHAddExpenseViewController.h"
 
+NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewControllerCache";
+
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAccountsViewController () <NSFetchedResultsControllerDelegate>
 
@@ -36,6 +38,8 @@
         // Data store ----------------------------------------------------------
         _controller = [_dataAccessLayer fetchedResultsControllerForClass:[KSHAccount class]
                                                                  sortKey:@"name"
+                                                      sectionNameKeyPath:nil
+                                                               cacheName:nil
                                                                 delegate:self];
 
         // Tab bar -------------------------------------------------------------
@@ -44,9 +48,9 @@
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.rightBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                              target:self
-                                                              action:@selector(presentAddAccountView:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                          target:self
+                                                          action:@selector(presentAddAccountView:)];
     }
 
     return self;
@@ -78,12 +82,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return _controller.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _controller.fetchedObjects.count;
+    id <NSFetchedResultsSectionInfo> sectionInfo = _controller.sections[( NSUInteger ) section];
+    return sectionInfo.numberOfObjects;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,7 +105,7 @@
     KSHAccount *account = [_controller objectAtIndexPath:indexPath];
     cell.textLabel.text = account.name;
     cell.accessoryType = [account isEqual:_selectedAccount] ?
-            UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 
     return cell;
 }
@@ -122,7 +127,9 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ( editingStyle == UITableViewCellEditingStyleDelete )
     {
@@ -144,7 +151,11 @@
     [self.tableView endUpdates];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
 {
     switch ( type )
     {
@@ -173,9 +184,9 @@
 - (void)presentAddAccountView:(id)sender
 {
     KSHAddAccountViewController *controller =
-            [[KSHAddAccountViewController alloc] initWithDataAccessLayer:_dataAccessLayer];
+        [[KSHAddAccountViewController alloc] initWithDataAccessLayer:_dataAccessLayer];
     UINavigationController *navigationController =
-            [[UINavigationController alloc] initWithRootViewController:controller];
+        [[UINavigationController alloc] initWithRootViewController:controller];
 
     [self presentViewController:navigationController
                        animated:YES

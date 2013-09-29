@@ -16,7 +16,11 @@
 
 - (BOOL)saveContext:(NSManagedObjectContext *)context;
 
-- (NSFetchedResultsController *)fetchedResultsControllerForClass:(Class)klass sortKey:(NSString *)sortKeyPath delegate:(id <NSFetchedResultsControllerDelegate>)delegate;
+- (NSFetchedResultsController *)fetchedResultsControllerForClass:(Class)klass
+                                                         sortKey:(NSString *)sortKeyPath
+                                              sectionNameKeyPath:(NSString *)sectionName
+                                                       cacheName:(NSString *)cacheName
+                                                        delegate:(id <NSFetchedResultsControllerDelegate>)delegate;
 
 - (BOOL)deleteObject:(NSManagedObject *)object;
 

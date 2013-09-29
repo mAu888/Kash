@@ -13,11 +13,13 @@
 
 @interface KSHExpense : NSManagedObject
 
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * totalAmount;
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) KSHAccount *account;
-@property (nonatomic, retain) NSOrderedSet *items;
+@property(nonatomic, retain) NSString *title;
+@property(nonatomic, retain) NSNumber *totalAmount;
+@property(nonatomic, retain) NSDate *date;
+@property(nonatomic, retain) KSHAccount *account;
+@property(nonatomic, retain) NSOrderedSet *items;
+@property(nonatomic, readonly) NSString *sectionIdentifier;
+
 @end
 
 @interface KSHExpense (CoreDataGeneratedAccessors)

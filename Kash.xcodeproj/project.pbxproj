@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
+		3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */; };
 		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
 		3D09B22F33E9A7699AF0AB5D /* KSHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9CBAC7ACBD9EA649622 /* KSHTextField.m */; };
@@ -64,6 +65,7 @@
 		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
 		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
+		3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDateFormatterFactory.m; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
 		3D09B7DE0418CBE5415C5406 /* KSHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTextField.h; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
 		3D09BB87743145DED78C2A78 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextFieldCell.m; sourceTree = "<group>"; };
+		3D09BCF4B528BE6404AFB90F /* KSHDateFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDateFormatterFactory.h; sourceTree = "<group>"; };
 		3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
 		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextFieldCell.h; sourceTree = "<group>"; };
 		3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 			children = (
 				3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */,
 				3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */,
+				3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */,
+				3D09BCF4B528BE6404AFB90F /* KSHDateFormatterFactory.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */,
 				3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */,
 				3D09B22F33E9A7699AF0AB5D /* KSHTextField.m in Sources */,
+				3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
