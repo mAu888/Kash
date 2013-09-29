@@ -32,12 +32,7 @@
         _textField.textAlignment = NSTextAlignmentRight;
         _textField.returnKeyType = UIReturnKeyDone;
         _textField.enablesReturnKeyAutomatically = YES;
-
-//        _textField.rightView = [[UIView alloc]
-//        initWithFrame:CGRect;Make(.0f, .0f, 5.f, CGRectGetHeight(_textField.bounds))];
-//        _textField.rightViewMode = UITextFieldViewModeAlways
         _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-
         _textField.delegate = self;
 
         [self.contentView addSubview:_textField];
@@ -108,6 +103,13 @@
 
 #pragma mark - UITextFieldDelegate
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+
+    return YES;
+}
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     if ( _textFieldType == KSHCurrencyTextField )
@@ -115,16 +117,16 @@
         NSNumberFormatter *currencyNumberFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
         NSNumber *currentValue = [currencyNumberFormatter numberFromString:_textField.text];
 
-        NSNumberFormatter *decimalNumberFormatter = [KSHNumberFormatter sharedInstance].decimalNumberFormatter;
-        textField.text = [decimalNumberFormatter stringFromNumber:currentValue];
+        if ( currentValue.floatValue > .0f || currentValue.floatValue < .0f )
+        {
+            NSNumberFormatter *decimalNumberFormatter = [KSHNumberFormatter sharedInstance].decimalNumberFormatter;
+            textField.text = [decimalNumberFormatter stringFromNumber:currentValue];
+        }
+        else
+        {
+            textField.text = @"";
+        }
     }
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-
-    return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -133,6 +135,7 @@
     {
         NSNumberFormatter *decimalNumberFormatter = [KSHNumberFormatter sharedInstance].decimalNumberFormatter;
         NSNumber *currentValue = [decimalNumberFormatter numberFromString:_textField.text];
+        currentValue = currentValue == nil ? @(.0f) : currentValue;
 
         NSNumberFormatter *currencyNumberFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
         textField.text = [currencyNumberFormatter stringFromNumber:currentValue];
@@ -144,9 +147,9 @@
     }
 }
 
-- (BOOL)textField:(UITextField *)textField
-    shouldChangeCharactersInRange:(NSRange)range
-    replacementString:(NSString *)string
+- (BOOL)            textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+            replacementString:(NSString *)string
 {
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range
                                                                   withString:string];
@@ -163,6 +166,5 @@
 
     return YES;
 }
-
 
 @end

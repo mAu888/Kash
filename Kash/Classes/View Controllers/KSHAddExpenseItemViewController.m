@@ -41,7 +41,6 @@
 
         _expenseItem = ( KSHExpenseItem * ) [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpenseItem class])
                                                                           inManagedObjectContext:_context];
-        _expenseItem.expense = _expense;
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
@@ -58,23 +57,9 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-    if ( _context.undoManager == nil )
-    {
-        _context.undoManager = [[NSUndoManager alloc] init];
-    }
-
-    [_context.undoManager beginUndoGrouping];
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-
-    [_context.undoManager endUndoGrouping];
 }
 
 
@@ -150,17 +135,14 @@
 
 - (void)cancel:(id)sender
 {
-    [self dismissViewControllerAnimated:YES
-                             completion:^
-                             {
-                                 [_context rollback];
-                             }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)save:(id)sender
 {
     [self.view endEditing:YES];
 
+    _expenseItem.expense = _expense;
     [[_expense mutableOrderedSetValueForKey:@"items"] addObject:_expenseItem];
 
     if (_delegate != nil && [_delegate respondsToSelector:@selector(controllerDidSaveExpenseItem:)] )

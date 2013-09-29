@@ -16,7 +16,7 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
-    bounds = [super editingRectForBounds:bounds];
+    bounds = [super textRectForBounds:bounds];
     if ( self.clearButtonMode == UITextFieldViewModeAlways || self.clearButtonMode == UITextFieldViewModeUnlessEditing )
     {
         return bounds;
@@ -28,7 +28,7 @@
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
     bounds = [super editingRectForBounds:bounds];
-    if ( self.clearButtonMode == UITextFieldViewModeAlways || self.clearButtonMode == UITextFieldViewModeWhileEditing )
+    if ( self.clearButtonMode == UITextFieldViewModeAlways || (self.clearButtonMode == UITextFieldViewModeWhileEditing && self.text.length > 0) )
     {
         return bounds;
     }

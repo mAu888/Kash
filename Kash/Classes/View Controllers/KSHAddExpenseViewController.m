@@ -82,7 +82,6 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         self.title = NSLocalizedString(@"Update expense", nil);
 
 
-
         // Navigation item -----------------------------------------------------
         self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
