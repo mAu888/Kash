@@ -15,7 +15,16 @@
 - (void)setAccount:(KSHAccount *)account
 {
     self.textLabel.text = NSLocalizedString(@"Account", nil);
-    self.detailTextLabel.text = account != nil ? account.name : NSLocalizedString(@"Choose account", nil);
+    if ( account != nil)
+    {
+        self.detailTextLabel.text = account.name;
+        self.detailTextLabel.textColor = account.color;
+    }
+    else
+    {
+        self.detailTextLabel.text = NSLocalizedString(@"Choose account", nil);
+        self.detailTextLabel.textColor = [UIColor lightTextColor];
+    }
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 

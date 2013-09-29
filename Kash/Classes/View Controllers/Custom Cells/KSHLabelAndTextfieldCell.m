@@ -85,7 +85,6 @@
 
         UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(.0f, .0f, CGRectGetWidth(self.bounds), 44.f)];
         toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        toolbar.barStyle = UIBarStyleBlackTranslucent;
         toolbar.items = @[
             flexibleItem,
             doneItem

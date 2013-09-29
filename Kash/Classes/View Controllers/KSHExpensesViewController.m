@@ -46,7 +46,7 @@
         _controller = [_dataAccessLayer fetchedResultsControllerForClass:[KSHExpense class]
                                                                  sortKey:@"date"
                                                       sectionNameKeyPath:@"sectionIdentifier"
-                                                               cacheName:@"KSHExpensesViewControllerCache"
+                                                               cacheName:nil
                                                                 delegate:self];
     }
 
@@ -58,13 +58,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _controller.fetchedObjects.count;
+    id <NSFetchedResultsSectionInfo> sectionInfo = _controller.sections[( NSUInteger ) section];
+    return sectionInfo.numberOfObjects;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return _controller.sections.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,6 +157,31 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
 }
 
 - (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch ( type )
+    {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeMove:
+#warning Act on section move
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
    didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath
      forChangeType:(NSFetchedResultsChangeType)type
@@ -176,8 +202,8 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
                                    toIndexPath:newIndexPath];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath]
-                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:( NSUInteger ) indexPath.section]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
 }

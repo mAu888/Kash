@@ -13,5 +13,6 @@
 
 @dynamic name;
 @dynamic expenses;
+@dynamic color;
 
 @end

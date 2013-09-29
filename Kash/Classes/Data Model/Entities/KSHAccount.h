@@ -14,6 +14,7 @@
 
 @property(nonatomic, retain) NSString *name;
 @property(nonatomic, retain) NSSet *expenses;
+@property(nonatomic, copy) UIColor *color;
 
 @end
 

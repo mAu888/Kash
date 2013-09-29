@@ -9,9 +9,10 @@
 #import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
+#import "KSHColorPickerViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHAddAccountViewController () <KSHInputCellDelegate>
+@interface KSHAddAccountViewController () <KSHInputCellDelegate, KSHColorPickerViewControllerDelegate>
 
 @end
 
@@ -39,14 +40,14 @@
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                              target:self
-                                                              action:@selector(cancel:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                          target:self
+                                                          action:@selector(cancel:)];
 
         self.navigationItem.rightBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                              target:self
-                                                              action:@selector(save:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                          target:self
+                                                          action:@selector(save:)];
     }
 
     return self;
@@ -57,7 +58,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -67,19 +68,67 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *reuseIdentifier = @"CellIdentifier";
-
-    KSHLabelAndTextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if ( cell == nil )
+    UITableViewCell *returnedCell = nil;
+    if ( indexPath.section == 0 )
     {
-        cell = [[KSHLabelAndTextFieldCell alloc] initWithReuseIdentifier:reuseIdentifier];
-        cell.delegate = self;
+        static NSString *reuseIdentifier = @"KSHLabelAndTextFieldCell";
+
+        KSHLabelAndTextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        if ( cell == nil )
+        {
+            cell = [[KSHLabelAndTextFieldCell alloc] initWithReuseIdentifier:reuseIdentifier];
+            cell.delegate = self;
+        }
+
+        cell.textLabel.text = NSLocalizedString(@"Account", nil);
+
+        returnedCell = cell;
+    }
+    else if ( indexPath.section == 1 )
+    {
+        static NSString *reuseIdentifier = @"UITableViewCellStyleValue1";
+
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        if ( cell == nil )
+        {
+            cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+        }
+
+        cell.textLabel.text = NSLocalizedString(@"Key color", nil);
+        if ( _account.color == nil)
+        {
+            cell.detailTextLabel.textColor = [UIColor lightTextColor];
+            cell.detailTextLabel.text = NSLocalizedString(@"Choose color", nil);
+        }
+        else
+        {
+            cell.detailTextLabel.textColor = _account.color;
+            cell.detailTextLabel.text = NSLocalizedString(@"Chosen color", nil);
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        returnedCell = cell;
     }
 
-    cell.textLabel.text = NSLocalizedString(@"Account", nil);
-
-    return cell;
+    return returnedCell;
 }
+
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ( indexPath.section == 1 && indexPath.row == 0 )
+    {
+        KSHColorPickerViewController *controller = [[KSHColorPickerViewController alloc] init];
+        controller.delegate = self;
+
+        [self.navigationController pushViewController:controller
+                                             animated:YES];
+    }
+}
+
 
 
 #pragma mark - Private methods
@@ -104,7 +153,7 @@
     }
 
     [self dismissViewControllerAnimated:YES
-          completion:nil];
+                             completion:nil];
 }
 
 
@@ -112,7 +161,19 @@
 
 - (void)cellDidChangeValue:(UITableViewCell *)cell
 {
-    _account.name = (( KSHLabelAndTextFieldCell *)cell).textField.text;
+    _account.name = (( KSHLabelAndTextFieldCell * ) cell).textField.text;
 }
+
+
+#pragma mark - KSHColorPickerViewControllerDelegate
+
+- (void)colorPickerControllerDidSelectColor:(UIColor *)color
+{
+    _account.color = color;
+
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

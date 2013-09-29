@@ -9,6 +9,7 @@
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
 #import "KSHAddExpenseViewController.h"
+#import "KSHAccountCell.h"
 
 NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewControllerCache";
 
@@ -93,17 +94,17 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *reuseIdentifier = @"CellIdentifier";
+    static NSString *reuseIdentifier = @"KSHAccountCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    KSHAccountCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if ( cell == nil )
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:reuseIdentifier];
+        cell = [[KSHAccountCell alloc] initWithReuseIdentifier:reuseIdentifier];
     }
 
     KSHAccount *account = [_controller objectAtIndexPath:indexPath];
-    cell.textLabel.text = account.name;
+    [cell setAccount:account];
+
     cell.accessoryType = [account isEqual:_selectedAccount] ?
         UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 
