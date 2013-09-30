@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
+		3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */; };
 		3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */; };
 		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
@@ -66,12 +67,14 @@
 		3D09B0C967AB606C033AE37C /* KSHAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountCell.h; sourceTree = "<group>"; };
 		3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountCell.m; sourceTree = "<group>"; };
+		3D09B261B1E31B37D58A126C /* KSHDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDatePickerCell.h; sourceTree = "<group>"; };
 		3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHLabelAndTextFieldCell+Formatting.m"; sourceTree = "<group>"; };
 		3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHInputCellDelegate.h; sourceTree = "<group>"; };
 		3D09B361F6C58D0BB54136D1 /* KSHColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorPickerViewController.h; sourceTree = "<group>"; };
 		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
 		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
+		3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDatePickerCell.m; sourceTree = "<group>"; };
 		3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDateFormatterFactory.m; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				3D09BC9392B71A513888BA1C /* KSHColorCollectionCell.h */,
 				3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */,
 				3D09B0C967AB606C033AE37C /* KSHAccountCell.h */,
+				3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */,
+				3D09B261B1E31B37D58A126C /* KSHDatePickerCell.h */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -494,6 +499,7 @@
 				3D09BA57A9DE4347378C7510 /* KSHColorPickerViewController.m in Sources */,
 				3D09B92F66E908B3B7175198 /* KSHColorCollectionCell.m in Sources */,
 				3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */,
+				3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

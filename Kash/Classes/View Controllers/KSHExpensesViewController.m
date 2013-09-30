@@ -25,7 +25,7 @@
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
 {
-    self = [super init];
+    self = [super initWithStyle:UITableViewStyleGrouped];
 
     if ( self != nil )
     {
@@ -44,7 +44,10 @@
 
         // Data model ----------------------------------------------------------
         _controller = [_dataAccessLayer fetchedResultsControllerForClass:[KSHExpense class]
-                                                                 sortKey:@"date"
+                                                         sortDescriptors:@[
+                                                             [NSSortDescriptor sortDescriptorWithKey:@"date"
+                                                                                           ascending:NO]
+                                                         ]
                                                       sectionNameKeyPath:@"sectionIdentifier"
                                                                cacheName:nil
                                                                 delegate:self];
@@ -81,6 +84,7 @@
 
     KSHExpense *expense = [_controller objectAtIndexPath:indexPath];
     cell.textLabel.text = expense.title;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     return cell;
 }
@@ -173,6 +177,7 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
             break;
         case NSFetchedResultsChangeMove:
 #warning Act on section move
+            NSLog(@"Move :(");
             break;
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex]
@@ -198,8 +203,11 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
                                   withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeMove:
-            [self.tableView moveRowAtIndexPath:indexPath
-                                   toIndexPath:newIndexPath];
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+
             break;
         case NSFetchedResultsChangeUpdate:
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:( NSUInteger ) indexPath.section]

@@ -38,7 +38,10 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
 
         // Data store ----------------------------------------------------------
         _controller = [_dataAccessLayer fetchedResultsControllerForClass:[KSHAccount class]
-                                                                 sortKey:@"name"
+                                                         sortDescriptors:@[
+                                                             [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                                                           ascending:YES]
+                                                         ]
                                                       sectionNameKeyPath:nil
                                                                cacheName:nil
                                                                 delegate:self];

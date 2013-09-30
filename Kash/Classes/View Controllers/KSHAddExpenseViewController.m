@@ -16,6 +16,7 @@
 #import "KSHNumberFormatter.h"
 #import "KSHLabelAndTextFieldCell+Formatting.h"
 #import "UITableViewCell+Formatting.h"
+#import "KSHDatePickerCell.h"
 
 NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 {
@@ -25,7 +26,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHAddExpenseViewController () <KSHInputCellDelegate, KSHAccountsControllerDelegate, KSHAddExpenseItemControllerDelegate>
+@interface KSHAddExpenseViewController () <KSHInputCellDelegate, KSHAccountsControllerDelegate, KSHAddExpenseItemControllerDelegate, KSHDatePickerCellDelegate>
 
 @end
 
@@ -66,6 +67,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         _context = [_dataAccessLayer contextForEditing];
         _expense = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpense class])
                                                  inManagedObjectContext:_context];
+        _expense.date = [NSDate date];
     }
 
     return self;
@@ -124,7 +126,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -137,6 +139,8 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             return 1;
         case 2:
             return _expense.items.count + 1;
+        case 3:
+            return 1;
         default:
             break;
     }
@@ -218,7 +222,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             {
                 cell = [[UITableViewCell alloc]
                     initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
-                cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
 
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -226,6 +230,24 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         }
 
         returnedCell = cell;
+    }
+    else if ( indexPath.section == 3 )
+    {
+        if ( indexPath.row == 0 )
+        {
+            static NSString *reuseIdentifier = @"KSHDatePickerCellIdentifier";
+
+            KSHDatePickerCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if ( cell == nil)
+            {
+                cell = [[KSHDatePickerCell alloc] initWithReuseIdentifier:reuseIdentifier];
+                cell.delegate = self;
+            }
+
+            cell.date = _expense.date;
+
+            returnedCell = cell;
+        }
     }
 
     return returnedCell;
@@ -247,6 +269,21 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                       withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 2)
+    {
+        return NSLocalizedString(@"Split", nil);
+    }
+    else if (section == 3)
+    {
+        return NSLocalizedString(@"Value date", nil);
+    }
+
+    return nil;
+}
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
@@ -294,10 +331,16 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Accessory button tapped at index path %@", indexPath);
+    if ( indexPath.section == 3 && indexPath.row == 0 )
+    {
+        return 216.f;
+    }
+
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
+
 
 
 #pragma mark - KSHInputCellDelegate
@@ -321,8 +364,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)controller:(KSHAccountsViewController *)controller didSelectAccount:(KSHAccount *)account
 {
     _expense.account = ( KSHAccount * ) [_context objectWithID:account.objectID];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
-                  withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
 
     [controller.navigationController popViewControllerAnimated:YES];
 }
@@ -337,6 +379,14 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 
+#pragma mark - KSHDatePickerCellDelegate
+
+- (void)datePickerCellDidChangeToDate:(NSDate *)date
+{
+    _expense.date = date;
+}
+
+
 #pragma mark - Private methods
 
 - (void)cancel:(id)sender
@@ -348,7 +398,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     [self.view endEditing:YES];
 
-    _expense.date = [NSDate date];
     if ( ![_dataAccessLayer saveContext:_context] )
     {
         [[[UIAlertView alloc] initWithTitle:nil

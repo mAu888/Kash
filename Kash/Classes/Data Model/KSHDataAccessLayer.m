@@ -77,7 +77,7 @@
 }
 
 - (NSFetchedResultsController *)fetchedResultsControllerForClass:(Class)klass
-                                                         sortKey:(NSString *)sortKey
+                                                 sortDescriptors:(NSArray *)sortDescriptors
                                               sectionNameKeyPath:(NSString *)sectionName
                                                        cacheName:(NSString *)cacheName
                                                         delegate:(id <NSFetchedResultsControllerDelegate>)delegate
@@ -85,8 +85,7 @@
     NSFetchRequest *fetchRequest =
             [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(klass)];
     fetchRequest.fetchBatchSize = 100;
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sortKey
-                                                                   ascending:YES]];
+    fetchRequest.sortDescriptors = sortDescriptors;
 
     NSFetchedResultsController *controller =
             [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest

@@ -17,7 +17,7 @@
 - (BOOL)saveContext:(NSManagedObjectContext *)context;
 
 - (NSFetchedResultsController *)fetchedResultsControllerForClass:(Class)klass
-                                                         sortKey:(NSString *)sortKeyPath
+                                                 sortDescriptors:(NSArray *)sortKeyPath
                                               sectionNameKeyPath:(NSString *)sectionName
                                                        cacheName:(NSString *)cacheName
                                                         delegate:(id <NSFetchedResultsControllerDelegate>)delegate;
