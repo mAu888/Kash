@@ -33,7 +33,8 @@
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
 
         NSError *error = nil;
-        NSURL *storeURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"KSHDataStore.sqlite"];
+        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSURL *storeURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"KSHDataStore.sqlite"]];
         [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                   configuration:nil
                                                             URL:storeURL
