@@ -5,6 +5,7 @@
 
 #import "KSHColorPickerViewController.h"
 #import "KSHColorCollectionCell.h"
+#import "UIColor+Colours.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHColorPickerViewController ()
@@ -24,18 +25,15 @@
 
     if ( self )
     {
-        _colors = @[
-            [UIColor redColor],
-            [UIColor greenColor],
-            [UIColor blueColor],
-            [UIColor yellowColor],
-            [UIColor blackColor],
-            [UIColor grayColor],
-            [UIColor brownColor],
-            [UIColor cyanColor],
-            [UIColor orangeColor],
-            [UIColor magentaColor]
-        ];
+		NSMutableArray *colors = [NSMutableArray array];
+        [colors addObjectsFromArray:[[UIColor robinEggColor] colorSchemeOfType:ColorSchemeMonochromatic]];
+        [colors addObjectsFromArray:[[UIColor pastelGreenColor] colorSchemeOfType:ColorSchemeMonochromatic]];
+        [colors addObjectsFromArray:[[UIColor pastelBlueColor] colorSchemeOfType:ColorSchemeMonochromatic]];
+        [colors addObjectsFromArray:[[UIColor pastelPurpleColor] colorSchemeOfType:ColorSchemeMonochromatic]];
+        [colors addObjectsFromArray:[[UIColor mustardColor] colorSchemeOfType:ColorSchemeMonochromatic]];
+        [colors addObjectsFromArray:[[UIColor charcoalColor] colorSchemeOfType:ColorSchemeAnalagous]];
+
+        _colors = [NSArray arrayWithArray:colors];
     }
 
     return self;

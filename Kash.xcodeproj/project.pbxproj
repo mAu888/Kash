@@ -27,6 +27,7 @@
 		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */; };
 		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
 		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
+		7FA769D724F947218683B074 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */; };
 		FE4DDED317F8B66C001310DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DDED217F8B66C001310DD /* QuartzCore.framework */; };
 		FEB5D17517B563CC00998E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17417B563CC00998E3B /* UIKit.framework */; };
 		FEB5D17717B563CC00998E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17617B563CC00998E3B /* Foundation.framework */; };
@@ -96,6 +97,8 @@
 		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextFieldCell.h; sourceTree = "<group>"; };
 		3D09BEFBF84D0F47BD50A666 /* KSHColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHColorPickerViewController.m; sourceTree = "<group>"; };
 		3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
+		ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4DDED217F8B66C001310DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FEB5D17117B563CC00998E3B /* Kash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB5D17417B563CC00998E3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,7 @@
 				FEB5D17517B563CC00998E3B /* UIKit.framework in Frameworks */,
 				FEB5D17717B563CC00998E3B /* Foundation.framework in Frameworks */,
 				FEB5D17917B563CC00998E3B /* CoreGraphics.framework in Frameworks */,
+				7FA769D724F947218683B074 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +245,7 @@
 				FEB5D19E17B563CC00998E3B /* KashTests */,
 				FEB5D17317B563CC00998E3B /* Frameworks */,
 				FEB5D17217B563CC00998E3B /* Products */,
+				ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +267,7 @@
 				FEB5D17617B563CC00998E3B /* Foundation.framework */,
 				FEB5D17817B563CC00998E3B /* CoreGraphics.framework */,
 				FEB5D19817B563CC00998E3B /* SenTestingKit.framework */,
+				BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -374,9 +380,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEB5D1A917B563CC00998E3B /* Build configuration list for PBXNativeTarget "Kash" */;
 			buildPhases = (
+				E906055738F245E195F8FD04 /* Check Pods Manifest.lock */,
 				FEB5D16D17B563CC00998E3B /* Sources */,
 				FEB5D16E17B563CC00998E3B /* Frameworks */,
 				FEB5D16F17B563CC00998E3B /* Resources */,
+				261B8C732FC04CC18E59FD1B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -426,6 +434,8 @@
 			mainGroup = FEB5D16817B563CB00998E3B;
 			productRefGroup = FEB5D17217B563CC00998E3B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				FEB5D17017B563CC00998E3B /* Kash */,
@@ -455,6 +465,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		261B8C732FC04CC18E59FD1B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E906055738F245E195F8FD04 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		FEB5D19517B563CC00998E3B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,24 +620,30 @@
 		};
 		FEB5D1AA17B563CC00998E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancilliary Files/Kash-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		FEB5D1AB17B563CC00998E3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancilliary Files/Kash-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
