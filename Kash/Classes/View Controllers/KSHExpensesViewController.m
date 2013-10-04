@@ -8,6 +8,7 @@
 #import "KSHDataAccessLayer.h"
 #import "KSHExpense.h"
 #import "KSHNumberFormatter.h"
+#import "UIColor+Colours.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpensesViewController () <NSFetchedResultsControllerDelegate>
@@ -139,6 +140,16 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
         [_dataAccessLayer deleteObject:[_controller objectAtIndexPath:indexPath]];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if ( _controller.sections.count > 0 )
+    {
+        return 40.f;
+    }
+}
+
+
 
 
 #pragma mark - NSFetchedResultsControllerDelegate

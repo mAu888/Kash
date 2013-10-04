@@ -13,9 +13,9 @@
 
 @interface KSHExpenseItem : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * amount;
-@property (nonatomic, retain) KSHExpense *expense;
-@property (nonatomic, retain) KSHCategory *category;
+@property(nonatomic, retain) NSString *name;
+@property(nonatomic, retain) NSNumber *amount;
+@property(nonatomic, retain) KSHExpense *expense;
+@property(nonatomic, retain) KSHCategory *category;
 
 @end

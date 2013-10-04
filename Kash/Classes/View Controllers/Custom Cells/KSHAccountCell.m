@@ -34,8 +34,12 @@
                 CGRectGetHeight(self.contentView.bounds) - 10.f)];
         _colorView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
         _colorView.layer.cornerRadius = 5.f;
-        _colorView.layer.borderWidth = 2.f;
-        _colorView.layer.borderColor = [UIColor blackColor].CGColor;
+        _colorView.layer.shadowOpacity = .2f;
+        _colorView.layer.shadowColor = [UIColor blackColor].CGColor;
+        _colorView.layer.shadowRadius = 3.f;
+        _colorView.layer.shadowOffset = CGSizeZero;
+        _colorView.layer.shadowPath = [UIBezierPath bezierPathWithRect:_colorView.frame].CGPath;
+        _colorView.layer.shouldRasterize = YES;
         [self.contentView addSubview:_colorView];
     }
 
@@ -47,6 +51,5 @@
     self.textLabel.text = account.name;
     _colorView.backgroundColor = account.color;
 }
-
 
 @end

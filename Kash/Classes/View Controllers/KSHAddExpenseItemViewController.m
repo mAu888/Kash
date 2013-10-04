@@ -11,6 +11,7 @@
 #import "KSHInputCellDelegate.h"
 #import "KSHExpense.h"
 #import "KSHLabelAndTextFieldCell+Formatting.h"
+#import "KSHNumberFormatter.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAddExpenseItemViewController () <KSHInputCellDelegate>
@@ -27,31 +28,52 @@
     KSHExpenseItem *_expenseItem;
 }
 
-- (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer context:(NSManagedObjectContext *)context expense:(KSHExpense *)expense
+- (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
+                      context:(NSManagedObjectContext *)context
+                      expense:(KSHExpense *)expense
+{
+    self = [self initWithDataAccessLayer:dataAccessLayer context:context expenseItem:nil];
+
+    if ( self != nil )
+    {
+        _expense = expense;
+    }
+
+    return self;
+}
+
+- (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
+                      context:(NSManagedObjectContext *)context
+                  expenseItem:(KSHExpenseItem *)item
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
 
     if ( self != nil )
     {
-        self.title = NSLocalizedString(@"Add expense item", nil);
+        BOOL updatingMode = item != nil;
+        NSString *title = updatingMode ?
+            NSLocalizedString(@"Add expense item", nil) :
+            NSLocalizedString(@"Update expense item", nil);
+
+        self.title = title;
 
         _dataAccessLayer = dataAccessLayer;
         _context = context;
-        _expense = expense;
-
-        _expenseItem = ( KSHExpenseItem * ) [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpenseItem class])
-                                                                          inManagedObjectContext:_context];
 
         // Navigation item -----------------------------------------------------
-        self.navigationItem.leftBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                              target:self
-                                                              action:@selector(cancel:)];
-
         self.navigationItem.rightBarButtonItem =
-                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                              target:self
-                                                              action:@selector(save:)];
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                          target:self
+                                                          action:@selector(save:)];
+
+        // Create item ---------------------------------------------------------
+        if ( ! updatingMode )
+        {
+            item = ( KSHExpenseItem * ) [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpenseItem class])
+                                                                      inManagedObjectContext:_context];
+        }
+
+        _expenseItem = item;
     }
 
     return self;
@@ -142,16 +164,19 @@
 {
     [self.view endEditing:YES];
 
-    _expenseItem.expense = _expense;
-    [[_expense mutableOrderedSetValueForKey:@"items"] addObject:_expenseItem];
+    BOOL updatingMode = _expense == nil;
 
-    if (_delegate != nil && [_delegate respondsToSelector:@selector(controllerDidSaveExpenseItem:)] )
+    // Only assign the expense if we are in "create" mode
+    if ( !updatingMode )
+    {
+        _expenseItem.expense = _expense;
+        [[_expense mutableOrderedSetValueForKey:@"items"] addObject:_expenseItem];
+    }
+
+    if ( _delegate != nil && [_delegate respondsToSelector:@selector(controllerDidSaveExpenseItem:)] )
     {
         [_delegate controllerDidSaveExpenseItem:self];
     }
-
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
 }
 
 @end
