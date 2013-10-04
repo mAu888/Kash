@@ -40,6 +40,11 @@
         _colorView = [[UIView alloc] initWithFrame:self.contentView.bounds];
         _colorView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _colorView.layer.cornerRadius = 5.f;
+        _colorView.layer.shadowColor = [UIColor blackColor].CGColor;
+        _colorView.layer.shadowOffset = CGSizeZero;
+        _colorView.layer.shadowOpacity = .2f;
+        _colorView.layer.shadowRadius = 5.f;
+        _colorView.layer.shouldRasterize = YES;
 
         [self.contentView addSubview:_colorView];
     }

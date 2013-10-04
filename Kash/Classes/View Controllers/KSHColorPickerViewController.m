@@ -6,9 +6,12 @@
 #import "KSHColorPickerViewController.h"
 #import "KSHColorCollectionCell.h"
 #import "UIColor+Colours.h"
+#import "KSHFlowLayout.h"
+
+const float KSHMinimumInterItemSpacing = 15.f;
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHColorPickerViewController ()
+@interface KSHColorPickerViewController () <UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -21,11 +24,11 @@
 
 - (id)init
 {
-    self = [super initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+    self = [super initWithCollectionViewLayout:[[KSHFlowLayout alloc] init]];
 
     if ( self )
     {
-		NSMutableArray *colors = [NSMutableArray array];
+        NSMutableArray *colors = [NSMutableArray array];
         [colors addObjectsFromArray:[[UIColor robinEggColor] colorSchemeOfType:ColorSchemeMonochromatic]];
         [colors addObjectsFromArray:[[UIColor pastelGreenColor] colorSchemeOfType:ColorSchemeMonochromatic]];
         [colors addObjectsFromArray:[[UIColor pastelBlueColor] colorSchemeOfType:ColorSchemeMonochromatic]];
@@ -85,6 +88,30 @@
         UIColor *color = _colors[( NSUInteger ) indexPath.item];
         [_delegate colorPickerControllerDidSelectColor:color];
     }
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                             layout:(UICollectionViewLayout *)collectionViewLayout
+minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return KSHMinimumInterItemSpacing;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                                  layout:(UICollectionViewLayout *)collectionViewLayout
+minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return KSHMinimumInterItemSpacing;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIEdgeInsets insets = collectionView.contentInset;
+    CGFloat edgeLength = ((collectionView.bounds.size.width - insets.left - insets.right - KSHMinimumInterItemSpacing) / 2.f);
+
+    return CGSizeMake(edgeLength, edgeLength);
 }
 
 

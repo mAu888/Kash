@@ -7,8 +7,6 @@
 //
 
 #import "KSHAppDelegate.h"
-
-#import "KSHViewController.h"
 #import "KSHMainViewController.h"
 
 @implementation KSHAppDelegate
