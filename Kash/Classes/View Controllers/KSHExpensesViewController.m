@@ -9,6 +9,8 @@
 #import "KSHExpense.h"
 #import "KSHNumberFormatter.h"
 #import "UIColor+Colours.h"
+#import "KSHBadgeCell.h"
+#import "KSHBadgeCell+KSHCellConfiguration.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpensesViewController () <NSFetchedResultsControllerDelegate>
@@ -74,18 +76,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *reuseIdentifier = @"CellIdentifier";
+    static NSString *reuseIdentifier = @"BadgeCellIdentifier";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    KSHBadgeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if ( cell == nil )
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:reuseIdentifier];
+        cell = [[KSHBadgeCell alloc] initWithReuseIdentifier:reuseIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     KSHExpense *expense = [_controller objectAtIndexPath:indexPath];
-    cell.textLabel.text = expense.title;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [cell setExpense:expense];
 
     return cell;
 }
@@ -127,8 +128,7 @@
         [[KSHAddExpenseViewController alloc] initWithDataAccessLayer:_dataAccessLayer
                                                              expense:[_controller objectAtIndexPath:indexPath]];
 
-    [self.navigationController pushViewController:controller
-                                         animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void) tableView:(UITableView *)tableView

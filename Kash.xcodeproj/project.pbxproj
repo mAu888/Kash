@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D09B025394AEAC675877C6B /* KSHBadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B69DD213AC436623C553 /* KSHBadgeCell.m */; };
 		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
 		3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */; };
 		3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */; };
@@ -26,6 +27,7 @@
 		3D09BA7AE92DB340C14B950D /* KSHFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */; };
 		3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */; };
 		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */; };
+		3D09BCC55E537BA90689D866 /* KSHBadgeCell+KSHCellConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */; };
 		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
 		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
 		7FA769D724F947218683B074 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */; };
@@ -68,6 +70,7 @@
 		3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddAccountViewController.h; sourceTree = "<group>"; };
 		3D09B0C967AB606C033AE37C /* KSHAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountCell.h; sourceTree = "<group>"; };
 		3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3D09B1DE38B0349AD664F473 /* KSHBadgeCell+KSHCellConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHBadgeCell+KSHCellConfiguration.h"; sourceTree = "<group>"; };
 		3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountCell.m; sourceTree = "<group>"; };
 		3D09B261B1E31B37D58A126C /* KSHDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDatePickerCell.h; sourceTree = "<group>"; };
 		3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHLabelAndTextFieldCell+Formatting.m"; sourceTree = "<group>"; };
@@ -76,7 +79,9 @@
 		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
 		3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHFlowLayout.m; sourceTree = "<group>"; };
+		3D09B5B3DCB59395271AC1A0 /* KSHBadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHBadgeCell.h; sourceTree = "<group>"; };
 		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
+		3D09B69DD213AC436623C553 /* KSHBadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHBadgeCell.m; sourceTree = "<group>"; };
 		3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDatePickerCell.m; sourceTree = "<group>"; };
 		3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDateFormatterFactory.m; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextFieldCell.h; sourceTree = "<group>"; };
 		3D09BEFBF84D0F47BD50A666 /* KSHColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHColorPickerViewController.m; sourceTree = "<group>"; };
 		3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
+		3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHBadgeCell+KSHCellConfiguration.m"; sourceTree = "<group>"; };
 		ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4DDED217F8B66C001310DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -174,6 +180,10 @@
 				3D09B0C967AB606C033AE37C /* KSHAccountCell.h */,
 				3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */,
 				3D09B261B1E31B37D58A126C /* KSHDatePickerCell.h */,
+				3D09B69DD213AC436623C553 /* KSHBadgeCell.m */,
+				3D09B5B3DCB59395271AC1A0 /* KSHBadgeCell.h */,
+				3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */,
+				3D09B1DE38B0349AD664F473 /* KSHBadgeCell+KSHCellConfiguration.h */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -554,6 +564,8 @@
 				3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */,
 				3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */,
 				3D09BA7AE92DB340C14B950D /* KSHFlowLayout.m in Sources */,
+				3D09B025394AEAC675877C6B /* KSHBadgeCell.m in Sources */,
+				3D09BCC55E537BA90689D866 /* KSHBadgeCell+KSHCellConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
