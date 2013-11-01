@@ -9,6 +9,7 @@
 #import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
+#import "KSHAccount.h"
 #import "KSHColorPickerViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -20,13 +21,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHAddAccountViewController
 {
-
     KSHDataAccessLayer *_dataAccessLayer;
     NSManagedObjectContext *_context;
     KSHAccount *_account;
 }
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
+{
+    return [self initWithDataAccessLayer:dataAccessLayer account:nil];
+}
+
+- (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer account:(KSHAccount *)account
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
 
@@ -35,8 +40,15 @@
         _dataAccessLayer = dataAccessLayer;
         _context = [_dataAccessLayer contextForEditing];
 
-        _account = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHAccount class])
-                                                 inManagedObjectContext:_context];
+        if ( account == nil )
+        {
+            _account = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHAccount class])
+                                                     inManagedObjectContext:_context];
+        }
+        else
+        {
+            _account = ( KSHAccount * ) [_context objectWithID:account.objectID];
+        }
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
@@ -81,6 +93,7 @@
         }
 
         cell.textLabel.text = NSLocalizedString(@"Account", nil);
+        cell.textField.text = _account.name;
 
         returnedCell = cell;
     }
@@ -135,8 +148,7 @@
 
 - (void)cancel:(id)sender
 {
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self dismissOrPopViewController];
 }
 
 - (void)save:(id)sender
@@ -152,10 +164,20 @@
                           otherButtonTitles:nil] show];
     }
 
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self dismissOrPopViewController];
 }
 
+- (void)dismissOrPopViewController
+{
+    if ( self.presentingViewController != nil )
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 #pragma mark - KSHInputCellDelegate
 

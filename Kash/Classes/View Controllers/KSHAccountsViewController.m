@@ -108,8 +108,15 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
     KSHAccount *account = [_controller objectAtIndexPath:indexPath];
     [cell setAccount:account];
 
-    cell.accessoryType = [account isEqual:_selectedAccount] ?
-        UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    if ( _delegate != nil)
+    {
+        cell.accessoryType = [account isEqual:_selectedAccount] ?
+            UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
 
     return cell;
 }
@@ -124,10 +131,18 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     if ( _delegate != nil && [_delegate respondsToSelector:@selector(controller:didSelectAccount:)] )
     {
         [_delegate controller:self
              didSelectAccount:[_controller objectAtIndexPath:indexPath]];
+    }
+    else if ( _delegate == nil )
+    {
+        KSHAddAccountViewController *controller = [[KSHAddAccountViewController alloc]
+            initWithDataAccessLayer:_dataAccessLayer account:[_controller objectAtIndexPath:indexPath]];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 
