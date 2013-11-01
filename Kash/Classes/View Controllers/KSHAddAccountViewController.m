@@ -44,18 +44,15 @@
         {
             _account = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHAccount class])
                                                      inManagedObjectContext:_context];
+            self.title = NSLocalizedString(@"Add new account", nil);
         }
         else
         {
             _account = ( KSHAccount * ) [_context objectWithID:account.objectID];
+            self.title = _account.name;
         }
 
         // Navigation item -----------------------------------------------------
-        self.navigationItem.leftBarButtonItem =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                          target:self
-                                                          action:@selector(cancel:)];
-
         self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
                                                           target:self
@@ -64,6 +61,20 @@
 
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    if ( self.presentingViewController != nil )
+    {
+        self.navigationItem.leftBarButtonItem =
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                          target:self
+                                                          action:@selector(cancel:)];
+    }
+}
+
 
 
 #pragma mark - UITableViewDataSource

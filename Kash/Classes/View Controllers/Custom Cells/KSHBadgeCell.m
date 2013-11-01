@@ -14,6 +14,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHBadgeCell
+{
+    UIImageView *_badgeImageView;
+}
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -21,13 +24,18 @@
 
     if ( self != nil )
     {
-        _badgeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        UIImage *image = [[UIImage imageNamed:@"red-circle.png"]
+            resizableImageWithCapInsets:UIEdgeInsetsMake(11.f, 11.f, 10.f, 10.f)];
+        _badgeImageView = [[UIImageView alloc] initWithImage:image];
+        [self.contentView addSubview:_badgeImageView];
+
+        _badgeLabel = [[UILabel alloc] initWithFrame:_badgeImageView.bounds];
         _badgeLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
         _badgeLabel.textAlignment = NSTextAlignmentCenter;
         _badgeLabel.textColor = [UIColor whiteColor];
         _badgeLabel.shadowColor = [UIColor colorWithWhite:.0f alpha:.667f];
         _badgeLabel.shadowOffset = CGSizeMake(.0f, 1.f);
-        [self.contentView addSubview:_badgeLabel];
+        [_badgeImageView addSubview:_badgeLabel];
     }
 
     return self;
@@ -44,13 +52,12 @@
         CGRectGetWidth(_badgeLabel.frame) + 10.f,
         CGRectGetHeight(_badgeLabel.frame) + 4.f
     );
-    _badgeLabel.frame = CGRectIntegral(frame);
-    _badgeLabel.layer.cornerRadius = CGRectGetHeight(frame) / 2.f;
-}
 
-- (void)setBadgeColor:(UIColor *)badgeColor
-{
-    _badgeLabel.layer.backgroundColor = badgeColor.CGColor;
+    _badgeImageView.frame = CGRectIntegral(frame);
+    _badgeLabel.center = CGPointMake(
+        roundf(CGRectGetWidth(_badgeImageView.bounds) / 2.f),
+        roundf(CGRectGetHeight(_badgeImageView.bounds) / 2.f)
+    );
 }
 
 @end

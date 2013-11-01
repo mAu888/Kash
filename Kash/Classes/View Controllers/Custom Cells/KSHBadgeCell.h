@@ -10,6 +10,5 @@
 @property (nonatomic, readonly) UILabel *badgeLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
-- (void)setBadgeColor:(UIColor *)badgeColor;
 
 @end

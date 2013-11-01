@@ -15,14 +15,8 @@
 {
     NSNumberFormatter *currencyFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
 
-    UIColor *redColor = [UIColor colorWithRed:(177.f/255.f)
-                                        green:(71.f/255.f)
-                                         blue:(91.f/255.f)
-                                        alpha:1.f];
-
     self.textLabel.text = expense.title;
     self.badgeLabel.text = [currencyFormatter stringFromNumber:expense.totalAmount];
-    [self setBadgeColor:redColor];
 }
 
 @end
