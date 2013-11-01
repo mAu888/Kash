@@ -152,4 +152,12 @@
     }
 }
 
+- (NSManagedObjectContext *)contextWithParentContext:(NSManagedObjectContext *)parentContext
+{
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc]
+        initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    context.parentContext = parentContext;
+
+    return context;
+}
 @end

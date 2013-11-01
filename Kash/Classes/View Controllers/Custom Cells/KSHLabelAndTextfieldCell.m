@@ -7,6 +7,7 @@
 #import "KSHInputCellDelegate.h"
 #import "KSHNumberFormatter.h"
 #import "KSHTextField.h"
+#import "UIColor+Colours.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHLabelAndTextFieldCell () <UITextFieldDelegate>
@@ -26,6 +27,7 @@
     {
         KSHTextField *textField = [[KSHTextField alloc] initWithFrame:CGRectZero];
         textField.textInsets = UIEdgeInsetsMake(.0f, .0f, .0f, 5.f);
+        [textField setTextColor:[UIColor coolGrayColor] forControlState:UIControlStateDisabled];
 
         _textField = textField;
         _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;

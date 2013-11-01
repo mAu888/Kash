@@ -30,4 +30,6 @@
 
 - (NSManagedObject *)objectTransferredToMainContext:(NSManagedObject *)object;
 
+- (NSManagedObjectContext *)contextWithParentContext:(NSManagedObjectContext *)parentContext;
+
 @end

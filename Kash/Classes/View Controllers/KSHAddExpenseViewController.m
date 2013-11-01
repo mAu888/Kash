@@ -168,12 +168,15 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell.textLabel.text = NSLocalizedString(@"For what?", nil);
             cell.textField.text = _expense.title;
             cell.textFieldType = KSHDefaultTextField;
+            cell.textField.enabled = YES;
         }
         else if ( indexPath.row == KSHAddExpenseTotalAmountRow )
         {
             cell.textLabel.text = NSLocalizedString(@"How much?", nil);
             [cell setCurrencyValue:_expense.totalAmount];
             cell.textFieldType = KSHCurrencyTextField;
+
+            cell.textField.enabled = _expense.items.count == 0;
         }
 
         returnedCell = cell;
@@ -265,9 +268,13 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     if ( editingStyle == UITableViewCellEditingStyleDelete )
     {
+        KSHExpenseItem *item = [_expense.items objectAtIndex:( NSUInteger ) indexPath.row];
+        _expense.totalAmount = @(round((_expense.totalAmount.doubleValue - item.amount.doubleValue) * 100.f) / 100.f);
+
         [[_expense mutableOrderedSetValueForKey:@"items"] removeObjectAtIndex:( NSUInteger ) indexPath.row];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2]
-                      withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSetWithIndex:0];
+        [indexSet addIndex:2];
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
@@ -288,14 +295,14 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-//    if ( section == 2 && _expense.items.count > 0 )
-//    {
-//        NSNumberFormatter *formatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
-//
-//        NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
-//        return [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil),
-//                                          [formatter stringFromNumber:sum]];
-//    }
+    if ( section == 2 && _expense.items.count > 0 )
+    {
+        NSNumberFormatter *formatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
+
+        NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
+        return [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil),
+                                          [formatter stringFromNumber:sum]];
+    }
 
     return nil;
 }
@@ -313,36 +320,36 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     return .0f;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    if ( section == 2 && _expense.items.count > 0 )
-    {
-        NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
-
-        NSNumberFormatter *numberFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
-
-        UIView *container = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, CGRectGetWidth(self.view.bounds), 20.f)];
-        container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-
-        UILabel *label = [[UILabel alloc]
-            initWithFrame:CGRectMake(15.f, .0f, CGRectGetWidth(self.view.bounds) - 10.f, 20.f)];
-        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
-        label.textColor = [UIColor darkGrayColor];
-        label.text = [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil),
-                                                [numberFormatter stringFromNumber:sum]];
-        [container addSubview:label];
-
-        UITapGestureRecognizer *gestureRecognizer =
-            [[UITapGestureRecognizer alloc]
-                initWithTarget:self action:@selector(shouldUpdateTotalAmountsBySummingItems)];
-        [container addGestureRecognizer:gestureRecognizer];
-
-        return container;
-    }
-
-    return nil;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    if ( section == 2 && _expense.items.count > 0 )
+//    {
+//        NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
+//
+//        NSNumberFormatter *numberFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
+//
+//        UIView *container = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, CGRectGetWidth(self.view.bounds), 20.f)];
+//        container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//
+//        UILabel *label = [[UILabel alloc]
+//            initWithFrame:CGRectMake(15.f, .0f, CGRectGetWidth(self.view.bounds) - 10.f, 20.f)];
+//        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
+//        label.textColor = [UIColor darkGrayColor];
+//        label.text = [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil),
+//                                                [numberFormatter stringFromNumber:sum]];
+//        [container addSubview:label];
+//
+//        UITapGestureRecognizer *gestureRecognizer =
+//            [[UITapGestureRecognizer alloc]
+//                initWithTarget:self action:@selector(shouldUpdateTotalAmountsBySummingItems)];
+//        [container addGestureRecognizer:gestureRecognizer];
+//
+//        return container;
+//    }
+//
+//    return nil;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -362,7 +369,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
         KSHAddExpenseItemViewController *controller =
             [[KSHAddExpenseItemViewController alloc]
                 initWithDataAccessLayer:_dataAccessLayer
-                                context:_context
+                                context:[_dataAccessLayer contextWithParentContext:_context]
                             expenseItem:_expense.items[( NSUInteger ) indexPath.row]];
         controller.delegate = self;
         [self.navigationController pushViewController:controller animated:YES];
@@ -372,7 +379,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     {
         KSHAddExpenseItemViewController *controller =
             [[KSHAddExpenseItemViewController alloc] initWithDataAccessLayer:_dataAccessLayer
-                                                                     context:_context
+                                                                     context:[_dataAccessLayer contextWithParentContext:_context]
                                                                      expense:_expense];
         controller.delegate = self;
 
@@ -425,8 +432,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     [self.navigationController popViewControllerAnimated:YES];
 
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2]
-                  withRowAnimation:UITableViewRowAnimationAutomatic];
+    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSetWithIndex:0];
+    [indexSet addIndex:2];
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
@@ -440,15 +448,15 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 #pragma mark - UIAlertViewDelegate
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if ( buttonIndex == alertView.firstOtherButtonIndex )
-    {
-        _expense.totalAmount = [_expense.items valueForKeyPath:@"@sum.amount"];
-        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]]
-                              withRowAnimation:UITableViewRowAnimationFade];
-    }
-}
+//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+//{
+//    if ( buttonIndex == alertView.firstOtherButtonIndex )
+//    {
+//        _expense.totalAmount = [_expense.items valueForKeyPath:@"@sum.amount"];
+//        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]]
+//                              withRowAnimation:UITableViewRowAnimationFade];
+//    }
+//}
 
 
 #pragma mark - Private methods

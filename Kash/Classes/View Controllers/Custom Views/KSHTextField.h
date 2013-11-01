@@ -9,4 +9,5 @@
 
 @property (nonatomic, assign) UIEdgeInsets textInsets;
 
+- (void)setTextColor:(UIColor *)textColor forControlState:(UIControlState)state;
 @end

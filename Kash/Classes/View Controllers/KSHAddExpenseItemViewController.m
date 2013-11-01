@@ -36,7 +36,7 @@
 
     if ( self != nil )
     {
-        _expense = expense;
+        _expense = ( KSHExpense * ) [_context objectWithID:expense.objectID];
     }
 
     return self;
@@ -67,21 +67,20 @@
                                                           action:@selector(save:)];
 
         // Create item ---------------------------------------------------------
-        if ( ! updatingMode )
+        if ( !updatingMode )
         {
             item = ( KSHExpenseItem * ) [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpenseItem class])
                                                                       inManagedObjectContext:_context];
+        }
+        else
+        {
+            item = ( KSHExpenseItem * ) [_context objectWithID:item.objectID];
         }
 
         _expenseItem = item;
     }
 
     return self;
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
 }
 
 
@@ -144,7 +143,23 @@
 
     if ( indexPath.row == 0 )
     {
+        KSHExpense *expense = _expense;
+        if ( expense == nil )
+        {
+            expense = _expenseItem.expense;
+        }
+
+        if ( expense.items.count > 0 )
+        {
+            expense.totalAmount = @(round((expense.totalAmount.doubleValue - _expenseItem.amount.doubleValue) * 100.f) / 100.f);
+        }
+        else
+        {
+            expense.totalAmount = @(.0f);
+        }
+
         _expenseItem.amount = cell.numericValue;
+        expense.totalAmount = @(round((expense.totalAmount.doubleValue + _expenseItem.amount.doubleValue) * 100.f) / 100.f);
     }
     else if ( indexPath.row == 1 )
     {
@@ -171,6 +186,11 @@
     {
         _expenseItem.expense = _expense;
         [[_expense mutableOrderedSetValueForKey:@"items"] addObject:_expenseItem];
+    }
+
+    if ( ![_dataAccessLayer saveContext:_context] )
+    {
+        NSLog(@"Save failed #####################################################################");
     }
 
     if ( _delegate != nil && [_delegate respondsToSelector:@selector(controllerDidSaveExpenseItem:)] )
