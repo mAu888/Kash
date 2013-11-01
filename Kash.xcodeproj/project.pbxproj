@@ -18,6 +18,7 @@
 		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */; };
 		3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B01CB4FEBB395E39F91A /* Default@2x.png */; };
 		3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */; };
+		3D09B61620C7E678B283722C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B4CE2BD6BB012279E6E1 /* Icon@2x.png */; };
 		3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */; };
 		3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */; };
 		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
@@ -27,6 +28,7 @@
 		3D09BA7AE92DB340C14B950D /* KSHFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */; };
 		3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */; };
 		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */; };
+		3D09BCA664233E24F1FC2734 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B6F7130620132BFEA016 /* Icon.png */; };
 		3D09BCC55E537BA90689D866 /* KSHBadgeCell+KSHCellConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */; };
 		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
 		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
@@ -78,11 +80,13 @@
 		3D09B361F6C58D0BB54136D1 /* KSHColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorPickerViewController.h; sourceTree = "<group>"; };
 		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
+		3D09B4CE2BD6BB012279E6E1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHFlowLayout.m; sourceTree = "<group>"; };
 		3D09B5B3DCB59395271AC1A0 /* KSHBadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHBadgeCell.h; sourceTree = "<group>"; };
 		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B69DD213AC436623C553 /* KSHBadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHBadgeCell.m; sourceTree = "<group>"; };
 		3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDatePickerCell.m; sourceTree = "<group>"; };
+		3D09B6F7130620132BFEA016 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDateFormatterFactory.m; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
@@ -242,12 +246,29 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		3D09B79E623B7B5D65A6580D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D09B9ED7DDFA003964648D1 /* Graphics */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3D09B7CA679593CC22B6015D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				3D09BAFD30A73F79121A9A47 /* Images */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D09B9ED7DDFA003964648D1 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				3D09B6F7130620132BFEA016 /* Icon.png */,
+				3D09B4CE2BD6BB012279E6E1 /* Icon@2x.png */,
+			);
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 		3D09BAFD30A73F79121A9A47 /* Images */ = {
@@ -300,6 +321,7 @@
 				FEB5D1AF17B564AE00998E3B /* Ancilliary Files */,
 				FEB5D1B317B564AE00998E3B /* Classes */,
 				FEB5D1CD17B568E300998E3B /* Data Source */,
+				3D09B79E623B7B5D65A6580D /* Resources */,
 			);
 			path = Kash;
 			sourceTree = "<group>";
@@ -475,6 +497,8 @@
 				3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */,
 				3D09B80DD126C75C1602969D /* Default.png in Resources */,
 				3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */,
+				3D09BCA664233E24F1FC2734 /* Icon.png in Resources */,
+				3D09B61620C7E678B283722C /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
