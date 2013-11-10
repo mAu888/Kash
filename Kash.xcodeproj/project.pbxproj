@@ -8,32 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		3D09B025394AEAC675877C6B /* KSHBadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B69DD213AC436623C553 /* KSHBadgeCell.m */; };
+		3D09B0834CB8FF524E55DAE0 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2CD00F950F72F5B47EB /* KSHAddExpenseItemViewController.m */; };
 		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
 		3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */; };
 		3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */; };
-		3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
 		3D09B22F33E9A7699AF0AB5D /* KSHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9CBAC7ACBD9EA649622 /* KSHTextField.m */; };
-		3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9487F31421AD7E30214 /* KSHMainViewController.m */; };
+		3D09B2F2F7CE65BEFAF04963 /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6540271F7669A818C58 /* KSHMainViewController.m */; };
 		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */; };
 		3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B01CB4FEBB395E39F91A /* Default@2x.png */; };
 		3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */; };
+		3D09B5D1AC31CAB1FD31B1D4 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7889ADFCCCFCFFFAA4E /* KSHAddAccountViewController.m */; };
 		3D09B61620C7E678B283722C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B4CE2BD6BB012279E6E1 /* Icon@2x.png */; };
 		3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */; };
-		3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */; };
 		3D09B8007FFE704D0AD6E0C8 /* red-circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B8FF77C26437DDF53CB1 /* red-circle@2x.png */; };
 		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
 		3D09B92F66E908B3B7175198 /* KSHColorCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BC931EBEE3ACD27CD6D9 /* KSHColorCollectionCell.m */; };
-		3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */; };
-		3D09BA57A9DE4347378C7510 /* KSHColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BEFBF84D0F47BD50A666 /* KSHColorPickerViewController.m */; };
 		3D09BA7AE92DB340C14B950D /* KSHFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */; };
 		3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */; };
+		3D09BBC3D8B1B7D2F2D6F029 /* KSHColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B195A82112F34305849B /* KSHColorPickerViewController.m */; };
 		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */; };
 		3D09BCA664233E24F1FC2734 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B6F7130620132BFEA016 /* Icon.png */; };
 		3D09BCC55E537BA90689D866 /* KSHBadgeCell+KSHCellConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */; };
 		3D09BCCC34EB33939340BFAB /* red-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B601C764F77DAB7E7C74 /* red-circle.png */; };
-		3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */; };
-		3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */; };
+		3D09BD8C41AC7CFE39859374 /* KSHAddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B305AF9B7E34EE77DA88 /* KSHAddExpenseViewController.m */; };
+		3D09BE4143DAD017C91A7689 /* KSHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BC22D8C194D266BDCD0A /* KSHViewController.m */; };
+		3D09BE8759DBF0EA6F7CA131 /* KSHAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B00C49FCC220EA024872 /* KSHAccountsViewController.m */; };
+		3D09BE92D0FEE0753F6AF8EB /* KSHExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B36B9B65836A49929EBE /* KSHExpensesViewController.m */; };
 		7FA769D724F947218683B074 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */; };
 		FE4DDED317F8B66C001310DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DDED217F8B66C001310DD /* QuartzCore.framework */; };
 		FEB5D17517B563CC00998E3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17417B563CC00998E3B /* UIKit.framework */; };
@@ -44,7 +45,6 @@
 		FEB5D19B17B563CC00998E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D17617B563CC00998E3B /* Foundation.framework */; };
 		FEB5D1C017B564AE00998E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B217B564AE00998E3B /* main.m */; };
 		FEB5D1C117B564AE00998E3B /* KSHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */; };
-		FEB5D1C217B564AE00998E3B /* KSHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1B917B564AE00998E3B /* KSHViewController.m */; };
 		FEB5D1CC17B564D300998E3B /* KashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1CA17B564D300998E3B /* KashTests.m */; };
 		FEB5D1D017B5690700998E3B /* KSHDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEB5D1CE17B5690700998E3B /* KSHDataModel.xcdatamodeld */; };
 		FEB5D1D217B56B2E00998E3B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB5D1D117B56B2E00998E3B /* CoreData.framework */; };
@@ -65,55 +65,57 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D09B00C49FCC220EA024872 /* KSHAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountsViewController.m; sourceTree = "<group>"; };
 		3D09B01CB4FEBB395E39F91A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseItemViewController.m; sourceTree = "<group>"; };
-		3D09B073F05ED2EEB1AE5BB9 /* KSHExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpensesViewController.h; sourceTree = "<group>"; };
 		3D09B07A15C66F28960EED3C /* UITableViewCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Formatting.h"; sourceTree = "<group>"; };
-		3D09B07B325C7FAEFF54984D /* KSHAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountsViewController.h; sourceTree = "<group>"; };
-		3D09B0AA5E12C921C19A086A /* KSHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHMainViewController.h; sourceTree = "<group>"; };
-		3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddAccountViewController.h; sourceTree = "<group>"; };
 		3D09B0C967AB606C033AE37C /* KSHAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountCell.h; sourceTree = "<group>"; };
+		3D09B0CF64B624B04D4D3FC3 /* KSHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHViewController.h; sourceTree = "<group>"; };
 		3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3D09B195A82112F34305849B /* KSHColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHColorPickerViewController.m; sourceTree = "<group>"; };
 		3D09B1DE38B0349AD664F473 /* KSHBadgeCell+KSHCellConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHBadgeCell+KSHCellConfiguration.h"; sourceTree = "<group>"; };
 		3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountCell.m; sourceTree = "<group>"; };
 		3D09B261B1E31B37D58A126C /* KSHDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDatePickerCell.h; sourceTree = "<group>"; };
 		3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHLabelAndTextFieldCell+Formatting.m"; sourceTree = "<group>"; };
+		3D09B2CD00F950F72F5B47EB /* KSHAddExpenseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseItemViewController.m; sourceTree = "<group>"; };
+		3D09B305AF9B7E34EE77DA88 /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
 		3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHInputCellDelegate.h; sourceTree = "<group>"; };
-		3D09B361F6C58D0BB54136D1 /* KSHColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorPickerViewController.h; sourceTree = "<group>"; };
-		3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
+		3D09B36B9B65836A49929EBE /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
+		3D09B450B3AC07BB89EF7C91 /* KSHAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddAccountViewController.h; sourceTree = "<group>"; };
 		3D09B4CE2BD6BB012279E6E1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHFlowLayout.m; sourceTree = "<group>"; };
 		3D09B5B3DCB59395271AC1A0 /* KSHBadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHBadgeCell.h; sourceTree = "<group>"; };
-		3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B601C764F77DAB7E7C74 /* red-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-circle.png"; sourceTree = "<group>"; };
+		3D09B6540271F7669A818C58 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
 		3D09B69DD213AC436623C553 /* KSHBadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHBadgeCell.m; sourceTree = "<group>"; };
 		3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDatePickerCell.m; sourceTree = "<group>"; };
 		3D09B6F7130620132BFEA016 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDateFormatterFactory.m; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
+		3D09B7889ADFCCCFCFFFAA4E /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
 		3D09B7DE0418CBE5415C5406 /* KSHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTextField.h; sourceTree = "<group>"; };
 		3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHNumberFormatter.h; sourceTree = "<group>"; };
-		3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAccountsViewController.m; sourceTree = "<group>"; };
 		3D09B8FF77C26437DDF53CB1 /* red-circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-circle@2x.png"; sourceTree = "<group>"; };
-		3D09B9487F31421AD7E30214 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
 		3D09B9952948CD57DAB326F3 /* KSHLabelAndTextFieldCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHLabelAndTextFieldCell+Formatting.h"; sourceTree = "<group>"; };
 		3D09B9CBAC7ACBD9EA649622 /* KSHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTextField.m; sourceTree = "<group>"; };
+		3D09BA4583B13FE400098F6F /* KSHExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpensesViewController.h; sourceTree = "<group>"; };
+		3D09BA695D8C23EF22EF687D /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
 		3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Formatting.m"; sourceTree = "<group>"; };
-		3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
+		3D09BA7FC312854C46FD8670 /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
+		3D09BAD144BB6582CAB4F199 /* KSHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHMainViewController.h; sourceTree = "<group>"; };
 		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
 		3D09BB7C9BD7ABEDC3647119 /* KSHFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHFlowLayout.h; sourceTree = "<group>"; };
 		3D09BB87743145DED78C2A78 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3D09BC22D8C194D266BDCD0A /* KSHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
 		3D09BC931EBEE3ACD27CD6D9 /* KSHColorCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHColorCollectionCell.m; sourceTree = "<group>"; };
 		3D09BC9392B71A513888BA1C /* KSHColorCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorCollectionCell.h; sourceTree = "<group>"; };
 		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextFieldCell.m; sourceTree = "<group>"; };
 		3D09BCF4B528BE6404AFB90F /* KSHDateFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDateFormatterFactory.h; sourceTree = "<group>"; };
-		3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
+		3D09BD150B44BA0E238429F2 /* KSHColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorPickerViewController.h; sourceTree = "<group>"; };
 		3D09BEC25F7F8B8496F1CB49 /* KSHLabelAndTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHLabelAndTextFieldCell.h; sourceTree = "<group>"; };
-		3D09BEFBF84D0F47BD50A666 /* KSHColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHColorPickerViewController.m; sourceTree = "<group>"; };
-		3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
 		3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSHBadgeCell+KSHCellConfiguration.m"; sourceTree = "<group>"; };
+		3D09BFDAE511481683D6912C /* KSHAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountsViewController.h; sourceTree = "<group>"; };
 		ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4DDED217F8B66C001310DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -123,13 +125,11 @@
 		FEB5D17817B563CC00998E3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FEB5D19717B563CC00998E3B /* KashTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KashTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB5D19817B563CC00998E3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FEB5D1B017B564AE00998E3B /* Kash-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Kash-Info.plist"; sourceTree = "<group>"; };
+		FEB5D1B017B564AE00998E3B /* Kash-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "Kash-Info.plist"; sourceTree = "<group>"; };
 		FEB5D1B117B564AE00998E3B /* Kash-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kash-Prefix.pch"; sourceTree = "<group>"; };
 		FEB5D1B217B564AE00998E3B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEB5D1B517B564AE00998E3B /* KSHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAppDelegate.h; sourceTree = "<group>"; };
 		FEB5D1B617B564AE00998E3B /* KSHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAppDelegate.m; sourceTree = "<group>"; };
-		FEB5D1B817B564AE00998E3B /* KSHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHViewController.h; sourceTree = "<group>"; };
-		FEB5D1B917B564AE00998E3B /* KSHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
 		FEB5D1C717B564D300998E3B /* KashTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KashTests-Info.plist"; sourceTree = "<group>"; };
 		FEB5D1C917B564D300998E3B /* KashTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KashTests.h; sourceTree = "<group>"; };
 		FEB5D1CA17B564D300998E3B /* KashTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KashTests.m; sourceTree = "<group>"; };
@@ -194,6 +194,30 @@
 				3D09B1DE38B0349AD664F473 /* KSHBadgeCell+KSHCellConfiguration.h */,
 			);
 			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		3D09B1732B212DD9FD4DF1A8 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				3D09BD150B44BA0E238429F2 /* KSHColorPickerViewController.h */,
+				3D09B450B3AC07BB89EF7C91 /* KSHAddAccountViewController.h */,
+				3D09B00C49FCC220EA024872 /* KSHAccountsViewController.m */,
+				3D09B7889ADFCCCFCFFFAA4E /* KSHAddAccountViewController.m */,
+				3D09B195A82112F34305849B /* KSHColorPickerViewController.m */,
+				3D09BFDAE511481683D6912C /* KSHAccountsViewController.h */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		3D09B23A828D8F146EE0F45F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3D09BAD144BB6582CAB4F199 /* KSHMainViewController.h */,
+				3D09BC22D8C194D266BDCD0A /* KSHViewController.m */,
+				3D09B0CF64B624B04D4D3FC3 /* KSHViewController.h */,
+				3D09B6540271F7669A818C58 /* KSHMainViewController.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		3D09B264B952E3D71180BA7C /* Custom Views */ = {
@@ -287,6 +311,19 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		3D09BBD4CFCC3EA8F80692CD /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				3D09BA7FC312854C46FD8670 /* KSHAddExpenseItemViewController.h */,
+				3D09B2CD00F950F72F5B47EB /* KSHAddExpenseItemViewController.m */,
+				3D09B36B9B65836A49929EBE /* KSHExpensesViewController.m */,
+				3D09BA4583B13FE400098F6F /* KSHExpensesViewController.h */,
+				3D09BA695D8C23EF22EF687D /* KSHAddExpenseViewController.h */,
+				3D09B305AF9B7E34EE77DA88 /* KSHAddExpenseViewController.m */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
 		FEB5D16817B563CB00998E3B = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +361,7 @@
 		FEB5D17A17B563CC00998E3B /* Kash */ = {
 			isa = PBXGroup;
 			children = (
-				FEB5D1AF17B564AE00998E3B /* Ancilliary Files */,
+				FEB5D1AF17B564AE00998E3B /* Ancillary Files */,
 				FEB5D1B317B564AE00998E3B /* Classes */,
 				FEB5D1CD17B568E300998E3B /* Data Source */,
 				3D09B79E623B7B5D65A6580D /* Resources */,
@@ -341,7 +378,7 @@
 			path = KashTests;
 			sourceTree = "<group>";
 		};
-		FEB5D1AF17B564AE00998E3B /* Ancilliary Files */ = {
+		FEB5D1AF17B564AE00998E3B /* Ancillary Files */ = {
 			isa = PBXGroup;
 			children = (
 				FEB5D1B017B564AE00998E3B /* Kash-Info.plist */,
@@ -349,7 +386,7 @@
 				FEB5D1B217B564AE00998E3B /* main.m */,
 				3D09B41116538AF923FF8B8C /* enums.h */,
 			);
-			path = "Ancilliary Files";
+			path = "Ancillary Files";
 			sourceTree = "<group>";
 		};
 		FEB5D1B317B564AE00998E3B /* Classes */ = {
@@ -376,24 +413,11 @@
 		FEB5D1B717B564AE00998E3B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FEB5D1B817B564AE00998E3B /* KSHViewController.h */,
-				FEB5D1B917B564AE00998E3B /* KSHViewController.m */,
-				3D09B9487F31421AD7E30214 /* KSHMainViewController.m */,
-				3D09B0AA5E12C921C19A086A /* KSHMainViewController.h */,
-				3D09B408CC4C6C065ADBEB59 /* KSHExpensesViewController.m */,
-				3D09B073F05ED2EEB1AE5BB9 /* KSHExpensesViewController.h */,
-				3D09BDA2E0329BDA5D5A043D /* KSHAddExpenseViewController.m */,
-				3D09B5E9758DD8198DA43C5B /* KSHAddExpenseViewController.h */,
 				3D09B0F7F075D776D7FDF687 /* Custom Cells */,
-				3D09B8FE5F4A0751B8F45EB5 /* KSHAccountsViewController.m */,
-				3D09B07B325C7FAEFF54984D /* KSHAccountsViewController.h */,
-				3D09BF18BE085FC45124F383 /* KSHAddAccountViewController.m */,
-				3D09B0B4D245E0AD1F68C25A /* KSHAddAccountViewController.h */,
-				3D09B062F0A4BC7043086485 /* KSHAddExpenseItemViewController.m */,
-				3D09BB021EA76FCA6540C45B /* KSHAddExpenseItemViewController.h */,
 				3D09B264B952E3D71180BA7C /* Custom Views */,
-				3D09BEFBF84D0F47BD50A666 /* KSHColorPickerViewController.m */,
-				3D09B361F6C58D0BB54136D1 /* KSHColorPickerViewController.h */,
+				3D09BBD4CFCC3EA8F80692CD /* Expenses */,
+				3D09B1732B212DD9FD4DF1A8 /* Accounts */,
+				3D09B23A828D8F146EE0F45F /* Other */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -485,8 +509,6 @@
 			mainGroup = FEB5D16817B563CB00998E3B;
 			productRefGroup = FEB5D17217B563CC00998E3B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				FEB5D17017B563CC00998E3B /* Kash */,
@@ -572,18 +594,11 @@
 			files = (
 				FEB5D1C017B564AE00998E3B /* main.m in Sources */,
 				FEB5D1C117B564AE00998E3B /* KSHAppDelegate.m in Sources */,
-				FEB5D1C217B564AE00998E3B /* KSHViewController.m in Sources */,
-				3D09B347F0E2B599D67E9ABB /* KSHMainViewController.m in Sources */,
-				3D09B19BB6490EB921E6B4FD /* KSHExpensesViewController.m in Sources */,
 				FEB5D1D017B5690700998E3B /* KSHDataModel.xcdatamodeld in Sources */,
 				3D09B55A2EDE0D7F59257BA2 /* KSHDataAccessLayer.m in Sources */,
-				3D09BA21B8CEDAB518D2D3C3 /* KSHAddExpenseViewController.m in Sources */,
 				3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextFieldCell.m in Sources */,
-				3D09BE4DFB8DF2DB0A9398DF /* KSHAccountsViewController.m in Sources */,
-				3D09BD7203485EA84396A279 /* KSHAddAccountViewController.m in Sources */,
 				FEB5D1D517B5806B00998E3B /* KSHAccount.m in Sources */,
 				FEB5D1DE17B5A72F00998E3B /* KSHCategory.m in Sources */,
-				3D09B752316A1F0EA133E4E7 /* KSHAddExpenseItemViewController.m in Sources */,
 				FEB5D1E117B83C0400998E3B /* KSHExpenseItem.m in Sources */,
 				FEB5D1E417B83C2900998E3B /* KSHExpense.m in Sources */,
 				3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */,
@@ -591,13 +606,20 @@
 				3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */,
 				3D09B22F33E9A7699AF0AB5D /* KSHTextField.m in Sources */,
 				3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */,
-				3D09BA57A9DE4347378C7510 /* KSHColorPickerViewController.m in Sources */,
 				3D09B92F66E908B3B7175198 /* KSHColorCollectionCell.m in Sources */,
 				3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */,
 				3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */,
 				3D09BA7AE92DB340C14B950D /* KSHFlowLayout.m in Sources */,
 				3D09B025394AEAC675877C6B /* KSHBadgeCell.m in Sources */,
 				3D09BCC55E537BA90689D866 /* KSHBadgeCell+KSHCellConfiguration.m in Sources */,
+				3D09B0834CB8FF524E55DAE0 /* KSHAddExpenseItemViewController.m in Sources */,
+				3D09BE92D0FEE0753F6AF8EB /* KSHExpensesViewController.m in Sources */,
+				3D09BD8C41AC7CFE39859374 /* KSHAddExpenseViewController.m in Sources */,
+				3D09BE8759DBF0EA6F7CA131 /* KSHAccountsViewController.m in Sources */,
+				3D09B5D1AC31CAB1FD31B1D4 /* KSHAddAccountViewController.m in Sources */,
+				3D09BBC3D8B1B7D2F2D6F029 /* KSHColorPickerViewController.m in Sources */,
+				3D09BE4143DAD017C91A7689 /* KSHViewController.m in Sources */,
+				3D09B2F2F7CE65BEFAF04963 /* KSHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,8 +703,8 @@
 			baseConfigurationReference = ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancilliary Files/Kash-Info.plist";
+				GCC_PREFIX_HEADER = "Kash/Ancillary Files/Kash-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancillary Files/Kash-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -696,8 +718,8 @@
 			baseConfigurationReference = ADAAD8EEB2E94E4B93FE5DB9 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kash/Ancilliary Files/Kash-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancilliary Files/Kash-Info.plist";
+				GCC_PREFIX_HEADER = "Kash/Ancillary Files/Kash-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Kash/Ancillary Files/Kash-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
