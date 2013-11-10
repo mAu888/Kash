@@ -4,8 +4,11 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHChartView.h"
 
 @interface KSHChartCell : UITableViewCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithChartType:(KSHChartType)chartType reuseIdentifier:(NSString *)reuseIdentifier;
+- (void)setItems:(NSArray *)items;
+
 @end

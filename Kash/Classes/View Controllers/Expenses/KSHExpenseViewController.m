@@ -9,6 +9,8 @@
 #import "KSHChartCell.h"
 #import "KSHAddExpenseViewController.h"
 #import "KSHDataAccessLayer.h"
+#import "KSHChartView.h"
+#import "KSHExpenseItem.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpenseViewController ()
@@ -97,16 +99,36 @@
         KSHChartCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[KSHChartCell alloc] initWithReuseIdentifier:reuseIdentifier];
-//            cell.chartType = KSHPieChart;
+            cell = [[KSHChartCell alloc]
+                initWithChartType:KSHPieChartType reuseIdentifier:reuseIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
 
-//        [cell setItems:_expense.items];
+        NSMutableArray *values = [NSMutableArray arrayWithCapacity:_expense.items.count];
+        [_expense.items enumerateObjectsUsingBlock:^(KSHExpenseItem *item, NSUInteger index, BOOL *stop)
+        {
+            [values addObject:item.amount];
+        }];
+
+        [cell setItems:values];
 
         returnedCell = cell;
     }
 
     return returnedCell;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ( indexPath.row == 1 )
+    {
+        return CGRectGetWidth(self.view.bounds);
+    }
+
+    return 44.f;
 }
 
 
