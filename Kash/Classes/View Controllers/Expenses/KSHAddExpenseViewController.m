@@ -26,7 +26,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHAddExpenseViewController () <KSHInputCellDelegate, KSHAccountsControllerDelegate, KSHAddExpenseItemControllerDelegate, KSHDatePickerCellDelegate, UIAlertViewDelegate>
+@interface KSHAddExpenseViewController () <KSHInputCellDelegate, KSHAccountsControllerDelegate, KSHAddExpenseItemControllerDelegate, KSHDatePickerCellDelegate, UIAlertViewDelegate, UIActionSheetDelegate>
 
 @end
 
@@ -37,19 +37,33 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
     KSHDataAccessLayer *_dataAccessLayer;
     KSHExpense *_expense;
     NSManagedObjectContext *_context;
-
-    KSHNavigationStyle _navigationStyle;
+    BOOL _deleteButtonHidden;
 }
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
+{
+    self = [self initWithDataAccessLayer:dataAccessLayer expense:nil];
+
+    if ( self != nil )
+    {
+        self.title = NSLocalizedString(@"Add expense", nil);
+
+        // Data source ---------------------------------------------------------
+        _expense = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpense class])
+                                                 inManagedObjectContext:_context];
+        _expense.date = [NSDate date];
+    }
+
+    return self;
+}
+
+- (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer expense:(KSHExpense *)expense
 {
     self = [super initWithStyle:UITableViewStyleGrouped];
 
     if ( self != nil )
     {
-        _navigationStyle = KSHModalPresentationStyle;
-
-        self.title = NSLocalizedString(@"Add expense", nil);
+        self.title = NSLocalizedString(@"Update expense", nil);
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.leftBarButtonItem =
@@ -65,35 +79,13 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         // Data source ---------------------------------------------------------
         _dataAccessLayer = dataAccessLayer;
         _context = [_dataAccessLayer contextForEditing];
-        _expense = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([KSHExpense class])
-                                                 inManagedObjectContext:_context];
-        _expense.date = [NSDate date];
-    }
 
-    return self;
-}
-
-- (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer expense:(KSHExpense *)expense
-{
-    self = [super initWithStyle:UITableViewStyleGrouped];
-
-    if ( self != nil )
-    {
-        _navigationStyle = KSHNavigationControllerStyle;
-
-        self.title = NSLocalizedString(@"Update expense", nil);
-
-
-        // Navigation item -----------------------------------------------------
-        self.navigationItem.rightBarButtonItem =
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                          target:self
-                                                          action:@selector(save:)];
-
-        // Data source ---------------------------------------------------------
-        _dataAccessLayer = dataAccessLayer;
-        _context = [_dataAccessLayer contextForEditing];
-        _expense = ( KSHExpense * ) [_context objectWithID:expense.objectID];
+        _deleteButtonHidden = YES;
+        if ( expense != nil )
+        {
+            _expense = ( KSHExpense * ) [_context objectWithID:expense.objectID];
+            _deleteButtonHidden = NO;
+        }
     }
 
     return self;
@@ -126,7 +118,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return _deleteButtonHidden ? 4 : 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -141,11 +133,11 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             return _expense.items.count + 1;
         case 3:
             return 1;
+        case 4:
+            return 1;
         default:
-            break;
+            return 0;
     }
-
-    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -253,6 +245,24 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             returnedCell = cell;
         }
     }
+    else if ( indexPath.section == 4 )
+    {
+        if ( indexPath.row == 0 )
+        {
+            static NSString *reuseIdentifier = @"UITableViewCellStyleDefault";
+
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if ( cell == nil )
+            {
+                cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+            }
+
+            [cell displaysDeleteButtonWithTitle:NSLocalizedString(@"Delete Expense", nil)];
+
+            returnedCell = cell;
+        }
+    }
 
     return returnedCell;
 }
@@ -320,40 +330,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     return .0f;
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-//{
-//    if ( section == 2 && _expense.items.count > 0 )
-//    {
-//        NSNumber *sum = [_expense.items valueForKeyPath:@"@sum.amount"];
-//
-//        NSNumberFormatter *numberFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
-//
-//        UIView *container = [[UIView alloc] initWithFrame:CGRectMake(.0f, .0f, CGRectGetWidth(self.view.bounds), 20.f)];
-//        container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//
-//        UILabel *label = [[UILabel alloc]
-//            initWithFrame:CGRectMake(15.f, .0f, CGRectGetWidth(self.view.bounds) - 10.f, 20.f)];
-//        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
-//        label.textColor = [UIColor darkGrayColor];
-//        label.text = [NSString stringWithFormat:NSLocalizedString(@"Total cost is %@", nil),
-//                                                [numberFormatter stringFromNumber:sum]];
-//        [container addSubview:label];
-//
-//        UITapGestureRecognizer *gestureRecognizer =
-//            [[UITapGestureRecognizer alloc]
-//                initWithTarget:self action:@selector(shouldUpdateTotalAmountsBySummingItems)];
-//        [container addGestureRecognizer:gestureRecognizer];
-//
-//        return container;
-//    }
-//
-//    return nil;
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.view endEditing:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     if ( indexPath.section == 1 )
     {
@@ -385,6 +365,11 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
         [self.navigationController pushViewController:controller animated:YES];
     }
+
+    else if ( indexPath.section == 4 && indexPath.row == 0 )
+    {
+        [self confirmExpenseRemoval];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -397,6 +382,17 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( buttonIndex == actionSheet.destructiveButtonIndex )
+    {
+        [_context deleteObject:_expense];
+        [self save:nil];
+    }
+}
 
 
 #pragma mark - KSHInputCellDelegate
@@ -446,30 +442,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 
-#pragma mark - UIAlertViewDelegate
-
-//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-//{
-//    if ( buttonIndex == alertView.firstOtherButtonIndex )
-//    {
-//        _expense.totalAmount = [_expense.items valueForKeyPath:@"@sum.amount"];
-//        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]]
-//                              withRowAnimation:UITableViewRowAnimationFade];
-//    }
-//}
-
-
 #pragma mark - Private methods
-
-- (void)shouldUpdateTotalAmountsBySummingItems
-{
-    [[[UIAlertView alloc]
-        initWithTitle:nil
-              message:NSLocalizedString(@"Do you want to update the total amount by summing up the amount of each split item?", nil)
-             delegate:self
-    cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
-    otherButtonTitles:NSLocalizedString(@"Yes", nil), nil] show];
-}
 
 - (void)cancel:(id)sender
 {
@@ -489,15 +462,18 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                           otherButtonTitles:nil] show];
     }
 
-    switch ( _navigationStyle )
-    {
-        case KSHNavigationControllerStyle:
-            [self.navigationController popViewControllerAnimated:YES];
-            break;
-        case KSHModalPresentationStyle:
-            [self dismissViewControllerAnimated:YES completion:nil];
-            break;
-    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)confirmExpenseRemoval
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+        initWithTitle:nil
+             delegate:self
+     cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+destructiveButtonTitle:NSLocalizedString(@"Delete Expense", nil)
+     otherButtonTitles:nil];
+    [actionSheet showInView:self.view];
 }
 
 @end

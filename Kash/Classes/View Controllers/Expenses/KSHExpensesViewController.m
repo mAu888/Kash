@@ -11,6 +11,7 @@
 #import "UIColor+Colours.h"
 #import "KSHBadgeCell.h"
 #import "KSHBadgeCell+KSHCellConfiguration.h"
+#import "KSHExpenseViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpensesViewController () <NSFetchedResultsControllerDelegate>
@@ -124,9 +125,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    KSHAddExpenseViewController *controller =
-        [[KSHAddExpenseViewController alloc] initWithDataAccessLayer:_dataAccessLayer
-                                                             expense:[_controller objectAtIndexPath:indexPath]];
+    KSHExpenseViewController *controller =
+        [[KSHExpenseViewController alloc]
+            initWithDataAccessLayer:_dataAccessLayer expense:[_controller objectAtIndexPath:indexPath]];
 
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -147,6 +148,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     {
         return 40.f;
     }
+
+    return .0f;
 }
 
 

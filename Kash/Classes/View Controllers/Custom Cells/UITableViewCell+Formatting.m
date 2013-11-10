@@ -15,6 +15,7 @@
 - (void)setAccount:(KSHAccount *)account
 {
     self.textLabel.text = NSLocalizedString(@"Account", nil);
+
     if ( account != nil)
     {
         self.detailTextLabel.text = account.name;
@@ -23,7 +24,7 @@
     else
     {
         self.detailTextLabel.text = NSLocalizedString(@"Choose account", nil);
-        self.detailTextLabel.textColor = [UIColor lightTextColor];
+        self.detailTextLabel.textColor = [UIColor grayColor];
     }
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
@@ -34,6 +35,15 @@
 
     self.textLabel.text = expenseItem.name;
     self.detailTextLabel.text = [currencyNumberFormatter stringFromNumber:expenseItem.amount];
+
+    self.textLabel.textColor = [UIColor blackColor];
 }
+
+- (void)displaysDeleteButtonWithTitle:(NSString *)text
+{
+    self.textLabel.text = text;
+    self.textLabel.textColor = [UIColor redColor];
+}
+
 
 @end
