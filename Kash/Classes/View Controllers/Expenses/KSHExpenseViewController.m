@@ -11,6 +11,8 @@
 #import "KSHDataAccessLayer.h"
 #import "KSHChartView.h"
 #import "KSHExpenseItem.h"
+#import "KSHSubtitleView.h"
+#import "KSHDateFormatterFactory.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpenseViewController ()
@@ -52,7 +54,17 @@
 {
     [super viewWillAppear:animated];
 
-    self.title = _expense.title;
+    // After editing the date may have changed, thus we apply the title view before appearing and not in init
+    NSDateFormatter *formatter = [[KSHDateFormatterFactory sharedInstance]
+        dateFormatterWithDateStyle:NSDateFormatterMediumStyle
+                         timeStyle:NSDateFormatterShortStyle];
+    KSHSubtitleView *titleView = [[KSHSubtitleView alloc] init];
+    titleView.textLabel.text = _expense.title;
+    titleView.detailTextLabel.text = [formatter stringFromDate:_expense.date];
+
+    self.navigationItem.titleView = titleView;
+
+    // Reload possible changes after editing
     [self.tableView reloadData];
 }
 
@@ -65,8 +77,6 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
-
 
 
 #pragma mark - UITableViewDataSource
@@ -142,9 +152,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc]
         initWithRootViewController:controller];
 
-    [self.navigationController presentViewController:navigationController
-                                            animated:YES
-                                          completion:nil];
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end

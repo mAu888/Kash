@@ -55,6 +55,8 @@
 {
     self.textLabel.text = text;
     self.textLabel.textColor = [UIColor redColor];
+
+    self.accessoryType = UITableViewCellAccessoryNone;
 }
 
 

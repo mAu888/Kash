@@ -522,7 +522,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)confirmExpenseRemoval
 {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
-        initWithTitle:nil
+        initWithTitle:NSLocalizedString(@"The expense will be permanently removed. Do you want to continue?", nil)
              delegate:self
      cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
 destructiveButtonTitle:NSLocalizedString(@"Delete Expense", nil)

@@ -112,15 +112,15 @@
 
         if ( indexPath.row == 0 )
         {
-            cell.textFieldType = KSHCurrencyTextField;
-            cell.textLabel.text = NSLocalizedString(@"Amount", nil);
-            [cell setCurrencyValue:_expenseItem.amount];
-        }
-        else if ( indexPath.row == 1 )
-        {
             cell.textFieldType = KSHDefaultTextField;
             cell.textLabel.text = NSLocalizedString(@"Description", nil);
             cell.textField.text = _expenseItem.name;
+        }
+        else if ( indexPath.row == 1 )
+        {
+            cell.textFieldType = KSHCurrencyTextField;
+            cell.textLabel.text = NSLocalizedString(@"Amount", nil);
+            [cell setCurrencyValue:_expenseItem.amount];
         }
 
         returnedCell = cell;
@@ -143,6 +143,10 @@
 
     if ( indexPath.row == 0 )
     {
+        _expenseItem.name = cell.textField.text;
+    }
+    else if ( indexPath.row == 1 )
+    {
         KSHExpense *expense = _expense;
         if ( expense == nil )
         {
@@ -160,10 +164,6 @@
 
         _expenseItem.amount = cell.numericValue;
         expense.totalAmount = @(round((expense.totalAmount.doubleValue + _expenseItem.amount.doubleValue) * 100.f) / 100.f);
-    }
-    else if ( indexPath.row == 1 )
-    {
-        _expenseItem.name = cell.textField.text;
     }
 }
 
