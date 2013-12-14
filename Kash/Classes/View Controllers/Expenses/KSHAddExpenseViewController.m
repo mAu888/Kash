@@ -34,10 +34,12 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHAddExpenseViewController
 {
+    NSManagedObjectContext *_context;
     KSHDataAccessLayer *_dataAccessLayer;
     KSHExpense *_expense;
-    NSManagedObjectContext *_context;
+
     BOOL _deleteButtonHidden;
+    BOOL _shouldShowDatePickerCell;
 }
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
@@ -132,7 +134,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         case 2:
             return _expense.items.count + 1;
         case 3:
-            return 1;
+            return 1 + (_shouldShowDatePickerCell ? 1 : 0);
         case 4:
             return 1;
         default:
@@ -231,6 +233,21 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
     {
         if ( indexPath.row == 0 )
         {
+            static NSString *reuseIdentifier = @"UITableViewCellStyleValue1";
+
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+            if ( cell == nil )
+            {
+                cell = [[UITableViewCell alloc]
+                    initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+            }
+
+            [cell setDate:_expense.date];
+
+            returnedCell = cell;
+        }
+        else if ( indexPath.row == 1 )
+        {
             static NSString *reuseIdentifier = @"KSHDatePickerCellIdentifier";
 
             KSHDatePickerCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
@@ -320,16 +337,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    if ( section == 2 && _expense.items.count > 0 )
-    {
-        return 30.f;
-    }
-
-    return .0f;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.view endEditing:YES];
@@ -366,15 +373,56 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
         [self.navigationController pushViewController:controller animated:YES];
     }
 
+    else if ( indexPath.section == 3 && indexPath.row == 0 )
+    {
+        _shouldShowDatePickerCell = !_shouldShowDatePickerCell;
+
+        NSIndexPath *datePickerIndexPath = [NSIndexPath indexPathForRow:1 inSection:3];
+
+        [self.tableView beginUpdates];
+        if ( _shouldShowDatePickerCell )
+        {
+            [self.tableView insertRowsAtIndexPaths:@[datePickerIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+        }
+        else
+        {
+            [self.tableView deleteRowsAtIndexPaths:@[datePickerIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+        }
+
+        // Reload the date cell too, to fix the broken separator
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:3]]
+                              withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView endUpdates];
+
+        if ( _shouldShowDatePickerCell )
+        {
+            [self.tableView scrollToRowAtIndexPath:datePickerIndexPath
+                                  atScrollPosition:UITableViewScrollPositionBottom
+                                          animated:YES];
+        }
+    }
+
     else if ( indexPath.section == 4 && indexPath.row == 0 )
     {
         [self confirmExpenseRemoval];
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if ( section == 2 && _expense.items.count > 0 )
+    {
+        return 30.f;
+    }
+
+    return .0f;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.section == 3 && indexPath.row == 0 )
+    if ( indexPath.section == 3 && indexPath.row == 1 )
     {
         return 216.f;
     }
@@ -439,6 +487,12 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)datePickerCellDidChangeToDate:(NSDate *)date
 {
     _expense.date = date;
+
+    [self.tableView reloadRowsAtIndexPaths:@[
+        [NSIndexPath indexPathForRow:0
+                           inSection:3]
+    ]
+                          withRowAnimation:UITableViewRowAnimationNone];
 }
 
 

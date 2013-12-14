@@ -12,6 +12,7 @@
 
 - (void)setAccount:(KSHAccount *)account;
 - (void)setExpenseItem:(KSHExpenseItem *)expenseItem;
+- (void)setDate:(NSDate *)date;
 - (void)displaysDeleteButtonWithTitle:(NSString *)text;
 
 @end

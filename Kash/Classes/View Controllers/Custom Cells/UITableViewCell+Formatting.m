@@ -7,6 +7,7 @@
 #import "KSHNumberFormatter.h"
 #import "KSHExpenseItem.h"
 #import "KSHAccount.h"
+#import "KSHDateFormatterFactory.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -35,6 +36,17 @@
 
     self.textLabel.text = expenseItem.name;
     self.detailTextLabel.text = [currencyNumberFormatter stringFromNumber:expenseItem.amount];
+
+    self.textLabel.textColor = [UIColor blackColor];
+}
+
+- (void)setDate:(NSDate *)date
+{
+    NSDateFormatter *formatter = [[KSHDateFormatterFactory sharedInstance]
+        dateFormatterWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
+
+    self.textLabel.text = NSLocalizedString(@"Date", nil);
+    self.detailTextLabel.text = [formatter stringFromDate:date];
 
     self.textLabel.textColor = [UIColor blackColor];
 }
