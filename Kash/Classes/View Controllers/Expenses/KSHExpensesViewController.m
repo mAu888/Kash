@@ -93,7 +93,7 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)titleForHeaderInSection:(NSInteger)section
 {
     if ( _controller.sections.count > 0 )
     {
@@ -104,7 +104,7 @@
     return nil;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+- (NSString *)titleForFooterInSection:(NSInteger)section
 {
     if ( _controller.sections.count > 0 )
     {
@@ -119,6 +119,39 @@
     {
         return nil;
     }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *title = [self titleForHeaderInSection:section];
+    return [self tableHeaderFooterViewWithTitle:title];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    NSString *title = [self titleForFooterInSection:section];
+    return [self tableHeaderFooterViewWithTitle:title];
+}
+
+- (UITableViewHeaderFooterView *)tableHeaderFooterViewWithTitle:(NSString *)title
+{
+    UITableViewHeaderFooterView *view = nil;
+    if ( title != nil )
+    {
+        static NSString *reuseIdentifier = @"KSHTableHeaderFooterView";
+
+        view = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:reuseIdentifier];
+        if ( view == nil)
+        {
+            view = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:reuseIdentifier];
+            view.textLabel.font = [UIFont fontWithName:@"OpenSans" size:12.f];
+            view.textLabel.textColor = [UIColor coolGrayColor];
+        }
+
+        view.textLabel.text = title;
+    }
+
+    return view;
 }
 
 
@@ -143,11 +176,16 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40.f;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if ( _controller.sections.count > 0 )
     {
-        return 40.f;
+        return 28.f;
     }
 
     return .0f;
