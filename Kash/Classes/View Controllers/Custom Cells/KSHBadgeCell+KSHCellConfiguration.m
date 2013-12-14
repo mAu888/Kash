@@ -7,6 +7,7 @@
 #import "KSHExpense.h"
 #import "KSHNumberFormatter.h"
 #import "KSHAccount.h"
+#import "UIColor+Colours.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHBadgeCell (KSHCellConfiguration)
@@ -17,6 +18,8 @@
 
     self.textLabel.text = expense.title;
     self.badgeLabel.text = [currencyFormatter stringFromNumber:expense.totalAmount];
+
+    self.tintColor = [expense.totalAmount floatValue] > .0f ? [UIColor brickRedColor] : [UIColor grassColor];
 }
 
 @end

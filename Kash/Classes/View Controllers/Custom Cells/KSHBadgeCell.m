@@ -26,7 +26,7 @@
     {
         UIImage *image = [[UIImage imageNamed:@"red-circle.png"]
             resizableImageWithCapInsets:UIEdgeInsetsMake(11.f, 11.f, 10.f, 10.f)];
-        _badgeImageView = [[UIImageView alloc] initWithImage:image];
+        _badgeImageView = [[UIImageView alloc] initWithImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self.contentView addSubview:_badgeImageView];
 
         _badgeLabel = [[UILabel alloc] initWithFrame:_badgeImageView.bounds];

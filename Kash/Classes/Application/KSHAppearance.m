@@ -20,6 +20,16 @@
 + (void)applyAppearance
 {
     [self appearanceForNavigationBar];
+    [self appearanceForTabBar];
+}
+
++ (void)appearanceForTabBar
+{
+    NSDictionary *attributes = @{
+        NSFontAttributeName : [UIFont fontWithName:@"OpenSans" size:10.f]
+    };
+
+    [[UITabBarItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
 }
 
 + (void)appearanceForNavigationBar

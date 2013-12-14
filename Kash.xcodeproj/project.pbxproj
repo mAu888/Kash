@@ -26,7 +26,6 @@
 		3D09B6D552339853451BA5FC /* KSHAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA0CBBF5B46D086CA061 /* KSHAppearance.m */; };
 		3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */; };
 		3D09B76474FA92C5C2E8E8EA /* KSHChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B99C00D855B259C74E8E /* KSHChartView.m */; };
-		3D09B8007FFE704D0AD6E0C8 /* red-circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B8FF77C26437DDF53CB1 /* red-circle@2x.png */; };
 		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
 		3D09B8F4332A7AB661B165A7 /* KSHChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B97F3897FC45DF703C42 /* KSHChart.m */; };
 		3D09B92F66E908B3B7175198 /* KSHColorCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BC931EBEE3ACD27CD6D9 /* KSHColorCollectionCell.m */; };
@@ -36,7 +35,6 @@
 		3D09BBC3D8B1B7D2F2D6F029 /* KSHColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B195A82112F34305849B /* KSHColorPickerViewController.m */; };
 		3D09BC8338C97E19A4B99D37 /* KSHLabelAndTextFieldCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2BE709EC54B78DE7CF5 /* KSHLabelAndTextFieldCell+Formatting.m */; };
 		3D09BCC55E537BA90689D866 /* KSHBadgeCell+KSHCellConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BF77D4B29905FA4F70C7 /* KSHBadgeCell+KSHCellConfiguration.m */; };
-		3D09BCCC34EB33939340BFAB /* red-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B601C764F77DAB7E7C74 /* red-circle.png */; };
 		3D09BCF551DC9AE07B5FB2FF /* KSHSubtitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BEAA203D22ADBE21BA16 /* KSHSubtitleView.m */; };
 		3D09BD8C41AC7CFE39859374 /* KSHAddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B305AF9B7E34EE77DA88 /* KSHAddExpenseViewController.m */; };
 		3D09BE4143DAD017C91A7689 /* KSHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BC22D8C194D266BDCD0A /* KSHViewController.m */; };
@@ -110,7 +108,6 @@
 		3D09B538D883BE2B8C3D9992 /* KSHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTextField.m; sourceTree = "<group>"; };
 		3D09B5B3DCB59395271AC1A0 /* KSHBadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHBadgeCell.h; sourceTree = "<group>"; };
 		3D09B5BF02B2C187437F6E57 /* KSHAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAppearance.h; sourceTree = "<group>"; };
-		3D09B601C764F77DAB7E7C74 /* red-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-circle.png"; sourceTree = "<group>"; };
 		3D09B6348460E09814E3EA4B /* KSHChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartCell.h; sourceTree = "<group>"; };
 		3D09B63E77D7AA86E24A1300 /* UILabel+KSHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KSHAdditions.m"; sourceTree = "<group>"; };
 		3D09B6540271F7669A818C58 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
@@ -124,7 +121,6 @@
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
 		3D09B81443D394C61DC18543 /* KSHExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHNumberFormatter.h; sourceTree = "<group>"; };
-		3D09B8FF77C26437DDF53CB1 /* red-circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-circle@2x.png"; sourceTree = "<group>"; };
 		3D09B97F3897FC45DF703C42 /* KSHChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChart.m; sourceTree = "<group>"; };
 		3D09B9952948CD57DAB326F3 /* KSHLabelAndTextFieldCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHLabelAndTextFieldCell+Formatting.h"; sourceTree = "<group>"; };
 		3D09B99C00D855B259C74E8E /* KSHChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChartView.m; sourceTree = "<group>"; };
@@ -342,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				FE5DC239185CC2E8006C60A0 /* Images.xcassets */,
-				3D09B9ED7DDFA003964648D1 /* Graphics */,
 				3D09B8FEA390D5804EA81C25 /* Fonts */,
 			);
 			path = Resources;
@@ -371,15 +366,6 @@
 				FE5DC22C185C80AA006C60A0 /* OpenSans-SemiboldItalic.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		3D09B9ED7DDFA003964648D1 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				3D09B601C764F77DAB7E7C74 /* red-circle.png */,
-				3D09B8FF77C26437DDF53CB1 /* red-circle@2x.png */,
-			);
-			path = Graphics;
 			sourceTree = "<group>";
 		};
 		3D09BAC783947BE0A52D48D3 /* Chart Types */ = {
@@ -647,9 +633,7 @@
 				FE5DC22D185C80AA006C60A0 /* OpenSans-Bold.ttf in Resources */,
 				3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */,
 				FE5DC22E185C80AA006C60A0 /* OpenSans-BoldItalic.ttf in Resources */,
-				3D09BCCC34EB33939340BFAB /* red-circle.png in Resources */,
 				FE5DC234185C80AA006C60A0 /* OpenSans-Regular.ttf in Resources */,
-				3D09B8007FFE704D0AD6E0C8 /* red-circle@2x.png in Resources */,
 				FE5DC231185C80AA006C60A0 /* OpenSans-Italic.ttf in Resources */,
 				FE5DC230185C80AA006C60A0 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				FE5DC22F185C80AA006C60A0 /* OpenSans-ExtraBold.ttf in Resources */,

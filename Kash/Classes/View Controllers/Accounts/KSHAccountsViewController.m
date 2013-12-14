@@ -49,6 +49,7 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
         // Tab bar -------------------------------------------------------------
         self.title = NSLocalizedString(@"Accounts", nil);
         self.tabBarItem.title = NSLocalizedString(@"Accounts", nil);
+        self.tabBarItem.image = [UIImage imageNamed:@"account"];
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.rightBarButtonItem =

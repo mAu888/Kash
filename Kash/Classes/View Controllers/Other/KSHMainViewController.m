@@ -29,14 +29,14 @@
         KSHDataAccessLayer *dataAccessLayer = [[KSHDataAccessLayer alloc] init];
 
         KSHExpensesViewController *expensesViewController =
-                [[KSHExpensesViewController alloc] initWithDataAccessLayer:dataAccessLayer];
+            [[KSHExpensesViewController alloc] initWithDataAccessLayer:dataAccessLayer];
         UINavigationController *expensesNavigationController =
-                [[UINavigationController alloc] initWithRootViewController:expensesViewController];
+            [[UINavigationController alloc] initWithRootViewController:expensesViewController];
 
         KSHAccountsViewController *accountsViewController =
-                [[KSHAccountsViewController alloc] initWithDataAccessLayer:dataAccessLayer];
+            [[KSHAccountsViewController alloc] initWithDataAccessLayer:dataAccessLayer];
         UINavigationController *accountsNavigationController =
-                [[UINavigationController alloc] initWithRootViewController:accountsViewController];
+            [[UINavigationController alloc] initWithRootViewController:accountsViewController];
 
         self.viewControllers = @[expensesNavigationController, accountsNavigationController];
     }

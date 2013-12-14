@@ -39,6 +39,7 @@
 
         // Tab bar -------------------------------------------------------------
         self.tabBarItem.title = NSLocalizedString(@"Expenses", nil);
+        self.tabBarItem.image = [UIImage imageNamed:@"expense"];
 
         // Navigation item -----------------------------------------------------
         self.navigationItem.rightBarButtonItem =
