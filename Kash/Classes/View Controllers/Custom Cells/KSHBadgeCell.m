@@ -4,6 +4,7 @@
 */
 
 #import <QuartzCore/QuartzCore.h>
+#import <Colours/UIColor+Colours.h>
 #import "KSHBadgeCell.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,11 +27,15 @@
     {
         UIImage *image = [[UIImage imageNamed:@"red-circle.png"]
             resizableImageWithCapInsets:UIEdgeInsetsMake(11.f, 11.f, 10.f, 10.f)];
-        _badgeImageView = [[UIImageView alloc] initWithImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        _badgeImageView = [[UIImageView alloc]
+            initWithImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self.contentView addSubview:_badgeImageView];
 
+        UIFontDescriptor *footnoteDescriptor =
+            [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleFootnote];
+
         _badgeLabel = [[UILabel alloc] initWithFrame:_badgeImageView.bounds];
-        _badgeLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
+        _badgeLabel.font = [UIFont fontWithName:@"OpenSans" size:[footnoteDescriptor pointSize]];
         _badgeLabel.textAlignment = NSTextAlignmentCenter;
         _badgeLabel.textColor = [UIColor whiteColor];
         _badgeLabel.shadowColor = [UIColor colorWithWhite:.0f alpha:.667f];

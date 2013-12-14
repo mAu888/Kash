@@ -4,10 +4,11 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewCell.h"
 
 @class KSHAccount;
 
-@interface KSHAccountCell : UITableViewCell
+@interface KSHAccountCell : KSHTableViewCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setAccount:(KSHAccount *)account;

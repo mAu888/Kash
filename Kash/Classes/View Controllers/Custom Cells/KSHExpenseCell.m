@@ -19,13 +19,6 @@
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
-
-    if ( self != nil )
-    {
-        self.textLabel.font = [UIFont fontWithName:@"OpenSans-Semibold" size:18.f];
-        self.detailTextLabel.font = [UIFont fontWithName:@"OpenSans" size:12.f];
-    }
-
     return self;
 }
 

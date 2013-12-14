@@ -4,8 +4,9 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewCell.h"
 
-@interface KSHBadgeCell : UITableViewCell
+@interface KSHBadgeCell : KSHTableViewCell
 
 @property (nonatomic, readonly) UILabel *badgeLabel;
 

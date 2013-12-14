@@ -4,9 +4,10 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewCell.h"
 
 @class KSHExpense;
-@interface KSHExpenseCell : UITableViewCell
+@interface KSHExpenseCell : KSHTableViewCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setExpense:(KSHExpense *)expense;

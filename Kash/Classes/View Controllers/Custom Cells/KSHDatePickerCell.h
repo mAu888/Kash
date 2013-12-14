@@ -4,6 +4,7 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewCell.h"
 
 @protocol KSHDatePickerCellDelegate <NSObject>
 
@@ -12,7 +13,7 @@
 
 @end
 
-@interface KSHDatePickerCell : UITableViewCell
+@interface KSHDatePickerCell : KSHTableViewCell
 
 @property(nonatomic, weak) id <KSHDatePickerCellDelegate> delegate;
 

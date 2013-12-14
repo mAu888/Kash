@@ -25,6 +25,7 @@
 		3D09B63E43EA5C48EC9D619A /* UILabel+KSHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B63E77D7AA86E24A1300 /* UILabel+KSHAdditions.m */; };
 		3D09B6D552339853451BA5FC /* KSHAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA0CBBF5B46D086CA061 /* KSHAppearance.m */; };
 		3D09B701172C1AD108E5322D /* UITableViewCell+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */; };
+		3D09B71AC2ED760641625A46 /* KSHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B83447BE56ACEA2E4950 /* KSHTableViewCell.m */; };
 		3D09B76474FA92C5C2E8E8EA /* KSHChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B99C00D855B259C74E8E /* KSHChartView.m */; };
 		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
 		3D09B8F4332A7AB661B165A7 /* KSHChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B97F3897FC45DF703C42 /* KSHChart.m */; };
@@ -119,8 +120,10 @@
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
 		3D09B7889ADFCCCFCFFFAA4E /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
 		3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHNumberFormatter.m; sourceTree = "<group>"; };
+		3D09B8101E1E9994935019FD /* KSHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTableViewCell.h; sourceTree = "<group>"; };
 		3D09B81443D394C61DC18543 /* KSHExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHNumberFormatter.h; sourceTree = "<group>"; };
+		3D09B83447BE56ACEA2E4950 /* KSHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTableViewCell.m; sourceTree = "<group>"; };
 		3D09B97F3897FC45DF703C42 /* KSHChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChart.m; sourceTree = "<group>"; };
 		3D09B9952948CD57DAB326F3 /* KSHLabelAndTextFieldCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHLabelAndTextFieldCell+Formatting.h"; sourceTree = "<group>"; };
 		3D09B99C00D855B259C74E8E /* KSHChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChartView.m; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				3D09B1DE38B0349AD664F473 /* KSHBadgeCell+KSHCellConfiguration.h */,
 				3D09B20849884752593923F8 /* KSHExpenseCell.m */,
 				3D09B6824C49537B5CD69238 /* KSHExpenseCell.h */,
+				3D09B83447BE56ACEA2E4950 /* KSHTableViewCell.m */,
+				3D09B8101E1E9994935019FD /* KSHTableViewCell.h */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				3D09BCF551DC9AE07B5FB2FF /* KSHSubtitleView.m in Sources */,
 				3D09B63E43EA5C48EC9D619A /* UILabel+KSHAdditions.m in Sources */,
 				3D09B6D552339853451BA5FC /* KSHAppearance.m in Sources */,
+				3D09B71AC2ED760641625A46 /* KSHTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

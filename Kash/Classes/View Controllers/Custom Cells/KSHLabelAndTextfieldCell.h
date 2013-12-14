@@ -4,6 +4,7 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, KSHTextFieldType)
 {
@@ -14,7 +15,7 @@ typedef NS_ENUM(NSInteger, KSHTextFieldType)
 
 @protocol KSHInputCellDelegate;
 
-@interface KSHLabelAndTextFieldCell : UITableViewCell
+@interface KSHLabelAndTextFieldCell : KSHTableViewCell
 
 @property(nonatomic, weak) id <KSHInputCellDelegate> delegate;
 @property(nonatomic, strong) UITextField *textField;

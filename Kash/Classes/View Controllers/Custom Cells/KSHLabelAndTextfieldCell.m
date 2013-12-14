@@ -29,7 +29,11 @@
         textField.textInsets = UIEdgeInsetsMake(.0f, .0f, .0f, 5.f);
         [textField setTextColor:[UIColor coolGrayColor] forControlState:UIControlStateDisabled];
 
+        UIFontDescriptor *fontDescriptor =
+            [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+
         _textField = textField;
+        _textField.font = [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]];
         _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         _textField.textAlignment = NSTextAlignmentRight;
         _textField.returnKeyType = UIReturnKeyDone;

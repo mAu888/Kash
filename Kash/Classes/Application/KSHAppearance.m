@@ -3,6 +3,7 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
+#import <Colours/UIColor+Colours.h>
 #import "KSHAppearance.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -25,8 +26,11 @@
 
 + (void)appearanceForTabBar
 {
+    UIFontDescriptor *fontDescriptor =
+        [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleFootnote];
+
     NSDictionary *attributes = @{
-        NSFontAttributeName : [UIFont fontWithName:@"OpenSans" size:10.f]
+        NSFontAttributeName : [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]]
     };
 
     [[UITabBarItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
@@ -34,8 +38,12 @@
 
 + (void)appearanceForNavigationBar
 {
+    UIFontDescriptor *fontDescriptor =
+        [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleHeadline];
+
     NSDictionary *attributes = @{
-        NSFontAttributeName : [UIFont fontWithName:@"OpenSans" size:18.f]
+        NSFontAttributeName : [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]],
+        NSForegroundColorAttributeName : [UIColor charcoalColor]
     };
 
     [UINavigationBar appearance].titleTextAttributes = attributes;

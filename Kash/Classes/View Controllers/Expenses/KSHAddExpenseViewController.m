@@ -183,7 +183,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+            cell = [[KSHTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
         }
 
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -203,7 +203,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
             if ( cell == nil )
             {
-                cell = [[UITableViewCell alloc]
+                cell = [[KSHTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
                 cell.selectionStyle = UITableViewCellSelectionStyleBlue;
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -218,7 +218,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
             if ( cell == nil )
             {
-                cell = [[UITableViewCell alloc]
+                cell = [[KSHTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -238,7 +238,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
             if ( cell == nil )
             {
-                cell = [[UITableViewCell alloc]
+                cell = [[KSHTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
             }
 
@@ -271,7 +271,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
             if ( cell == nil )
             {
-                cell = [[UITableViewCell alloc]
+                cell = [[KSHTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
             }
 

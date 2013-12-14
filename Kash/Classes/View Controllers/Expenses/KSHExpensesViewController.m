@@ -144,7 +144,10 @@
         if ( view == nil)
         {
             view = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:reuseIdentifier];
-            view.textLabel.font = [UIFont fontWithName:@"OpenSans" size:12.f];
+
+            UIFontDescriptor *fontDescriptor =
+                [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleFootnote];
+            view.textLabel.font = [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]];
             view.textLabel.textColor = [UIColor coolGrayColor];
         }
 

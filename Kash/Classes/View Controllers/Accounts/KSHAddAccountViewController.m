@@ -115,7 +115,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[UITableViewCell alloc]
+            cell = [[KSHTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
         }
 
