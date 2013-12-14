@@ -28,6 +28,7 @@
 		3D09B71AC2ED760641625A46 /* KSHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B83447BE56ACEA2E4950 /* KSHTableViewCell.m */; };
 		3D09B76474FA92C5C2E8E8EA /* KSHChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B99C00D855B259C74E8E /* KSHChartView.m */; };
 		3D09B80DD126C75C1602969D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09BB87743145DED78C2A78 /* Default.png */; };
+		3D09B81B6A85A68C0876DEF3 /* KSHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BBC6D126BB007BF183C2 /* KSHTableViewController.m */; };
 		3D09B8F4332A7AB661B165A7 /* KSHChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B97F3897FC45DF703C42 /* KSHChart.m */; };
 		3D09B92F66E908B3B7175198 /* KSHColorCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BC931EBEE3ACD27CD6D9 /* KSHColorCollectionCell.m */; };
 		3D09BA2D29E8F9FD4D0AE95C /* KSHExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B20849884752593923F8 /* KSHExpenseCell.m */; };
@@ -116,6 +117,7 @@
 		3D09B6824C49537B5CD69238 /* KSHExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseCell.h; sourceTree = "<group>"; };
 		3D09B69DD213AC436623C553 /* KSHBadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHBadgeCell.m; sourceTree = "<group>"; };
 		3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDatePickerCell.m; sourceTree = "<group>"; };
+		3D09B6CBA1B4DB0241C284AC /* KSHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTableViewController.h; sourceTree = "<group>"; };
 		3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDateFormatterFactory.m; sourceTree = "<group>"; };
 		3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDataAccessLayer.h; sourceTree = "<group>"; };
 		3D09B7889ADFCCCFCFFFAA4E /* KSHAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddAccountViewController.m; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
 		3D09BB7C9BD7ABEDC3647119 /* KSHFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHFlowLayout.h; sourceTree = "<group>"; };
 		3D09BB87743145DED78C2A78 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3D09BBC6D126BB007BF183C2 /* KSHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTableViewController.m; sourceTree = "<group>"; };
 		3D09BC22D8C194D266BDCD0A /* KSHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
 		3D09BC5D32D9AF1FAFAEE3B0 /* KSHSubtitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHSubtitleView.h; sourceTree = "<group>"; };
 		3D09BC8284CF3EDADE2EE64C /* KSHChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartDataSource.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				3D09BC22D8C194D266BDCD0A /* KSHViewController.m */,
 				3D09B0CF64B624B04D4D3FC3 /* KSHViewController.h */,
 				3D09B6540271F7669A818C58 /* KSHMainViewController.m */,
+				3D09BBC6D126BB007BF183C2 /* KSHTableViewController.m */,
+				3D09B6CBA1B4DB0241C284AC /* KSHTableViewController.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				3D09B63E43EA5C48EC9D619A /* UILabel+KSHAdditions.m in Sources */,
 				3D09B6D552339853451BA5FC /* KSHAppearance.m in Sources */,
 				3D09B71AC2ED760641625A46 /* KSHTableViewCell.m in Sources */,
+				3D09B81B6A85A68C0876DEF3 /* KSHTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

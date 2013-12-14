@@ -4,10 +4,11 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewController.h"
 
 @class KSHDataAccessLayer;
 
-@interface KSHExpensesViewController : UITableViewController
+@interface KSHExpensesViewController : KSHTableViewController
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer;
 

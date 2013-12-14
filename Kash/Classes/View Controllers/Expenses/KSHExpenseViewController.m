@@ -9,10 +9,11 @@
 #import "KSHChartCell.h"
 #import "KSHAddExpenseViewController.h"
 #import "KSHDataAccessLayer.h"
-#import "KSHChartView.h"
 #import "KSHExpenseItem.h"
 #import "KSHSubtitleView.h"
 #import "KSHDateFormatterFactory.h"
+#import "KSHBadgeCell.h"
+#import "KSHBadgeCell+KSHCellConfiguration.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpenseViewController ()
@@ -29,14 +30,12 @@
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer expense:(KSHExpense *)expense
 {
-    self = [super init];
+    self = [super initWithStyle:UITableViewStyleGrouped];
 
     if ( self )
     {
         _expense = expense;
         _dataAccessLayer = dataAccessLayer;
-
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
         // Navigation items
         self.navigationItem.rightBarButtonItems = @[
@@ -81,28 +80,53 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if ( section == 1 )
+    {
+        return 1;
+    }
+    else if ( _expense.items.count > 0 )
+    {
+        return _expense.items.count;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id returnedCell = nil;
-    if ( indexPath.row == 0 )
+    if ( indexPath.section == 0 )
     {
-        static NSString *reuseIdentifier = @"KSHExpenseCell";
+        static NSString *reuseIdentifier = @"KSHBadgeCell";
 
-        KSHExpenseCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        KSHBadgeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         if ( cell == nil )
         {
-            cell = [[KSHExpenseCell alloc] initWithReuseIdentifier:reuseIdentifier];
+            cell = [[KSHBadgeCell alloc] initWithReuseIdentifier:reuseIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
 
-        [cell setExpense:_expense];
+        if ( _expense.items.count > 0 )
+        {
+            [cell setExpenseItem:_expense.items[( NSUInteger ) indexPath.row]];
+        }
+        else
+        {
+            [cell setExpense:_expense];
+        }
+
         returnedCell = cell;
     }
-    else if ( indexPath.row == 1 )
+    else if ( indexPath.section == 1 )
     {
         static NSString *reuseIdentifier = @"KSHChartCell";
 
@@ -133,7 +157,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ( indexPath.row == 1 )
+    if ( indexPath.section == 1 )
     {
         return CGRectGetWidth(self.view.bounds);
     }

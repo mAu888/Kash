@@ -109,7 +109,7 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
     KSHAccount *account = [_controller objectAtIndexPath:indexPath];
     [cell setAccount:account];
 
-    if ( _delegate != nil)
+    if ( _delegate != nil )
     {
         cell.accessoryType = [account isEqual:_selectedAccount] ?
             UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;

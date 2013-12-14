@@ -3,6 +3,7 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
+#import <Colours/UIColor+Colours.h>
 #import "KSHAddExpenseViewController.h"
 #import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
@@ -162,6 +163,7 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell.textLabel.text = NSLocalizedString(@"For what?", nil);
             cell.textField.text = _expense.title;
             cell.textFieldType = KSHDefaultTextField;
+            cell.textLabelMaximumWidth = 100.f;
             cell.textField.enabled = YES;
         }
         else if ( indexPath.row == KSHAddExpenseTotalAmountRow )
@@ -169,8 +171,13 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             cell.textLabel.text = NSLocalizedString(@"How much?", nil);
             [cell setCurrencyValue:_expense.totalAmount];
             cell.textFieldType = KSHCurrencyTextField;
+            cell.textLabelMaximumWidth = 120.f;
 
             cell.textField.enabled = _expense.items.count == 0;
+            if ( !cell.textField.enabled )
+            {
+                cell.textLabel.text = [cell.textLabel.text stringByAppendingString:@" *"];
+            }
         }
 
         returnedCell = cell;
@@ -205,9 +212,10 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             {
                 cell = [[KSHTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-                cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
+
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 
             cell.textLabel.text = NSLocalizedString(@"Add item", nil);
         }
@@ -305,9 +313,13 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)titleForHeaderInSection:(NSInteger)section
 {
-    if ( section == 2 )
+    if ( section == 0 )
+    {
+        return NSLocalizedString(@"General information", nil);
+    }
+    else if ( section == 2 )
     {
         return NSLocalizedString(@"Split", nil);
     }
@@ -320,9 +332,13 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+- (NSString *)titleForFooterInSection:(NSInteger)section
 {
-    if ( section == 2 && _expense.items.count > 0 )
+    if ( section == 0 && _expense.items.count > 0 )
+    {
+        return NSLocalizedString(@"*Calculated when split items added", nil);
+    }
+    else if ( section == 2 && _expense.items.count > 0 )
     {
         NSNumberFormatter *formatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
 
@@ -333,6 +349,20 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
     return nil;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *title = [self titleForHeaderInSection:section];
+    return [self tableHeaderFooterViewWithTitle:title];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    NSString *title = [self titleForFooterInSection:section];
+    return [self tableHeaderFooterViewWithTitle:title];
+}
+
+
 
 
 #pragma mark - UITableViewDelegate
@@ -410,9 +440,23 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if ( section == 1 )
+    {
+        return .0f;
+    }
+
+    return 40.f;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if ( section == 2 && _expense.items.count > 0 )
+    if ( section == 0 && _expense.items.count > 0 )
+    {
+        return 30.f;
+    }
+    else if ( section == 2 && _expense.items.count > 0 )
     {
         return 30.f;
     }

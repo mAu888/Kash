@@ -6,6 +6,8 @@
 #import <Foundation/Foundation.h>
 #import "KSHTableViewCell.h"
 
+@class KSHExpenseItem;
+
 @interface KSHBadgeCell : KSHTableViewCell
 
 @property (nonatomic, readonly) UILabel *badgeLabel;

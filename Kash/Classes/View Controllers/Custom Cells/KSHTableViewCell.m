@@ -26,13 +26,35 @@
         self.textLabel.font = [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]];
         self.textLabel.textColor = [UIColor charcoalColor];
 
-        UIFontDescriptor *detailTextDescriptor =
-            [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleFootnote];
+        UIColor *detailTextColor = nil;
+        UIFontDescriptor *detailTextDescriptor = nil;
+        switch ( style )
+        {
+            case UITableViewCellStyleValue1:
+            case UITableViewCellStyleValue2:
+                detailTextColor = [UIColor charcoalColor];
+                detailTextDescriptor =
+                    [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+                break;
+            default:
+                detailTextColor = [UIColor black25PercentColor];
+                detailTextDescriptor =
+                    [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleFootnote];
+                break;
+        }
         self.detailTextLabel.font = [UIFont fontWithName:@"OpenSans" size:[detailTextDescriptor pointSize]];
-        self.detailTextLabel.textColor = [UIColor black25PercentColor];
+        self.detailTextLabel.textColor = detailTextColor;
     }
 
     return self;
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+
+    self.accessoryView = nil;
+    self.accessoryType = UITableViewCellAccessoryNone;
 }
 
 

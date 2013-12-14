@@ -11,5 +11,6 @@
 @interface KSHBadgeCell (KSHCellConfiguration)
 
 - (void)setExpense:(KSHExpense *)expense;
+- (void)setExpenseItem:(KSHExpenseItem *)expenseItem;
 
 @end

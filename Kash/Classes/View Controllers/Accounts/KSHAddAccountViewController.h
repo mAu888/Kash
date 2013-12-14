@@ -4,11 +4,12 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewController.h"
 
 @class KSHDataAccessLayer;
 @class KSHAccount;
 
-@interface KSHAddAccountViewController : UITableViewController
+@interface KSHAddAccountViewController : KSHTableViewController
 
 @property(nonatomic, strong) KSHAccount *account;
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer;

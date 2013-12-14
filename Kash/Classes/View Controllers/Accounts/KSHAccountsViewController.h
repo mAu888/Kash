@@ -3,7 +3,7 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
-#import <Foundation/Foundation.h>
+#import "KSHTableViewController.h"
 
 @class KSHDataAccessLayer;
 @class KSHAccount;
@@ -19,7 +19,7 @@
 
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHAccountsViewController : UITableViewController
+@interface KSHAccountsViewController : KSHTableViewController
 
 @property(nonatomic, weak) id<KSHAccountsControllerDelegate> delegate;
 

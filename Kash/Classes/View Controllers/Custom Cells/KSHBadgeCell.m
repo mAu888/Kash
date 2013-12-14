@@ -6,6 +6,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Colours/UIColor+Colours.h>
 #import "KSHBadgeCell.h"
+#import "KSHExpenseItem.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHBadgeCell ()
@@ -50,9 +51,11 @@
 {
     [super layoutSubviews];
 
+    CGFloat paddingRight = self.accessoryType == UITableViewCellAccessoryNone ? 20.f : 10.f;
+
     [_badgeLabel sizeToFit];
     CGRect frame = CGRectMake(
-        CGRectGetMaxX(self.contentView.bounds) - CGRectGetWidth(_badgeLabel.frame) - 10.f,
+        CGRectGetMaxX(self.contentView.bounds) - CGRectGetWidth(_badgeLabel.frame) - paddingRight,
         (CGRectGetHeight(self.contentView.bounds) - CGRectGetHeight(_badgeLabel.frame) - 4.f) / 2.f,
         CGRectGetWidth(_badgeLabel.frame) + 10.f,
         CGRectGetHeight(_badgeLabel.frame) + 4.f

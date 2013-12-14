@@ -4,6 +4,7 @@
 */
 
 #import <Foundation/Foundation.h>
+#import "KSHTableViewController.h"
 
 @class KSHExpense;
 @class KSHExpenseItem;
@@ -28,7 +29,7 @@
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHAddExpenseItemViewController : UITableViewController
+@interface KSHAddExpenseItemViewController : KSHTableViewController
 
 @property(nonatomic, weak) id <KSHAddExpenseItemControllerDelegate> delegate;
 

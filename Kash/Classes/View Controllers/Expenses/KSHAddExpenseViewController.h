@@ -3,15 +3,14 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
-#import <Foundation/Foundation.h>
+#import "KSHTableViewController.h"
 
 @class KSHDataAccessLayer;
 @class KSHExpense;
 
-@interface KSHAddExpenseViewController : UITableViewController
+@interface KSHAddExpenseViewController : KSHTableViewController
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer;
-
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer expense:(KSHExpense *)expense;
 
 @end
