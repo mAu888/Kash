@@ -51,7 +51,7 @@
 {
     [super layoutSubviews];
 
-    CGFloat paddingRight = self.accessoryType == UITableViewCellAccessoryNone ? 20.f : 10.f;
+    CGFloat paddingRight = self.accessoryType == UITableViewCellAccessoryNone || self.isEditing ? 20.f : 10.f;
 
     [_badgeLabel sizeToFit];
     CGRect frame = CGRectMake(

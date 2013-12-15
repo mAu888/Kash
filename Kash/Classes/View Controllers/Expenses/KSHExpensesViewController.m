@@ -43,6 +43,7 @@
         self.tabBarItem.image = [UIImage imageNamed:@"expense"];
 
         // Navigation item -----------------------------------------------------
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
         self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                           target:self
@@ -260,7 +261,7 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
     UINavigationController *navigationController =
         [[UINavigationController alloc] initWithRootViewController:controller];
     navigationController.modalPresentationStyle = UIModalPresentationCustom;
-    navigationController.transitioningDelegate = (KSHNavigationController *)self.navigationController;
+    navigationController.transitioningDelegate = ( KSHNavigationController * ) self.navigationController;
 
     [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
