@@ -5,9 +5,9 @@ Copyright 2013 Maurício Hanika. Licensed under [the Apache 2.0 license](https:/
 Attribution
 ===========
 
-- Application icons by [icons8](http://www.icons8.com)
-- Colours by [Ben Gordon](https://github.com/bennyguitar/Colours-for-iOS)
-- Open Sans font by [Google](http://www.google.com/fonts/specimen/Open+Sans)
+- Application icons by [icons8](http://www.icons8.com), [Creative Commons Attribution-NoDerivs 3.0 Unported](http://creativecommons.org/licenses/by-nd/3.0/)
+- Colours by [Ben Gordon](https://github.com/bennyguitar/Colours-for-iOS), [MIT License](https://github.com/bennyguitar/Colours-for-iOS/blob/master/LICENSE)
+- Open Sans font by [Google](http://www.google.com/fonts/specimen/Open+Sans), [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html)
   - OpenSans-Light.ttf: Digitized data copyright © 2010-2011, Google Corporation.
   - OpenSans-LightItalic.ttf: Digitized data copyright © 2010-2011, Google Corporation.
   - OpenSans-Regular.ttf: Digitized data copyright © 2010-2011, Google Corporation.
