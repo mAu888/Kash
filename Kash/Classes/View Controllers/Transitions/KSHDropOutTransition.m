@@ -48,16 +48,11 @@
             CGRectGetHeight(fromViewController.view.frame)
         );
 
-        UIView *shadowView = [[UIView alloc] initWithFrame:fromViewController.view.frame];
-        shadowView.alpha = .0f;
-        shadowView.backgroundColor = [UIColor blackColor];
+        // Add a shadow view
+        UIView *shadowView = [self dimmingViewForView:fromViewController.view alpha:.0f];
         [fromViewController.view addSubview:shadowView];
 
-        CALayer *layer = toViewController.view.layer;
-        layer.shadowColor = [UIColor blackColor].CGColor;
-        layer.shadowPath = [UIBezierPath bezierPathWithRect:fromViewController.view.frame].CGPath;
-        layer.shadowOpacity = .3f;
-        layer.shadowRadius = shadowRadius;
+        [self addShadowToLayer:toViewController.view.layer radius:shadowRadius];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^
@@ -72,7 +67,10 @@
                          }
                          completion:^(BOOL finished)
                          {
+                             // Cleanup
                              [shadowView removeFromSuperview];
+                             [self removeShadowFromLayer:toViewController.view.layer];
+
                              [transitionContext completeTransition:YES];
                          }];
     }
@@ -80,13 +78,16 @@
     {
         [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.frame = CGRectMake(
-            .0f, .0f, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds)
+            .0f,
+            .0f,
+            CGRectGetWidth(containerView.bounds),
+            CGRectGetHeight(containerView.bounds)
         );
 
-        UIView *shadowView = [[UIView alloc] initWithFrame:toViewController.view.frame];
-        shadowView.alpha = .37f;
-        shadowView.backgroundColor = [UIColor blackColor];
+        UIView *shadowView = [self dimmingViewForView:toViewController.view alpha:.37f];
         [toViewController.view addSubview:shadowView];
+
+        [self addShadowToLayer:fromViewController.view.layer radius:25.f];
 
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^
@@ -98,12 +99,7 @@
                              [shadowView removeFromSuperview];
                          }];
 
-        CALayer *layer = fromViewController.view.layer;
-        layer.shadowColor = [UIColor blackColor].CGColor;
-        layer.shadowPath = [UIBezierPath bezierPathWithRect:fromViewController.view.frame].CGPath;
-        layer.shadowOpacity = .4f;
-        layer.shadowRadius = 25.f;
-
+        // Do the dynamics
         _animator = [[UIDynamicAnimator alloc] initWithReferenceView:containerView];
 
         CGFloat inset = -hypotf(CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds));
@@ -134,6 +130,7 @@
         [_animator addBehavior:itemBehavior];
 
 
+        // Ensure we finish in time
         int64_t duration = ( int64_t ) (NSEC_PER_SEC * [self transitionDuration:transitionContext]);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration), dispatch_get_main_queue(), ^
         {
@@ -169,6 +166,30 @@
 {
     float d = bigNumber - smallNumber;
     return ((( float ) (arc4random() % (( unsigned ) RAND_MAX + 1)) / RAND_MAX) * d) + smallNumber;
+}
+
+- (void)addShadowToLayer:(CALayer *)layer radius:(CGFloat)radius
+{
+    layer.shadowColor = [UIColor blackColor].CGColor;
+    layer.shadowPath = [UIBezierPath bezierPathWithRect:layer.frame].CGPath;
+    layer.shadowOpacity = .3f;
+    layer.shadowRadius = radius;
+}
+
+- (void)removeShadowFromLayer:(CALayer *)layer
+{
+    layer.shadowRadius = .0f;
+    layer.shadowOpacity = .0f;
+    layer.shadowColor = [UIColor clearColor].CGColor;
+}
+
+- (UIView *)dimmingViewForView:(UIView *)view alpha:(CGFloat)alpha
+{
+    UIView *dimmingView = [[UIView alloc] initWithFrame:view.frame];
+    dimmingView.alpha = alpha;
+    dimmingView.backgroundColor = [UIColor blackColor];
+
+    return dimmingView;
 }
 
 @end
