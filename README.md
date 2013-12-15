@@ -1,3 +1,5 @@
+![ScreenShot](https://raw.github.com/mAu888/Kash/master/Screenshots/kash-banner.png)
+
 License
 =======
 Copyright 2013 Maurício Hanika. Licensed under [the Apache 2.0 license](https://github.com/mAu888/Kash/blob/master/LICENSE).
