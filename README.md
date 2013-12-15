@@ -1,6 +1,6 @@
 License
 =======
-Copyright 2013 Maurício Hanika. Licensed under [the Apache 2.0 license]().
+Copyright 2013 Maurício Hanika. Licensed under [the Apache 2.0 license](https://github.com/mAu888/Kash/blob/master/LICENSE).
 
 Attribution
 ===========
