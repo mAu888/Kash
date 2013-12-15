@@ -12,6 +12,7 @@
 #import "KSHBadgeCell+KSHCellConfiguration.h"
 #import "KSHExpenseViewController.h"
 #import "KSHNavigationController.h"
+#import "UIColor+Colours.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpensesViewController () <NSFetchedResultsControllerDelegate, UIViewControllerTransitioningDelegate>
@@ -24,6 +25,7 @@
 {
     KSHDataAccessLayer *_dataAccessLayer;
     NSFetchedResultsController *_controller;
+    UILabel *_tableFooterView;
 }
 
 - (id)initWithDataAccessLayer:(KSHDataAccessLayer *)dataAccessLayer
@@ -60,6 +62,32 @@
 
     return self;
 }
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+
+    _tableFooterView = [[UILabel alloc]
+        initWithFrame:CGRectMake(.0f, .0f, CGRectGetWidth(self.tableView.bounds), 44.f)];
+    _tableFooterView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _tableFooterView.font = [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]];
+    _tableFooterView.textAlignment = NSTextAlignmentCenter;
+    _tableFooterView.textColor = [UIColor coolGrayColor];
+    self.tableView.tableFooterView = _tableFooterView;
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    _tableFooterView.text =
+        [NSString localizedStringWithFormat:NSLocalizedString(@"%d expenses in total", nil),
+                                            _controller.fetchedObjects.count];
+}
+
 
 
 #pragma mark - UITableViewDataSource
@@ -217,6 +245,8 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
                           withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
+
+    NSLog(@"expenses: %d", _controller.fetchedObjects.count);
 }
 
 - (void)controller:(NSFetchedResultsController *)controller
