@@ -8,6 +8,7 @@
 #import "KSHAccountsViewController.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHNavigationController.h"
+#import "KSHChartsViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHMainViewController ()
@@ -36,7 +37,21 @@
         KSHNavigationController *accountsNavigationController =
             [[KSHNavigationController alloc] initWithRootViewController:accountsViewController];
 
-        self.viewControllers = @[expensesNavigationController, accountsNavigationController];
+        KSHChartsViewController *chartsViewController =
+            [[KSHChartsViewController alloc] initWithDataAccessLayer:dataAccessLayer];
+        KSHNavigationController *chartsNavigationController =
+            [[KSHNavigationController alloc] initWithRootViewController:chartsViewController];
+
+
+        self.viewControllers = @[
+            expensesNavigationController,
+            accountsNavigationController,
+            chartsNavigationController
+        ];
+
+        self.customizableViewControllers = @[
+            chartsNavigationController
+        ];
     }
 
     return self;
