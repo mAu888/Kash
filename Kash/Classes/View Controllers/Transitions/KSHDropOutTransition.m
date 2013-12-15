@@ -22,10 +22,10 @@
 {
     if ( self.type == KSHAnimatedTransitioningWillDismiss )
     {
-        return 4.f;
+        return .557f;
     }
 
-    return 4.f;
+    return .335f;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
@@ -39,16 +39,30 @@
     if ( self.type == KSHAnimatedTransitioningWillAppear )
     {
         [containerView insertSubview:toViewController.view aboveSubview:fromViewController.view];
+
+        float shadowRadius = 10.f;
         toViewController.view.frame = CGRectMake(
             .0f,
-            CGRectGetMaxY(containerView.bounds),
+            CGRectGetMaxY(containerView.bounds) + shadowRadius,
             CGRectGetWidth(fromViewController.view.frame),
             CGRectGetHeight(fromViewController.view.frame)
         );
 
-        [UIView animateWithDuration:.335f
+        UIView *shadowView = [[UIView alloc] initWithFrame:fromViewController.view.frame];
+        shadowView.alpha = .0f;
+        shadowView.backgroundColor = [UIColor blackColor];
+        [fromViewController.view addSubview:shadowView];
+
+        CALayer *layer = toViewController.view.layer;
+        layer.shadowColor = [UIColor blackColor].CGColor;
+        layer.shadowPath = [UIBezierPath bezierPathWithRect:fromViewController.view.frame].CGPath;
+        layer.shadowOpacity = .3f;
+        layer.shadowRadius = shadowRadius;
+
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^
                          {
+                             shadowView.alpha = .37f;
                              toViewController.view.frame = CGRectMake(
                                  .0f,
                                  .0f,
@@ -58,6 +72,7 @@
                          }
                          completion:^(BOOL finished)
                          {
+                             [shadowView removeFromSuperview];
                              [transitionContext completeTransition:YES];
                          }];
     }
@@ -67,6 +82,27 @@
         toViewController.view.frame = CGRectMake(
             .0f, .0f, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds)
         );
+
+        UIView *shadowView = [[UIView alloc] initWithFrame:toViewController.view.frame];
+        shadowView.alpha = .37f;
+        shadowView.backgroundColor = [UIColor blackColor];
+        [toViewController.view addSubview:shadowView];
+
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
+                         animations:^
+                         {
+                             shadowView.alpha = .0f;
+                         }
+                         completion:^(BOOL finished)
+                         {
+                             [shadowView removeFromSuperview];
+                         }];
+
+        CALayer *layer = fromViewController.view.layer;
+        layer.shadowColor = [UIColor blackColor].CGColor;
+        layer.shadowPath = [UIBezierPath bezierPathWithRect:fromViewController.view.frame].CGPath;
+        layer.shadowOpacity = .4f;
+        layer.shadowRadius = 25.f;
 
         _animator = [[UIDynamicAnimator alloc] initWithReferenceView:containerView];
 
