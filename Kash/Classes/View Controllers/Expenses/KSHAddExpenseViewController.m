@@ -228,9 +228,9 @@ NS_ENUM(NSInteger, KSHAddExpenseDescriptionRows)
             {
                 cell = [[KSHTableViewCell alloc]
                     initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
 
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setExpenseItem:_expense.items[indexPath.row]];
         }

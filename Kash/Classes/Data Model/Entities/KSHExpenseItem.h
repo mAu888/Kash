@@ -15,4 +15,5 @@
 @property(nonatomic, retain) KSHExpense *expense;
 @property(nonatomic, retain) KSHCategory *category;
 
+- (NSString *)nameAccountingEmptyString;
 @end

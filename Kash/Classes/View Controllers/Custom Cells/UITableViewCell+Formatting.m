@@ -34,7 +34,7 @@
 {
     NSNumberFormatter *currencyNumberFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
 
-    self.textLabel.text = expenseItem.name;
+    self.textLabel.text = expenseItem.nameAccountingEmptyString;
     self.detailTextLabel.text = [currencyNumberFormatter stringFromNumber:expenseItem.amount];
 
     self.textLabel.textColor = [UIColor blackColor];

@@ -15,4 +15,9 @@
 @dynamic expense;
 @dynamic category;
 
+- (NSString *)nameAccountingEmptyString
+{
+    return self.name.length == 0 ? NSLocalizedString(@"(no name)", nil) : self.name;
+}
+
 @end
