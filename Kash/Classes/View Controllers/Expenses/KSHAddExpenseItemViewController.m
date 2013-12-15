@@ -51,7 +51,7 @@
 
     if ( self != nil )
     {
-        BOOL updatingMode = item != nil;
+        BOOL updatingMode = item == nil;
         NSString *title = updatingMode ?
             NSLocalizedString(@"Add expense item", nil) :
             NSLocalizedString(@"Update expense item", nil);

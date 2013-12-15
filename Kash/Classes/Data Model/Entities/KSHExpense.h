@@ -17,6 +17,7 @@
 @property(nonatomic, retain) NSOrderedSet *items;
 @property(nonatomic, readonly) NSString *sectionIdentifier;
 
+- (NSString *)titleAccountingEmptyString;
 @end
 
 @interface KSHExpense (CoreDataGeneratedAccessors)

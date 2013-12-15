@@ -26,7 +26,7 @@
 {
     NSDateFormatter *dateFormatter = [[KSHDateFormatterFactory sharedInstance]
         dateFormatterWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
-    self.textLabel.text = expense.title;
+    self.textLabel.text = expense.titleAccountingEmptyString;
     self.detailTextLabel.text = [dateFormatter stringFromDate:expense.date];
 }
 

@@ -41,13 +41,13 @@
     UIFontDescriptor *fontDescriptor =
         [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleHeadline];
 
-    NSDictionary *attributes = @{
-        NSFontAttributeName : [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]],
+    UIFont *font = [UIFont fontWithName:@"OpenSans" size:[fontDescriptor pointSize]];
+
+    [UINavigationBar appearance].titleTextAttributes = @{
+        NSFontAttributeName            : font,
         NSForegroundColorAttributeName : [UIColor charcoalColor]
     };
-
-    [UINavigationBar appearance].titleTextAttributes = attributes;
-    [[UIBarItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
 }
 
 @end

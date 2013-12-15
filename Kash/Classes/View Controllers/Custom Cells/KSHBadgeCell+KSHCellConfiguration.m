@@ -17,7 +17,7 @@
 {
     NSNumberFormatter *currencyFormatter = [KSHNumberFormatter sharedInstance].currencyNumberFormatter;
 
-    self.textLabel.text = expense.title;
+    self.textLabel.text = expense.titleAccountingEmptyString;
     self.badgeLabel.text = [currencyFormatter stringFromNumber:expense.totalAmount];
 
     self.tintColor = [expense.totalAmount floatValue] > .0f ? [UIColor brickRedColor] : [UIColor grassColor];

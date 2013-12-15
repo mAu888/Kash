@@ -17,7 +17,12 @@
 @dynamic account;
 @dynamic items;
 
-- (NSString *)sectionIdentifier
+- (NSString *)titleAccountingEmptyString
+{
+    return self.title.length == 0 ? NSLocalizedString(@"(no title)", nil) : self.title;
+}
+
+- (NSString *)sectionIdentifier __unused
 {
     NSDateFormatter *dateFormatter = [[KSHDateFormatterFactory sharedInstance]
         dateFormatterWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];

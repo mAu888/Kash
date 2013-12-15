@@ -59,7 +59,7 @@
         dateFormatterWithDateStyle:NSDateFormatterMediumStyle
                          timeStyle:NSDateFormatterShortStyle];
     KSHSubtitleView *titleView = [[KSHSubtitleView alloc] init];
-    titleView.textLabel.text = _expense.title;
+    titleView.textLabel.text = _expense.titleAccountingEmptyString;
     titleView.detailTextLabel.text = [formatter stringFromDate:_expense.date];
 
     self.navigationItem.titleView = titleView;
