@@ -3,14 +3,12 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
-#import <Colours/UIColor+Colours.h>
 #import "KSHAddExpenseViewController.h"
 #import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
 #import "KSHExpense.h"
 #import "KSHInputCellDelegate.h"
-#import "enums.h"
 #import "KSHAccountsViewController.h"
 #import "KSHAddExpenseItemViewController.h"
 #import "KSHExpenseItem.h"

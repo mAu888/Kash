@@ -4,8 +4,6 @@
 */
 
 #import "KSHExpenseItem.h"
-#import "KSHCategory.h"
-#import "KSHExpense.h"
 
 
 @implementation KSHExpenseItem

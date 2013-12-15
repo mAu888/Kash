@@ -8,11 +8,9 @@
 #import "KSHDataAccessLayer.h"
 #import "KSHExpense.h"
 #import "KSHNumberFormatter.h"
-#import "UIColor+Colours.h"
 #import "KSHBadgeCell.h"
 #import "KSHBadgeCell+KSHCellConfiguration.h"
 #import "KSHExpenseViewController.h"
-#import "KSHDropOutTransition.h"
 #import "KSHNavigationController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,7 +53,7 @@
                                                              [NSSortDescriptor sortDescriptorWithKey:@"date"
                                                                                            ascending:NO]
                                                          ]
-                                                      sectionNameKeyPath:@"sectionIdentifier"
+                                                      sectionNameKeyPath:NSStringFromSelector(@selector(sectionIdentifier))
                                                                cacheName:nil
                                                                 delegate:self];
     }

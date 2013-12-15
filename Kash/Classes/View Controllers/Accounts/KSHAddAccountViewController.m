@@ -9,7 +9,6 @@
 #import "KSHLabelAndTextFieldCell.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
-#import "KSHAccount.h"
 #import "KSHColorPickerViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////

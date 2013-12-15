@@ -6,7 +6,6 @@
 #import "KSHBadgeCell+KSHCellConfiguration.h"
 #import "KSHExpense.h"
 #import "KSHNumberFormatter.h"
-#import "KSHAccount.h"
 #import "UIColor+Colours.h"
 #import "KSHExpenseItem.h"
 

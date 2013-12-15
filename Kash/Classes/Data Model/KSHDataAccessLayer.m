@@ -5,7 +5,6 @@
 
 #import <CoreData/CoreData.h>
 #import "KSHDataAccessLayer.h"
-#import "KSHAccount.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHDataAccessLayer ()

@@ -3,10 +3,7 @@
 * Copyright (c) 2013 Maurício Hanika. All rights reserved.
 */
 
-#import <QuartzCore/QuartzCore.h>
-#import <Colours/UIColor+Colours.h>
 #import "KSHBadgeCell.h"
-#import "KSHExpenseItem.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHBadgeCell ()

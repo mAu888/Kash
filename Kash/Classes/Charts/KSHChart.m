@@ -4,8 +4,6 @@
 */
 
 #import "KSHChart.h"
-#import "KSHChartDataSource.h"
-#import "KSHChartDelegate.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChart ()

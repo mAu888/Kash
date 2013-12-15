@@ -4,8 +4,6 @@
 */
 
 #import "KSHExpense.h"
-#import "KSHAccount.h"
-#import "KSHExpenseItem.h"
 #import "KSHDateFormatterFactory.h"
 
 // -----------------------------------------------------------------------------
@@ -22,7 +20,7 @@
     return self.title.length == 0 ? NSLocalizedString(@"(no title)", nil) : self.title;
 }
 
-- (NSString *)sectionIdentifier __unused
+- (NSString *)sectionIdentifier
 {
     NSDateFormatter *dateFormatter = [[KSHDateFormatterFactory sharedInstance]
         dateFormatterWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];

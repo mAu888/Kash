@@ -5,7 +5,6 @@
 
 #import "KSHAccountCell.h"
 #import "KSHAccount.h"
-#import <QuartzCore/QuartzCore.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAccountCell ()

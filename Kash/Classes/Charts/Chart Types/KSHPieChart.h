@@ -10,6 +10,6 @@
 
 @interface KSHPieChart : KSHChart
 
-@property(nonatomic, assign) id <KSHPieChartDataSource> dataSource;
+@property(nonatomic, assign) id <KSHChartDataSource, KSHPieChartDataSource> dataSource;
 
 @end

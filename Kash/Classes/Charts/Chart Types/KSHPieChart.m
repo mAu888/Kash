@@ -5,7 +5,6 @@
 
 #import "KSHPieChart.h"
 #import "KSHChartDataSource.h"
-#import "KSHChartDelegate.h"
 #import "KSHPieChartDataSource.h"
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -8,7 +8,6 @@
 #import "KSHAddAccountViewController.h"
 #import "KSHDataAccessLayer.h"
 #import "KSHAccount.h"
-#import "KSHAddExpenseViewController.h"
 #import "KSHAccountCell.h"
 #import "KSHNavigationController.h"
 

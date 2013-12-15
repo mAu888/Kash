@@ -8,7 +8,6 @@
 #import "KSHChartDataSource.h"
 #import "KSHPieChartDataSource.h"
 #import "KSHPieChart.h"
-#import "KSHChart.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartCell () <KSHPieChartDataSource>

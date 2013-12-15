@@ -11,8 +11,6 @@
 #import "KSHInputCellDelegate.h"
 #import "KSHExpense.h"
 #import "KSHLabelAndTextFieldCell+Formatting.h"
-#import "KSHNumberFormatter.h"
-#import "KSHDropOutTransition.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAddExpenseItemViewController () <KSHInputCellDelegate>
