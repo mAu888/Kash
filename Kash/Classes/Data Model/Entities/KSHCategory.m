@@ -1,10 +1,7 @@
-//
-//  KSHCategory.m
-//  Kash
-//
-//  Created by Maurício Hanika on 10.08.13.
-//  Copyright (c) 2013 Maurício Hanika. All rights reserved.
-//
+/**
+* Created by Maurício Hanika on 14.12.13.
+* Copyright (c) 2013 Maurício Hanika. All rights reserved.
+*/
 
 #import "KSHCategory.h"
 
