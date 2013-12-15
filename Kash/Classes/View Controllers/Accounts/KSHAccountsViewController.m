@@ -53,6 +53,8 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
         self.tabBarItem.image = [UIImage imageNamed:@"account"];
 
         // Navigation item -----------------------------------------------------
+        self.navigationItem.leftBarButtonItem =
+            self.editButtonItem;
         self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                           target:self
@@ -81,6 +83,14 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
     }
 
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.tableView.allowsSelection = NO;
+    self.tableView.allowsSelectionDuringEditing = YES;
 }
 
 
@@ -117,7 +127,7 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
     }
     else
     {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     return cell;
