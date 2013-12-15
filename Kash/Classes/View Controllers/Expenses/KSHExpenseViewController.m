@@ -83,23 +83,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    if ( _expense.items.count > 0 )
+    {
+        return 2;
+    }
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ( section == 1 )
-    {
-        return 1;
-    }
-    else if ( _expense.items.count > 0 )
+    if ( section == 0 && _expense.items.count > 0 )
     {
         return _expense.items.count;
     }
-    else
+    else if ( section == 0 )
     {
         return 1;
     }
+    else if ( section == 1 )
+    {
+        return 1;
+    }
+
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
