@@ -92,6 +92,16 @@ NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewController
     self.tableView.allowsSelectionDuringEditing = YES;
 }
 
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    // Current view controller is already part of the navigation stack here
+    if ( self.navigationController.viewControllers.count > 1 )
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+        self.tableView.allowsSelection = YES;
+    }
+}
+
 
 #pragma mark - UITableViewDataSource
 
