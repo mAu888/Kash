@@ -1,4 +1,4 @@
-![ScreenShot](https://raw.github.com/mAu888/Kash/master/Screenshots/kash-banner.png)
+![ScreenShot](https://raw.github.com/mAu888/Kash/master/Screenshots/kash-banner.jpg)
 
 License
 =======
