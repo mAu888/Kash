@@ -22,7 +22,6 @@
 		3D09B56023D4EC3585B5E3BF /* KSHChartsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B20E1B48D98BC27FE680 /* KSHChartsViewController.m */; };
 		3D09B5D0E6E3C3E42A19A447 /* KSHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B538D883BE2B8C3D9992 /* KSHTextField.m */; };
 		3D09B5D1AC31CAB1FD31B1D4 /* KSHAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7889ADFCCCFCFFFAA4E /* KSHAddAccountViewController.m */; };
-		3D09B5E698D934D76C9B045C /* KSHChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA8BFDBF96A3028287BF /* KSHChartCell.m */; };
 		3D09B63E43EA5C48EC9D619A /* UILabel+KSHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B63E77D7AA86E24A1300 /* UILabel+KSHAdditions.m */; };
 		3D09B64BE14F1F3E36AEFF1C /* KSHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B52DE160F2D707CD0309 /* KSHNavigationController.m */; };
 		3D09B6D552339853451BA5FC /* KSHAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BA0CBBF5B46D086CA061 /* KSHAppearance.m */; };
@@ -33,6 +32,7 @@
 		3D09B81B6A85A68C0876DEF3 /* KSHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BBC6D126BB007BF183C2 /* KSHTableViewController.m */; };
 		3D09B8F4332A7AB661B165A7 /* KSHChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B97F3897FC45DF703C42 /* KSHChart.m */; };
 		3D09B92F66E908B3B7175198 /* KSHColorCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BC931EBEE3ACD27CD6D9 /* KSHColorCollectionCell.m */; };
+		3D09B9E7F256E1F4009EF625 /* KSHChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B0FBC6C9CACDDC447FC1 /* KSHChartCell.m */; };
 		3D09BA2D29E8F9FD4D0AE95C /* KSHExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B20849884752593923F8 /* KSHExpenseCell.m */; };
 		3D09BA7AE92DB340C14B950D /* KSHFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B4DE42EB6BF5E9DD4429 /* KSHFlowLayout.m */; };
 		3D09BAF6DACCB9415245E6D9 /* KSHAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B1F4D93DD2398AF8DB3A /* KSHAccountCell.m */; };
@@ -93,6 +93,7 @@
 		3D09B07A15C66F28960EED3C /* UITableViewCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Formatting.h"; sourceTree = "<group>"; };
 		3D09B0C967AB606C033AE37C /* KSHAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAccountCell.h; sourceTree = "<group>"; };
 		3D09B0CF64B624B04D4D3FC3 /* KSHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHViewController.h; sourceTree = "<group>"; };
+		3D09B0FBC6C9CACDDC447FC1 /* KSHChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChartCell.m; sourceTree = "<group>"; };
 		3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3D09B195A82112F34305849B /* KSHColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHColorPickerViewController.m; sourceTree = "<group>"; };
 		3D09B1D90B9246F83C1BF50F /* KSHDropOutTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDropOutTransition.m; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		3D09B538D883BE2B8C3D9992 /* KSHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTextField.m; sourceTree = "<group>"; };
 		3D09B5B3DCB59395271AC1A0 /* KSHBadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHBadgeCell.h; sourceTree = "<group>"; };
 		3D09B5BF02B2C187437F6E57 /* KSHAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAppearance.h; sourceTree = "<group>"; };
-		3D09B6348460E09814E3EA4B /* KSHChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartCell.h; sourceTree = "<group>"; };
 		3D09B63E77D7AA86E24A1300 /* UILabel+KSHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KSHAdditions.m"; sourceTree = "<group>"; };
 		3D09B6540271F7669A818C58 /* KSHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHMainViewController.m; sourceTree = "<group>"; };
 		3D09B67E5AFD23460B53F047 /* KSHChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartView.h; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		3D09BA695D8C23EF22EF687D /* KSHAddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseViewController.h; sourceTree = "<group>"; };
 		3D09BA6FAD41B047D79591EB /* UITableViewCell+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Formatting.m"; sourceTree = "<group>"; };
 		3D09BA7FC312854C46FD8670 /* KSHAddExpenseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHAddExpenseItemViewController.h; sourceTree = "<group>"; };
-		3D09BA8BFDBF96A3028287BF /* KSHChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChartCell.m; sourceTree = "<group>"; };
+		3D09BAA7A4AF3759C2B715C5 /* KSHChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartCell.h; sourceTree = "<group>"; };
 		3D09BAD144BB6582CAB4F199 /* KSHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHMainViewController.h; sourceTree = "<group>"; };
 		3D09BB42DC4FBBD18219B30A /* KSHPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHPieChart.m; sourceTree = "<group>"; };
 		3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHDataAccessLayer.m; sourceTree = "<group>"; };
@@ -258,6 +258,8 @@
 				3D09B6824C49537B5CD69238 /* KSHExpenseCell.h */,
 				3D09B83447BE56ACEA2E4950 /* KSHTableViewCell.m */,
 				3D09B8101E1E9994935019FD /* KSHTableViewCell.h */,
+				3D09B0FBC6C9CACDDC447FC1 /* KSHChartCell.m */,
+				3D09BAA7A4AF3759C2B715C5 /* KSHChartCell.h */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -440,8 +442,6 @@
 				3D09B305AF9B7E34EE77DA88 /* KSHAddExpenseViewController.m */,
 				3D09B4360F953B74D0D1ECDD /* KSHExpenseViewController.m */,
 				3D09B81443D394C61DC18543 /* KSHExpenseViewController.h */,
-				3D09BA8BFDBF96A3028287BF /* KSHChartCell.m */,
-				3D09B6348460E09814E3EA4B /* KSHChartCell.h */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -771,7 +771,6 @@
 				3D09BF59A762C87C6E6ACDB9 /* KSHExpenseViewController.m in Sources */,
 				3D09B5D0E6E3C3E42A19A447 /* KSHTextField.m in Sources */,
 				3D09BA2D29E8F9FD4D0AE95C /* KSHExpenseCell.m in Sources */,
-				3D09B5E698D934D76C9B045C /* KSHChartCell.m in Sources */,
 				3D09B8F4332A7AB661B165A7 /* KSHChart.m in Sources */,
 				3D09B76474FA92C5C2E8E8EA /* KSHChartView.m in Sources */,
 				3D09B1646BF04B0A06C06094 /* KSHPieChart.m in Sources */,
@@ -784,6 +783,7 @@
 				3D09BCEC702192412BA18E9A /* KSHDropOutTransition.m in Sources */,
 				3D09B64BE14F1F3E36AEFF1C /* KSHNavigationController.m in Sources */,
 				3D09B56023D4EC3585B5E3BF /* KSHChartsViewController.m in Sources */,
+				3D09B9E7F256E1F4009EF625 /* KSHChartCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
