@@ -10,6 +10,7 @@
 #import "KSHAccount.h"
 #import "KSHAddExpenseViewController.h"
 #import "KSHAccountCell.h"
+#import "KSHNavigationController.h"
 
 NSString *const KSHAccountsViewControllerCacheName = @"KSHAccountsViewControllerCache";
 
@@ -205,12 +206,13 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     KSHAddAccountViewController *controller =
         [[KSHAddAccountViewController alloc] initWithDataAccessLayer:_dataAccessLayer];
-    UINavigationController *navigationController =
-        [[UINavigationController alloc] initWithRootViewController:controller];
 
-    [self presentViewController:navigationController
-                       animated:YES
-                     completion:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc]
+        initWithRootViewController:controller];
+    navigationController.modalPresentationStyle = UIModalPresentationCustom;
+    navigationController.transitioningDelegate = ( KSHNavigationController * ) self.navigationController;
+
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end

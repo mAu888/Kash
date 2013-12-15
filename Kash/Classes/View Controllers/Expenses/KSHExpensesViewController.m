@@ -12,9 +12,11 @@
 #import "KSHBadgeCell.h"
 #import "KSHBadgeCell+KSHCellConfiguration.h"
 #import "KSHExpenseViewController.h"
+#import "KSHDropOutTransition.h"
+#import "KSHNavigationController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-@interface KSHExpensesViewController () <NSFetchedResultsControllerDelegate>
+@interface KSHExpensesViewController () <NSFetchedResultsControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -22,7 +24,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHExpensesViewController
 {
-
     KSHDataAccessLayer *_dataAccessLayer;
     NSFetchedResultsController *_controller;
 }
@@ -250,7 +251,6 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
 }
 
 
-
 #pragma mark - Private methods
 
 - (void)presentAddExpenseView:(id)sender
@@ -259,10 +259,10 @@ sectionIndexTitleForSectionName:(NSString *)sectionName
         [[KSHAddExpenseViewController alloc] initWithDataAccessLayer:_dataAccessLayer];
     UINavigationController *navigationController =
         [[UINavigationController alloc] initWithRootViewController:controller];
+    navigationController.modalPresentationStyle = UIModalPresentationCustom;
+    navigationController.transitioningDelegate = (KSHNavigationController *)self.navigationController;
 
-    [self presentViewController:navigationController
-                       animated:YES
-                     completion:nil];
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end

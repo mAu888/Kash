@@ -560,6 +560,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                           otherButtonTitles:nil] show];
     }
 
+    // Do not drop out when saving
+    self.navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.navigationController.transitioningDelegate = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

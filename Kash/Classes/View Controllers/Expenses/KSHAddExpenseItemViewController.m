@@ -12,6 +12,7 @@
 #import "KSHExpense.h"
 #import "KSHLabelAndTextFieldCell+Formatting.h"
 #import "KSHNumberFormatter.h"
+#import "KSHDropOutTransition.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHAddExpenseItemViewController () <KSHInputCellDelegate>
@@ -59,7 +60,7 @@
 
         _dataAccessLayer = dataAccessLayer;
         _context = context;
-
+        
         // Navigation item -----------------------------------------------------
         self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave

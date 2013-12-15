@@ -14,6 +14,7 @@
 #import "KSHDateFormatterFactory.h"
 #import "KSHBadgeCell.h"
 #import "KSHBadgeCell+KSHCellConfiguration.h"
+#import "KSHNavigationController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHExpenseViewController ()
@@ -175,6 +176,8 @@
 
     UINavigationController *navigationController = [[UINavigationController alloc]
         initWithRootViewController:controller];
+    navigationController.modalPresentationStyle = UIModalPresentationCustom;
+    navigationController.transitioningDelegate = ( KSHNavigationController * ) self.navigationController;
 
     [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }

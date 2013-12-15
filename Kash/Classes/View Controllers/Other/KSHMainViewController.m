@@ -7,6 +7,7 @@
 #import "KSHExpensesViewController.h"
 #import "KSHAccountsViewController.h"
 #import "KSHDataAccessLayer.h"
+#import "KSHNavigationController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHMainViewController ()
@@ -16,9 +17,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHMainViewController
-{
-
-}
 
 - (id)init
 {
@@ -30,13 +28,13 @@
 
         KSHExpensesViewController *expensesViewController =
             [[KSHExpensesViewController alloc] initWithDataAccessLayer:dataAccessLayer];
-        UINavigationController *expensesNavigationController =
-            [[UINavigationController alloc] initWithRootViewController:expensesViewController];
+        KSHNavigationController *expensesNavigationController =
+            [[KSHNavigationController alloc] initWithRootViewController:expensesViewController];
 
         KSHAccountsViewController *accountsViewController =
             [[KSHAccountsViewController alloc] initWithDataAccessLayer:dataAccessLayer];
-        UINavigationController *accountsNavigationController =
-            [[UINavigationController alloc] initWithRootViewController:accountsViewController];
+        KSHNavigationController *accountsNavigationController =
+            [[KSHNavigationController alloc] initWithRootViewController:accountsViewController];
 
         self.viewControllers = @[expensesNavigationController, accountsNavigationController];
     }

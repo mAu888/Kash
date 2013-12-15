@@ -159,7 +159,7 @@
 
 - (void)cancel:(id)sender
 {
-    [self dismissOrPopViewController];
+    [self dismissOrPopViewControllerAllowDropping:YES];
 }
 
 - (void)save:(id)sender
@@ -175,13 +175,19 @@
                           otherButtonTitles:nil] show];
     }
 
-    [self dismissOrPopViewController];
+    [self dismissOrPopViewControllerAllowDropping:NO];
 }
 
-- (void)dismissOrPopViewController
+- (void)dismissOrPopViewControllerAllowDropping:(BOOL)dropping
 {
     if ( self.presentingViewController != nil )
     {
+        if ( !dropping )
+        {
+            self.navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
+            self.navigationController.transitioningDelegate = nil;
+        }
+
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
