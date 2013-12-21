@@ -23,6 +23,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
+    // Normalize the coordinate system
     CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, rect.size.height);
     CGContextConcatCTM(context, flipVertical);
 

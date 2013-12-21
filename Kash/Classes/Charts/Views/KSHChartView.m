@@ -9,6 +9,7 @@
 #import "KSHChartDataSource.h"
 #import "KSHChartDelegate.h"
 #import "KSHLineChart.h"
+#import "KSHChartGrid.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartView ()
@@ -20,6 +21,7 @@
 @implementation KSHChartView
 {
     KSHChart *_chart;
+    KSHChartGrid *_grid;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -32,6 +34,11 @@
     }
 
     return self;
+}
+
+- (void)setGrid:(KSHChartGrid *)grid
+{
+    _grid = grid;
 }
 
 - (void)setChartType:(KSHChartType)chartType
@@ -47,6 +54,9 @@
 
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
+
+    // Draw the grid first
+    [_grid drawInRect:rect];
 
     // Draw the chart
     [_chart drawInRect:rect];
@@ -70,6 +80,5 @@
     _delegate = delegate;
     _chart.delegate = delegate;
 }
-
 
 @end

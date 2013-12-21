@@ -10,6 +10,7 @@
 #import "KSHChartView.h"
 #import "KSHChartDataSource.h"
 #import "KSHChart.h"
+#import "KSHChartGrid.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartsViewController () <KSHChartDataSource>
@@ -52,8 +53,12 @@
 
 - (void)loadView
 {
+    KSHChartGrid *grid = [[KSHChartGrid alloc] init];
+    grid.majorHorizontalDelta = @(50.f);
+
     KSHChartView *view = [[KSHChartView alloc] init];
     view.dataSource = self;
+    [view setGrid:grid];
     [view setChartType:KSHLineChartType];
 
     self.view = view;

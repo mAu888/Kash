@@ -7,6 +7,7 @@
 
 @protocol KSHChartDataSource;
 @protocol KSHChartDelegate;
+@class KSHChartGrid;
 
 typedef NS_ENUM(NSUInteger, KSHChartType)
 {
@@ -19,6 +20,7 @@ typedef NS_ENUM(NSUInteger, KSHChartType)
 @property(nonatomic, assign) id <KSHChartDataSource> dataSource;
 @property(nonatomic, assign) id <KSHChartDelegate> delegate;
 
+- (void)setGrid:(KSHChartGrid *)grid;
 - (void)setChartType:(KSHChartType)chartType;
 
 - (void)reloadData;
