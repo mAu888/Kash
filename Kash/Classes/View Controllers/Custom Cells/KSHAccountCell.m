@@ -25,20 +25,14 @@
 
     if ( self != nil)
     {
+        CGFloat diameter = 10.f;
         _colorView = [[UIView alloc]
-            initWithFrame:CGRectMake(CGRectGetWidth(
-                self.contentView.bounds) - CGRectGetHeight(self.contentView.bounds) - 5.f,
-                5.f,
-                CGRectGetHeight(self.contentView.bounds) - 10.f,
-                CGRectGetHeight(self.contentView.bounds) - 10.f)];
-        _colorView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
-        _colorView.layer.cornerRadius = 5.f;
-        _colorView.layer.shadowOpacity = .2f;
-        _colorView.layer.shadowColor = [UIColor blackColor].CGColor;
-        _colorView.layer.shadowRadius = 3.f;
-        _colorView.layer.shadowOffset = CGSizeZero;
-        _colorView.layer.shadowPath = [UIBezierPath bezierPathWithRect:_colorView.frame].CGPath;
-        _colorView.layer.shouldRasterize = YES;
+            initWithFrame:CGRectMake(
+                14.f,
+                roundf((CGRectGetHeight(self.bounds) - diameter) / 2.f),
+                diameter,
+                diameter)];
+        _colorView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
         [self.contentView addSubview:_colorView];
     }
 
@@ -49,6 +43,19 @@
 {
     self.textLabel.text = account.name;
     _colorView.backgroundColor = account.color;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    _colorView.layer.cornerRadius = roundf(CGRectGetWidth(_colorView.frame) / 2.f);
+    self.textLabel.frame = CGRectMake(
+        CGRectGetMaxX(_colorView.frame) + 10.f,
+        CGRectGetMinY(self.textLabel.frame),
+        CGRectGetWidth(self.textLabel.frame),
+        CGRectGetHeight(self.textLabel.frame)
+    );
 }
 
 @end
