@@ -4,6 +4,8 @@
 */
 
 #import "KSHChart.h"
+#import "KSHPieChart.h"
+#import "KSHLineChart.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChart ()
@@ -13,8 +15,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHChart
-{
 
+
++ (instancetype)chartWithType:(KSHChartType)chartType
+{
+    KSHChart *chart = nil;
+    switch ( chartType )
+    {
+        case KSHPieChartType:
+            chart = [[KSHPieChart alloc] init];
+            break;
+        case KSHLineChartType:
+            chart = [[KSHLineChart alloc] init];
+            break;
+    }
+
+    return chart;
 }
 
 - (void)drawInRect:(CGRect)rect

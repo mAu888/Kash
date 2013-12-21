@@ -27,7 +27,7 @@
     CGContextConcatCTM(context, flipVertical);
 
     NSInteger numberOfValues = [self.dataSource numberOfValuesInChart:self];
-    CGFloat dx = CGRectGetWidth(rect) / ( CGFloat ) numberOfValues;
+    CGFloat dx = CGRectGetWidth(rect) / (( CGFloat ) numberOfValues - 1);
 
     double minimumValue = DBL_MIN;
     double maximumValue = DBL_MAX;

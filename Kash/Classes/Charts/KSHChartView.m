@@ -36,21 +36,7 @@
 
 - (void)setChartType:(KSHChartType)chartType
 {
-    switch ( chartType )
-    {
-        case KSHPieChartType:
-        {
-            _chart = [[KSHPieChart alloc] init];
-        }
-            break;
-
-        case KSHLineChartType:
-        {
-            _chart = [[KSHLineChart alloc] init];
-        }
-            break;
-    }
-
+    _chart = [KSHChart chartWithType:chartType];
     _chart.dataSource = self.dataSource;
     _chart.delegate = self.delegate;
 }
