@@ -30,10 +30,12 @@
     {
         self.backgroundColor = [UIColor creamColor];
 
+        KSHChart *chart = [KSHChart chartWithType:chartType];
+        chart.dataSource = self;
+
         _chartView = [[KSHChartView alloc] initWithFrame:self.contentView.bounds];
         _chartView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _chartView.chartType = chartType;
-        _chartView.dataSource = self;
+        _chartView.chart = chart;
         [self.contentView addSubview:_chartView];
     }
 

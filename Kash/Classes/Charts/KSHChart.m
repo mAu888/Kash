@@ -6,6 +6,7 @@
 #import "KSHChart.h"
 #import "KSHPieChart.h"
 #import "KSHLineChart.h"
+#import "KSHChartGrid.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChart ()

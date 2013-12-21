@@ -8,6 +8,7 @@
 @protocol KSHChartDataSource;
 @protocol KSHChartDelegate;
 @class KSHChartGrid;
+@class KSHChart;
 
 typedef NS_ENUM(NSUInteger, KSHChartType)
 {
@@ -15,13 +16,19 @@ typedef NS_ENUM(NSUInteger, KSHChartType)
     KSHLineChartType
 };
 
+////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartView : UIView
 
-@property(nonatomic, assign) id <KSHChartDataSource> dataSource;
-@property(nonatomic, assign) id <KSHChartDelegate> delegate;
+/**
+ * Insets for the chart to be drawn. The insets affect the whole chart view. By default the chart has no insets.
+ */
+@property(nonatomic, assign) UIEdgeInsets contentInsets;
 
-- (void)setGrid:(KSHChartGrid *)grid;
-- (void)setChartType:(KSHChartType)chartType;
+/**
+ * The actual chart to be drawn.
+ */
+@property(nonatomic, strong) KSHChart *chart;
 
 - (void)reloadData;
+
 @end

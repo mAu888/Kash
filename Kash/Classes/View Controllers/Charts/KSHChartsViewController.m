@@ -11,6 +11,7 @@
 #import "KSHChartDataSource.h"
 #import "KSHChart.h"
 #import "KSHChartGrid.h"
+#import "KSHLineChart.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartsViewController () <KSHChartDataSource>
@@ -55,11 +56,16 @@
 {
     KSHChartGrid *grid = [[KSHChartGrid alloc] init];
     grid.majorHorizontalDelta = @(50.f);
+    grid.majorVerticalDelta = @(50.f);
+    grid.showsVerticalLines = YES;
+
+    KSHLineChart *chart = ( KSHLineChart * ) [KSHChart chartWithType:KSHLineChartType];
+    chart.dataSource = self;
+    chart.grid = grid;
 
     KSHChartView *view = [[KSHChartView alloc] init];
-    view.dataSource = self;
-    [view setGrid:grid];
-    [view setChartType:KSHLineChartType];
+    view.contentInsets = UIEdgeInsetsMake(20.f, 14.f, 20.f, 14.f);
+    view.chart = chart;
 
     self.view = view;
 }

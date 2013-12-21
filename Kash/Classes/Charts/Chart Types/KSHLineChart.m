@@ -5,6 +5,7 @@
 
 #import "KSHLineChart.h"
 #import "KSHChartDataSource.h"
+#import "KSHChartGrid.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHLineChart ()
@@ -14,26 +15,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHLineChart
-{
-
-}
 
 - (void)drawInRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
-    // Normalize the coordinate system
-    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, rect.size.height);
-    CGContextConcatCTM(context, flipVertical);
-
     NSInteger numberOfValues = [self.dataSource numberOfValuesInChart:self];
-    CGFloat dx = CGRectGetWidth(rect) / (( CGFloat ) numberOfValues - 1);
+    CGFloat dx = (CGRectGetWidth(rect) - self.grid.tickOffset) / (( CGFloat ) numberOfValues - 1);
 
     double minimumValue = DBL_MIN;
     double maximumValue = DBL_MAX;
 
-    NSMutableArray *values = [NSMutableArray arrayWithCapacity:( NSUInteger ) numberOfValues];
+    NSMutableArray *values = [NSMutableArray array];
     for ( int i = 0; i < numberOfValues; i++ )
     {
         NSNumber *value = [self.dataSource chart:self valueForIndex:i];
@@ -49,8 +43,10 @@
     UIBezierPath *path = [UIBezierPath bezierPath];
     [values enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger index, BOOL *stop)
     {
-        CGFloat x = index * dx;
-        CGFloat y = ( CGFloat ) ((mappingValue + value.doubleValue) / range) * rect.size.height;
+        CGFloat x = (index * dx) + CGRectGetMinX(rect) + self.grid.tickOffset;
+        CGFloat y = ( CGFloat ) ((mappingValue + value.doubleValue) / range) * (CGRectGetHeight(rect) - self.grid.tickOffset);
+        y = CGRectGetMinY(rect) + CGRectGetHeight(rect) - y - self.grid.tickOffset;
+
         index == 0 ?
             [path moveToPoint:CGPointMake(x, y)] :
             [path addLineToPoint:CGPointMake(x, y)];

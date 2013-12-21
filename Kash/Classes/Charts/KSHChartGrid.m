@@ -15,22 +15,59 @@
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHChartGrid
 
+- (id)init
+{
+    self = [super init];
+
+    if ( self != nil )
+    {
+        _tickOffset = 5.f;
+
+        _showsHorizontalLines = YES;
+        _showsVerticalLines = NO;
+    }
+
+    return self;
+}
+
+
 - (void)drawInRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
-    // Normalize the coordinate system
-    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, rect.size.height);
-    CGContextConcatCTM(context, flipVertical);
-
     [[UIColor lightGrayColor] setFill];
 
-    CGFloat horizontalDelta = [_majorHorizontalDelta floatValue];
-    for ( int i = 0, j = ( int ) ceil(CGRectGetHeight(rect) / horizontalDelta); i < j; i++ )
+    // Draw horizontal lines
+    if ( _showsHorizontalLines )
     {
-        CGRect line = CGRectMake(.0f, i * horizontalDelta, CGRectGetWidth(rect), 1.f);
-        CGContextFillRect(context, line);
+        CGFloat horizontalDelta = [_majorHorizontalDelta floatValue];
+        for ( int i = 0, j = ( int ) ceil(CGRectGetHeight(rect) / horizontalDelta); i < j; i++ )
+        {
+            CGRect line = CGRectMake(
+                CGRectGetMinX(rect),
+                CGRectGetMinY(rect) + CGRectGetHeight(rect) - _tickOffset - (i * horizontalDelta),
+                CGRectGetWidth(rect),
+                1.f
+            );
+            CGContextFillRect(context, line);
+        }
+    }
+
+    // Draw vertical lines
+    if ( _showsVerticalLines )
+    {
+        CGFloat verticalDelta = [_majorVerticalDelta floatValue];
+        for ( int i = 0, j = ( int ) ceil(CGRectGetWidth(rect) / verticalDelta); i < j; i++ )
+        {
+            CGRect line = CGRectMake(
+                CGRectGetMinX(rect) + _tickOffset + (i * verticalDelta),
+                CGRectGetMinY(rect),
+                1.f,
+                CGRectGetHeight(rect)
+            );
+            CGContextFillRect(context, line);
+        }
     }
 
     CGContextRestoreGState(context);

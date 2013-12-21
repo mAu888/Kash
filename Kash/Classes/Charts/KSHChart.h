@@ -9,6 +9,7 @@
 
 @protocol KSHChartDataSource;
 @protocol KSHChartDelegate;
+@class KSHChartGrid;
 
 @interface KSHChart : NSObject <KSHChartDrawable>
 
@@ -16,5 +17,10 @@
 
 @property(nonatomic, assign) id <KSHChartDataSource> dataSource;
 @property(nonatomic, assign) id <KSHChartDelegate> delegate;
+
+/**
+ * The grid applied to the chart.
+ */
+@property(nonatomic, strong) KSHChartGrid *grid;
 
 @end

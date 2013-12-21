@@ -12,6 +12,11 @@
 @property(nonatomic, assign) BOOL showsVerticalLines;
 
 /**
+ * The tick offset defines the horizontal respectively vertical offset the grid lines have over the real value range.
+ */
+@property(nonatomic, assign) float tickOffset;
+
+/**
  * Defines the horizontal delta between two grid lines. The value must be greater than or equal to zero.
  */
 @property(nonatomic, assign) NSNumber *majorHorizontalDelta;
