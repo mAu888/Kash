@@ -12,6 +12,7 @@
 #import "KSHChart.h"
 #import "KSHChartGrid.h"
 #import "KSHLineChart.h"
+#import "UIColor+Colours.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartsViewController () <KSHChartDataSource>
@@ -55,13 +56,14 @@
 - (void)loadView
 {
     KSHChartGrid *grid = [[KSHChartGrid alloc] init];
-    grid.majorHorizontalDelta = @(50.f);
-    grid.majorVerticalDelta = @(50.f);
+    grid.majorHorizontalDelta = @(40.f);
+    grid.majorVerticalDelta = @(40.f);
     grid.showsVerticalLines = YES;
 
     KSHLineChart *chart = ( KSHLineChart * ) [KSHChart chartWithType:KSHLineChartType];
     chart.dataSource = self;
     chart.grid = grid;
+    chart.lineColor = [UIColor chartreuseColor];
 
     KSHChartView *view = [[KSHChartView alloc] init];
     view.contentInsets = UIEdgeInsetsMake(20.f, 14.f, 20.f, 14.f);
@@ -83,5 +85,9 @@
     return _weeklyStatistics[( NSUInteger ) index];
 }
 
+- (NSString *)titleForValueAtIndex:(NSInteger)index
+{
+    return [NSString stringWithFormat:@"%d KW", 20 + index];
+}
 
 @end

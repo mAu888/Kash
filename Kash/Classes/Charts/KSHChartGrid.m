@@ -25,6 +25,9 @@
 
         _showsHorizontalLines = YES;
         _showsVerticalLines = NO;
+
+        _lineColor = [UIColor colorWithWhite:.875f alpha:1.f];
+        _lineWidth = 1.f;
     }
 
     return self;
@@ -36,7 +39,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
-    [[UIColor lightGrayColor] setFill];
+    [_lineColor setFill];
 
     // Draw horizontal lines
     if ( _showsHorizontalLines )
@@ -48,7 +51,7 @@
                 CGRectGetMinX(rect),
                 CGRectGetMinY(rect) + CGRectGetHeight(rect) - _tickOffset - (i * horizontalDelta),
                 CGRectGetWidth(rect),
-                1.f
+                _lineWidth
             );
             CGContextFillRect(context, line);
         }
@@ -63,7 +66,7 @@
             CGRect line = CGRectMake(
                 CGRectGetMinX(rect) + _tickOffset + (i * verticalDelta),
                 CGRectGetMinY(rect),
-                1.f,
+                _lineWidth,
                 CGRectGetHeight(rect)
             );
             CGContextFillRect(context, line);

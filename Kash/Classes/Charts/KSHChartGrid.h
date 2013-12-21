@@ -11,10 +11,13 @@
 @property(nonatomic, assign) BOOL showsHorizontalLines;
 @property(nonatomic, assign) BOOL showsVerticalLines;
 
+@property(nonatomic, assign) CGFloat lineWidth;
+@property(nonatomic, strong) UIColor *lineColor;
+
 /**
  * The tick offset defines the horizontal respectively vertical offset the grid lines have over the real value range.
  */
-@property(nonatomic, assign) float tickOffset;
+@property(nonatomic, assign) CGFloat tickOffset;
 
 /**
  * Defines the horizontal delta between two grid lines. The value must be greater than or equal to zero.

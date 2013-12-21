@@ -7,4 +7,8 @@
 #import "KSHChart.h"
 
 @interface KSHLineChart : KSHChart
+
+@property(nonatomic, assign) CGFloat lineWidth;
+@property(nonatomic, strong) UIColor *lineColor;
+
 @end

@@ -16,6 +16,20 @@
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHLineChart
 
+- (id)init
+{
+    self = [super init];
+
+    if ( self )
+    {
+        _lineColor = [UIColor darkGrayColor];
+        _lineWidth = 2.f;
+    }
+
+    return self;
+}
+
+
 - (void)drawInRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -52,7 +66,8 @@
             [path addLineToPoint:CGPointMake(x, y)];
     }];
 
-    [[UIColor darkGrayColor] setStroke];
+    [_lineColor setStroke];
+    [path setLineWidth:_lineWidth];
     [path stroke];
 
     CGContextRestoreGState(context);
