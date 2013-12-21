@@ -15,6 +15,7 @@
 		3D09B1646BF04B0A06C06094 /* KSHPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB42DC4FBBD18219B30A /* KSHPieChart.m */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
 		3D09B2F2F7CE65BEFAF04963 /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6540271F7669A818C58 /* KSHMainViewController.m */; };
+		3D09B3073972B4DD8044367A /* KSHExpenseStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B34BDEB4C139E816121E /* KSHExpenseStatistics.m */; };
 		3D09B3AB6B5C697CE1F0E38D /* KSHLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BE1ABF2A8C23B376D7EF /* KSHLineChart.m */; };
 		3D09B3EE9C038D8FE37AB8AC /* KSHLabelAndTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */; };
 		3D09B45B3BE538295BCB432A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B01CB4FEBB395E39F91A /* Default@2x.png */; };
@@ -108,6 +109,7 @@
 		3D09B2CD00F950F72F5B47EB /* KSHAddExpenseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseItemViewController.m; sourceTree = "<group>"; };
 		3D09B305AF9B7E34EE77DA88 /* KSHAddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHAddExpenseViewController.m; sourceTree = "<group>"; };
 		3D09B314138F35CFF45F47E9 /* KSHInputCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHInputCellDelegate.h; sourceTree = "<group>"; };
+		3D09B34BDEB4C139E816121E /* KSHExpenseStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpenseStatistics.m; sourceTree = "<group>"; };
 		3D09B36B9B65836A49929EBE /* KSHExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHExpensesViewController.m; sourceTree = "<group>"; };
 		3D09B389B0EEEEAC2E25DAB3 /* KSHChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChart.h; sourceTree = "<group>"; };
 		3D09B41116538AF923FF8B8C /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		3D09BCF4B528BE6404AFB90F /* KSHDateFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDateFormatterFactory.h; sourceTree = "<group>"; };
 		3D09BD150B44BA0E238429F2 /* KSHColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorPickerViewController.h; sourceTree = "<group>"; };
 		3D09BD47854E3FAA67823D4B /* KSHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTextField.h; sourceTree = "<group>"; };
+		3D09BDEFA0BFF1C3342CC6CE /* KSHExpenseStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseStatistics.h; sourceTree = "<group>"; };
 		3D09BE1ABF2A8C23B376D7EF /* KSHLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLineChart.m; sourceTree = "<group>"; };
 		3D09BE2E31EE0D1976FADEB1 /* KSHChartsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartsViewController.h; sourceTree = "<group>"; };
 		3D09BEAA203D22ADBE21BA16 /* KSHSubtitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHSubtitleView.m; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 				3D09BB6F9CDAEB21CDF5D116 /* KSHDataAccessLayer.m */,
 				3D09B759BCDD0C1AC24317DE /* KSHDataAccessLayer.h */,
 				3D09B3215042884848FAF79E /* Entities */,
+				3D09BF49A3F113AF6EB89130 /* Statistics */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -458,6 +462,15 @@
 				3D09BAC783947BE0A52D48D3 /* Chart Types */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		3D09BF49A3F113AF6EB89130 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				3D09B34BDEB4C139E816121E /* KSHExpenseStatistics.m */,
+				3D09BDEFA0BFF1C3342CC6CE /* KSHExpenseStatistics.h */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		FEB5D16817B563CB00998E3B = {
@@ -784,6 +797,7 @@
 				3D09B64BE14F1F3E36AEFF1C /* KSHNavigationController.m in Sources */,
 				3D09B56023D4EC3585B5E3BF /* KSHChartsViewController.m in Sources */,
 				3D09B9E7F256E1F4009EF625 /* KSHChartCell.m in Sources */,
+				3D09B3073972B4DD8044367A /* KSHExpenseStatistics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

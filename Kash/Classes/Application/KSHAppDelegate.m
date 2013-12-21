@@ -15,6 +15,7 @@
     [KSHAppearance applyAppearance];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor chartreuseColor];
 
     KSHMainViewController *controller = [[KSHMainViewController alloc] init];

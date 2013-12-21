@@ -23,6 +23,9 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
+    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, rect.size.height);
+    CGContextConcatCTM(context, flipVertical);
+
     NSInteger numberOfValues = [self.dataSource numberOfValuesInChart:self];
     CGFloat dx = CGRectGetWidth(rect) / ( CGFloat ) numberOfValues;
 
