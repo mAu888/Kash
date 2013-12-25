@@ -16,13 +16,25 @@
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHPieChart
 {
-
+    CALayer *_layer;
 }
 
-- (void)drawInRect:(CGRect)rect
+- (id)init
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);
+    self = [super init];
+
+    if ( self )
+    {
+        _layer = [CALayer layer];
+    }
+
+    return self;
+}
+
+
+- (CALayer *)layerForRect:(CGRect)rect
+{
+    [[_layer sublayers] makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
 
     NSInteger numberOfSegments = [self.dataSource numberOfValuesInChart:self];
     if ( numberOfSegments > 0 )
@@ -46,7 +58,6 @@
         __block CGFloat currentAngle = .0f;
         CGFloat twoPI = ( CGFloat ) (2 * M_PI);
 
-        CGContextSetLineWidth(context, lineWidth);
         [values enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger index, BOOL *stop)
         {
             CGFloat endAngle = twoPI * ( CGFloat ) (value.doubleValue / totalAmount);
@@ -56,18 +67,50 @@
                                                               endAngle:(currentAngle + endAngle)
                                                              clockwise:YES];
 
-            UIColor *segmentColor = [self.dataSource pieChart:self colorForSegmentAtIndex:index];
-            [segmentColor setStroke];
+            CAShapeLayer *partsLayer = [CAShapeLayer layer];
+            partsLayer.fillColor = [UIColor clearColor].CGColor;
+            partsLayer.strokeColor = [self.dataSource pieChart:self colorForSegmentAtIndex:index].CGColor;
+            partsLayer.lineWidth = lineWidth;
+            partsLayer.path = path.CGPath;
 
-            path.lineWidth = lineWidth;
-            [path stroke];
+            [_layer addSublayer:partsLayer];
 
             currentAngle += endAngle;
         }];
     }
 
-    CGContextRestoreGState(context);
+    return _layer;
 }
 
+- (void)animate
+{
+    [_layer.sublayers enumerateObjectsUsingBlock:^(CAShapeLayer *layer, NSUInteger index, BOOL *stop)
+    {
+        layer.strokeEnd = .0f;
+
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        animation.fromValue = @(.0f);
+        animation.toValue = @(1.f);
+        animation.duration = .667f;
+        animation.beginTime = CACurrentMediaTime() + (index * .667);
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+        animation.removedOnCompletion = NO;
+        animation.delegate = self;
+
+        [layer addAnimation:animation forKey:@"strokeEndAnimation"];
+    }];
+}
+
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished
+{
+    [_layer.sublayers enumerateObjectsUsingBlock:^(CAShapeLayer *layer, NSUInteger index, BOOL *stop)
+    {
+        if ( [layer animationForKey:@"strokeEndAnimation"] == animation )
+        {
+            layer.strokeEnd = 1.f;
+            [layer removeAllAnimations];
+        }
+    }];
+}
 
 @end

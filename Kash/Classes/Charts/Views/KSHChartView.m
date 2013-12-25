@@ -48,7 +48,8 @@
     [_chart.grid drawInRect:rect];
 
     // Draw the chart
-    [_chart drawInRect:rect];
+    [self.layer addSublayer:[_chart layerForRect:rect]];
+    [_chart animate];
 
     CGContextRestoreGState(context);
 }

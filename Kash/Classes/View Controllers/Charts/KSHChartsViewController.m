@@ -41,13 +41,6 @@
         // Tab item ------------------------------------------------------------
         self.tabBarItem.title = NSLocalizedString(@"Charts", nil);
         self.tabBarItem.image = [UIImage imageNamed:@"chart"];
-
-        // Gather data ---------------------------------------------------------
-        KSHExpenseStatistics *stats = [[KSHExpenseStatistics alloc] initWithDataAccessLayer:_dataAccessLayer];
-        _weeklyStatistics = [stats weeklyExpensesFromDate:[NSDate dateWithTimeIntervalSinceNow:-3025000]
-                                                   toDate:[NSDate date]];
-
-
     }
 
     return self;
@@ -70,6 +63,18 @@
     view.chart = chart;
 
     self.view = view;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    // Gather data ---------------------------------------------------------
+    KSHExpenseStatistics *stats = [[KSHExpenseStatistics alloc] initWithDataAccessLayer:_dataAccessLayer];
+    _weeklyStatistics = [stats weeklyExpensesFromDate:[NSDate dateWithTimeIntervalSinceNow:-3025000]
+                                               toDate:[NSDate dateWithTimeIntervalSinceNow:60*60*24*7]];
+
+    [(KSHChartView *)self.view reloadData];
 }
 
 

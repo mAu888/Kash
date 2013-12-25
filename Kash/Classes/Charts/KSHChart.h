@@ -11,9 +11,19 @@
 @protocol KSHChartDelegate;
 @class KSHChartGrid;
 
-@interface KSHChart : NSObject <KSHChartDrawable>
+@interface KSHChart : NSObject
 
 + (instancetype)chartWithType:(KSHChartType)chartType;
+
+/**
+ * The layer containing the chart to be drawn.
+ */
+- (CALayer *)layerForRect:(CGRect)rect;
+
+/**
+ * Animation for the chart.
+ */
+- (void)animate;
 
 @property(nonatomic, assign) id <KSHChartDataSource> dataSource;
 @property(nonatomic, assign) id <KSHChartDelegate> delegate;

@@ -15,6 +15,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 @implementation KSHLineChart
+{
+    CAShapeLayer *_layer;
+}
 
 - (id)init
 {
@@ -24,17 +27,15 @@
     {
         _lineColor = [UIColor darkGrayColor];
         _lineWidth = 2.f;
+        _layer = [CAShapeLayer layer];
     }
 
     return self;
 }
 
 
-- (void)drawInRect:(CGRect)rect
+- (UIBezierPath *)pathForRect:(CGRect)rect
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);
-
     NSInteger numberOfValues = [self.dataSource numberOfValuesInChart:self];
     CGFloat dx = (CGRectGetWidth(rect) - self.grid.tickOffset) / (( CGFloat ) numberOfValues - 1);
 
@@ -66,11 +67,30 @@
             [path addLineToPoint:CGPointMake(x, y)];
     }];
 
-    [_lineColor setStroke];
-    [path setLineWidth:_lineWidth];
-    [path stroke];
-
-    CGContextRestoreGState(context);
+    return path;
 }
+
+- (CALayer *)layerForRect:(CGRect)rect
+{
+    _layer.path = [self pathForRect:rect].CGPath;
+    _layer.fillColor = [UIColor clearColor].CGColor;
+    _layer.strokeColor = _lineColor.CGColor;
+    _layer.lineWidth = _lineWidth;
+
+    return _layer;
+}
+
+- (void)animate
+{
+    _layer.strokeEnd = 1.f;
+
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.fromValue = @(.0f);
+    animation.toValue = @(1.f);
+    animation.duration = .667f;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    [_layer addAnimation:animation forKey:@"strokeEndAnimation"];
+}
+
 
 @end

@@ -34,7 +34,14 @@
     return chart;
 }
 
-- (void)drawInRect:(CGRect)rect
+- (CALayer *)layerForRect:(CGRect)rect
+{
+    @throw [NSException exceptionWithName:@"KSHAbstractClassCallException"
+                                   reason:@"An abstract base method has been called"
+                                 userInfo:nil];
+}
+
+- (void)animate
 {
     @throw [NSException exceptionWithName:@"KSHAbstractClassCallException"
                                    reason:@"An abstract base method has been called"

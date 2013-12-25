@@ -22,11 +22,11 @@
 /**
  * Defines the horizontal delta between two grid lines. The value must be greater than or equal to zero.
  */
-@property(nonatomic, assign) NSNumber *majorHorizontalDelta;
+@property(nonatomic, strong) NSNumber *majorHorizontalDelta;
 
 /**
  * Defines the vertical delta between two grid lines. The value must be grater than or equal to zero.
  */
-@property(nonatomic, assign) NSNumber *majorVerticalDelta;
+@property(nonatomic, strong) NSNumber *majorVerticalDelta;
 
 @end
