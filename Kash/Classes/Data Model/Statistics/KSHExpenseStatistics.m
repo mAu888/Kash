@@ -79,7 +79,7 @@
 
     NSMutableArray *result = [NSMutableArray array];
     NSNumber *weeks = [self weeksBetweenStartDate:fromDate endDate:toDate];
-    for (int i = 0, j = [weeks intValue]; i < j; i++ )
+    for (int i = 0, j = [weeks intValue]; i <= j; i++ )
     {
         toDate = [gregorian dateFromComponents:endDateComponents];
 

@@ -6,9 +6,10 @@
 #import <Foundation/Foundation.h>
 #import "KSHChartView.h"
 #import "KSHChartDrawable.h"
+#import "KSHChartDataSource.h"
+#import "KSHChartDelegate.h"
 
-@protocol KSHChartDataSource;
-@protocol KSHChartDelegate;
+
 @class KSHChartGrid;
 
 @interface KSHChart : NSObject
@@ -25,8 +26,8 @@
  */
 - (void)animate;
 
-@property(nonatomic, assign) id <KSHChartDataSource> dataSource;
-@property(nonatomic, assign) id <KSHChartDelegate> delegate;
+@property(nonatomic, weak) id <KSHChartDataSource> dataSource;
+@property(nonatomic, weak) id <KSHChartDelegate> delegate;
 
 /**
  * The grid applied to the chart.

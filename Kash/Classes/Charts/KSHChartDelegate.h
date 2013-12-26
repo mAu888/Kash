@@ -11,5 +11,6 @@
 
 @optional
 - (NSString *)chart:(KSHChart *)chart labelForIndex:(NSInteger)index;
+- (CGPoint)chart:(KSHChart *)chart anchorPointForLabelAtIndex:(NSInteger)index;
 
 @end

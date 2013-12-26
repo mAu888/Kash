@@ -28,6 +28,7 @@
     if ( self != nil )
     {
         self.backgroundColor = [UIColor whiteColor];
+        self.clipsToBounds = YES;
 
         _contentInsets = UIEdgeInsetsZero;
     }
@@ -39,17 +40,16 @@
 {
     [super drawRect:rect];
 
-    rect = UIEdgeInsetsInsetRect(rect, _contentInsets);
+    CGRect insetRect = UIEdgeInsetsInsetRect(rect, _contentInsets);
 
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
     // Draw the grid first
-    [_chart.grid drawInRect:rect];
+    [_chart.grid drawInRect:insetRect];
 
     // Draw the chart
-    [self.layer addSublayer:[_chart layerForRect:rect]];
-    [_chart animate];
+    [self.layer addSublayer:[_chart layerForRect:insetRect]];
 
     CGContextRestoreGState(context);
 }
