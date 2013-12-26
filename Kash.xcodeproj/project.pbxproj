@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3D09B025394AEAC675877C6B /* KSHBadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B69DD213AC436623C553 /* KSHBadgeCell.m */; };
+		3D09B075F0E591CDF22A9263 /* CATextLayer+AutoSizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B9262817B238D9CE1C47 /* CATextLayer+AutoSizing.m */; };
 		3D09B0834CB8FF524E55DAE0 /* KSHAddExpenseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B2CD00F950F72F5B47EB /* KSHAddExpenseItemViewController.m */; };
 		3D09B0FF63D66423FFA6C41B /* KSHNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B7AAB784AAEB1CB2E7EE /* KSHNumberFormatter.m */; };
 		3D09B103D004DFC20112A7F6 /* KSHDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6C5384974BCFA844668 /* KSHDatePickerCell.m */; };
 		3D09B13A7697F33B6EBB379F /* KSHDateFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B73189516AAC04E16269 /* KSHDateFormatterFactory.m */; };
 		3D09B1646BF04B0A06C06094 /* KSHPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BB42DC4FBBD18219B30A /* KSHPieChart.m */; };
+		3D09B1F3B57BF6985F7CBED0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D09BBDF9DB3D71B6B737D37 /* CoreText.framework */; };
 		3D09B20A7180461873B6377B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D09B1302967B1E9EEF92995 /* Default-568h@2x.png */; };
 		3D09B27C3435D37C9C1D284B /* KSHChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09BED7792FF05ADEAD778C /* KSHChartView.m */; };
 		3D09B2F2F7CE65BEFAF04963 /* KSHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D09B6540271F7669A818C58 /* KSHMainViewController.m */; };
@@ -138,6 +140,7 @@
 		3D09B81443D394C61DC18543 /* KSHExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseViewController.h; sourceTree = "<group>"; };
 		3D09B81AAE3C6E4D2005DD10 /* KSHNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHNumberFormatter.h; sourceTree = "<group>"; };
 		3D09B83447BE56ACEA2E4950 /* KSHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTableViewCell.m; sourceTree = "<group>"; };
+		3D09B9262817B238D9CE1C47 /* CATextLayer+AutoSizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATextLayer+AutoSizing.m"; sourceTree = "<group>"; };
 		3D09B97F3897FC45DF703C42 /* KSHChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHChart.m; sourceTree = "<group>"; };
 		3D09B9952948CD57DAB326F3 /* KSHLabelAndTextFieldCell+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSHLabelAndTextFieldCell+Formatting.h"; sourceTree = "<group>"; };
 		3D09B9EAC794B1D8873B0125 /* UILabel+KSHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+KSHAdditions.h"; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		3D09BB7C9BD7ABEDC3647119 /* KSHFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHFlowLayout.h; sourceTree = "<group>"; };
 		3D09BB87743145DED78C2A78 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3D09BBC6D126BB007BF183C2 /* KSHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHTableViewController.m; sourceTree = "<group>"; };
+		3D09BBDF9DB3D71B6B737D37 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3D09BC22D8C194D266BDCD0A /* KSHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHViewController.m; sourceTree = "<group>"; };
 		3D09BC5D32D9AF1FAFAEE3B0 /* KSHSubtitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHSubtitleView.h; sourceTree = "<group>"; };
 		3D09BC8284CF3EDADE2EE64C /* KSHChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHChartDataSource.h; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		3D09BCAB1BC99A52EAEC3497 /* KSHLabelAndTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHLabelAndTextFieldCell.m; sourceTree = "<group>"; };
 		3D09BCD1689FF7D777064261 /* KSHPieChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHPieChartDataSource.h; sourceTree = "<group>"; };
 		3D09BCF4B528BE6404AFB90F /* KSHDateFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHDateFormatterFactory.h; sourceTree = "<group>"; };
+		3D09BD021CFDF374D80DECAD /* CATextLayer+AutoSizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATextLayer+AutoSizing.h"; sourceTree = "<group>"; };
 		3D09BD150B44BA0E238429F2 /* KSHColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHColorPickerViewController.h; sourceTree = "<group>"; };
 		3D09BD47854E3FAA67823D4B /* KSHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHTextField.h; sourceTree = "<group>"; };
 		3D09BDEFA0BFF1C3342CC6CE /* KSHExpenseStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHExpenseStatistics.h; sourceTree = "<group>"; };
@@ -225,6 +230,7 @@
 				FEB5D17717B563CC00998E3B /* Foundation.framework in Frameworks */,
 				FEB5D17917B563CC00998E3B /* CoreGraphics.framework in Frameworks */,
 				7FA769D724F947218683B074 /* libPods.a in Frameworks */,
+				3D09B1F3B57BF6985F7CBED0 /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +345,8 @@
 			children = (
 				3D09B63E77D7AA86E24A1300 /* UILabel+KSHAdditions.m */,
 				3D09B9EAC794B1D8873B0125 /* UILabel+KSHAdditions.h */,
+				3D09B9262817B238D9CE1C47 /* CATextLayer+AutoSizing.m */,
+				3D09BD021CFDF374D80DECAD /* CATextLayer+AutoSizing.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -518,6 +526,7 @@
 				FEB5D17817B563CC00998E3B /* CoreGraphics.framework */,
 				FEB5D19817B563CC00998E3B /* SenTestingKit.framework */,
 				BC18EEBA2C3649CEB0A3EAF6 /* libPods.a */,
+				3D09BBDF9DB3D71B6B737D37 /* CoreText.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -814,6 +823,7 @@
 				3D09B3073972B4DD8044367A /* KSHExpenseStatistics.m in Sources */,
 				3D09B27C3435D37C9C1D284B /* KSHChartView.m in Sources */,
 				3D09B600702CA69B75263E79 /* KSHChartGrid.m in Sources */,
+				3D09B075F0E591CDF22A9263 /* CATextLayer+AutoSizing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
