@@ -6,6 +6,8 @@
 #import <Foundation/Foundation.h>
 #import "KSHChartDrawable.h"
 
+
+////////////////////////////////////////////////////////////////////////////////
 @interface KSHChartGrid : NSObject <KSHChartDrawable>
 
 @property(nonatomic, assign) BOOL showsHorizontalLines;
@@ -29,4 +31,22 @@
  */
 @property(nonatomic, strong) NSNumber *majorVerticalDelta;
 
+/**
+ * Range of values in the grid.
+ */
+@property(nonatomic, strong) NSArray *plotRange;
+
+/**
+ * Values for the x axis labels. If set the horizontal lines offset will be overridden to match the count of the labels.
+ */
+@property(nonatomic, strong) NSArray *xLabels;
+
+
+/**
+ * Converts the given rectangle to the rectangle actually available for drawing the chart.
+ */
+- (CGRect)chartRectForRect:(CGRect)rect;
+
+- (NSNumber *)minimumValue;
+- (NSNumber *)maximumValue;
 @end

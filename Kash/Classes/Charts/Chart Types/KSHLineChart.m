@@ -4,7 +4,6 @@
 */
 
 #import "KSHLineChart.h"
-#import "KSHChartDataSource.h"
 #import "KSHChartGrid.h"
 #import "CATextLayer+AutoSizing.h"
 
@@ -39,14 +38,24 @@
 
 - (CALayer *)layerForRect:(CGRect)rect
 {
+    [[_layer sublayers] makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
+
+    rect = [self.grid chartRectForRect:rect];
+
     _layer.frame = rect;
     _layer.path = [self pathForLayer:_layer].CGPath;
     _layer.fillColor = [UIColor clearColor].CGColor;
 
-    // Do we have any labels?
-    if ( [self.dataSource respondsToSelector:@selector(titleForValueAtIndex:)] )
+    // Do the plot symbols
+    if ( self.plotSymbol != KSHChartPlotSymbolNone )
     {
-        [self addTitlesForValuesToLayer:_layer];
+        [self addPlotSymbolLayersToLayer:_layer];
+    }
+
+    // Do we have any labels?
+    if ( [self.dataSource respondsToSelector:@selector(chart:titleForValueAtIndex:)] )
+    {
+        [self addTextValueLayersToLayer:_layer];
     }
 
     return _layer;
@@ -90,77 +99,92 @@
 
 #pragma mark - Private methods
 
-- (void)addTitlesForValuesToLayer:(CALayer *)layer
+- (void)addTextValueLayersToLayer:(CALayer *)layer
 {
-    CGRect rect = _layer.bounds;
+    [self enumerateValuesForRect:layer.bounds
+                      usingBlock:^(id value, CGPoint point, NSInteger index)
+                      {
+                          CGFontRef font = CGFontCreateWithFontName(( CFStringRef ) @"OpenSans");
 
-    NSArray *values = nil;
-    double maximumValue;
-    double minimumValue;
-    long double range;
-    [self getValues:&values minimumValue:&minimumValue maximumValue:&maximumValue range:&range];
-
-    [values enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger index, BOOL *stop)
-    {
-        CGFontRef font = CGFontCreateWithFontName(( CFStringRef ) @"OpenSans");
-
-        CATextLayer *textLayer = [CATextLayer layer];
-        textLayer.contentsScale = [UIScreen mainScreen].scale;
-        textLayer.font = font;
-        textLayer.fontSize = 10.f;
-        textLayer.foregroundColor = [UIColor blackColor].CGColor;
+                          CATextLayer *textLayer = [CATextLayer layer];
+                          textLayer.contentsScale = [UIScreen mainScreen].scale;
+                          textLayer.font = font;
+                          textLayer.fontSize = 10.f;
+                          textLayer.foregroundColor = [UIColor blackColor].CGColor;
 //        textLayer.backgroundColor = [UIColor colorWithWhite:1.f alpha:.6f].CGColor;
-        textLayer.backgroundColor = [UIColor clearColor].CGColor;
-        textLayer.string = [self.dataSource titleForValueAtIndex:index];
-        textLayer.cornerRadius = 5.f;
-        [textLayer adjustBoundsToFit];
+                          textLayer.backgroundColor = [UIColor clearColor].CGColor;
+                          textLayer.string = [self.dataSource chart:self titleForValueAtIndex:index];
+                          textLayer.cornerRadius = 5.f;
+                          [textLayer adjustBoundsToFit];
 
-        if ( [self.delegate respondsToSelector:@selector(chart:anchorPointForLabelAtIndex:)] )
-        {
-            textLayer.anchorPoint = [self.delegate chart:self anchorPointForLabelAtIndex:index];
-        }
+                          if ( [self.delegate respondsToSelector:@selector(chart:anchorPointForLabelAtIndex:)] )
+                          {
+                              textLayer.anchorPoint = [self.delegate chart:self anchorPointForLabelAtIndex:index];
+                          }
 
-        CGPoint point = [self pointForValueAtIndex:index
-                                            values:values
-                                      minimumValue:minimumValue
-                                      maximumValue:maximumValue
-                                              rect:rect];
+                          CGFloat yOffset = textLayer.anchorPoint.y < .5f ? 7.f : -7.f;
+                          textLayer.position = CGPointMake(point.x, point.y + yOffset);
 
-        textLayer.position = point;
+                          CGFontRelease(font);
 
-        CGFontRelease(font);
+                          [layer addSublayer:textLayer];
+                      }];
+}
 
-        [layer addSublayer:textLayer];
-    }];
+- (void)addPlotSymbolLayersToLayer:(CALayer *)layer
+{
+    [self enumerateValuesForRect:layer.bounds
+                      usingBlock:^(id value, CGPoint point, NSInteger index)
+                      {
+                          CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+                          shapeLayer.fillColor = [UIColor whiteColor].CGColor;
+                          shapeLayer.strokeColor = [( CAShapeLayer * ) layer strokeColor];
+                          shapeLayer.lineWidth = 2.f;
+                          shapeLayer.path = [UIBezierPath bezierPathWithArcCenter:point
+                                                                           radius:3.f
+                                                                       startAngle:0
+                                                                         endAngle:( CGFloat ) (2 * M_PI)
+                                                                        clockwise:YES].CGPath;
+                          [layer addSublayer:shapeLayer];
+                      }];
 }
 
 - (UIBezierPath *)pathForLayer:(CALayer *)layer
 {
-    [[layer sublayers] makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
-
-    CGRect rect = layer.bounds;
-
-    NSArray *values = nil;
-    double maximumValue;
-    double minimumValue;
-    long double range;
-    [self getValues:&values minimumValue:&minimumValue maximumValue:&maximumValue range:&range];
-
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [values enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger index, BOOL *stop)
-    {
-        CGPoint point = [self pointForValueAtIndex:index
-                                        values:values
-                                  minimumValue:minimumValue
-                                  maximumValue:maximumValue
-                                          rect:rect];
 
-        index == 0 ?
-            [path moveToPoint:point] :
-            [path addLineToPoint:point];
-    }];
+    [self enumerateValuesForRect:layer.bounds
+                      usingBlock:^(id value, CGPoint point, NSInteger index)
+                      {
+                          index == 0 ?
+                              [path moveToPoint:point] :
+                              [path addLineToPoint:point];
+                      }];
 
     return path;
+}
+
+- (void)enumerateValuesForRect:(CGRect)rect usingBlock:(void (^)(id value, CGPoint point, NSInteger index))block
+{
+    if ( block != nil )
+    {
+        NSArray *values = nil;
+        double maximumValue;
+        double minimumValue;
+        long double range;
+        [self getValues:&values minimumValue:&minimumValue maximumValue:&maximumValue range:&range];
+
+        [values enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger index, BOOL *stop)
+        {
+            CGPoint point = [self pointForValueAtIndex:index
+                                                values:values
+                                          minimumValue:[self.grid.minimumValue doubleValue]
+                                          maximumValue:[self.grid.maximumValue doubleValue]
+                                                  rect:rect];
+
+            block(value, point, index);
+        }];
+    }
 }
 
 - (CGPoint)pointForValueAtIndex:(NSInteger)index
@@ -171,7 +195,7 @@
 {
     CGFloat dx = (CGRectGetWidth(rect) - self.grid.tickOffset) / (( CGFloat ) values.count - 1);
 
-    double range = MAX(maximumValue, minimumValue) - MIN(maximumValue, minimumValue);
+    double range = (MAX(maximumValue, minimumValue) - MIN(maximumValue, minimumValue)) + 1.f;
     double mappingValue = -1 * minimumValue;
 
     CGFloat x = (index * dx) + CGRectGetMinX(rect) + self.grid.tickOffset;

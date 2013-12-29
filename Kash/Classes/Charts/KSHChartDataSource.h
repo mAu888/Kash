@@ -14,6 +14,6 @@
 - (NSNumber *)chart:(KSHChart *)chart valueForIndex:(NSInteger)index;
 
 @optional
-- (NSString *)titleForValueAtIndex:(NSInteger)index;
+- (NSString *)chart:(KSHChart *)chart titleForValueAtIndex:(NSInteger)index;
 
 @end
